@@ -1,0 +1,601 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/sglavoie/
+	..
+1586970189
+'b
+	/home/sglavoie/bin/
+	..
+1586970189
+'h
+	/home/sglavoie/
+	..
+1586970189
+
+# Bookmarks:
+
+# TUI:
+al
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/tmp
+	helloworld.csv
+16
+d/home/sglavoie
+	dev
+12
+d/home/sglavoie/dev
+	..
+0
+d/home/sglavoie
+	dev
+12
+d/home/sglavoie/dev
+	config
+1
+d/home/sglavoie
+	Downloads
+3
+d/home/sglavoie/Downloads
+	..
+0
+d/home/sglavoie
+	Downloads
+3
+d/home/sglavoie/dev/datopian/github/awesome-data-prb
+	population_reference_bureau
+3
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/population_reference_bureau
+	inter
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/population_reference_bureau/inter
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/population_reference_bureau
+	us
+2
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/population_reference_bureau/us
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/population_reference_bureau
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb
+	original_data
+2
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/original_data
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb
+	processed_data
+4
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/processed_data
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb
+	processed_data
+4
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/processed_data
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb
+	truncate_data
+5
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/truncate_data
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb
+	scripts
+5
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb
+	scripts
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb
+	scripts
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts
+	truncate_data
+5
+d/home/sglavoie/dev/datopian/github/awesome-data-prb
+	scripts
+2
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts
+	population_reference_bureau
+3
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/population_reference_bureau
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts
+	population_reference_bureau
+3
+d/home/sglavoie/dev/datopian/github/awesome-data-prb
+	data
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/data
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb
+	scripts
+2
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts
+	population_reference_bureau
+3
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/population_reference_bureau
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts
+	truncate_data
+4
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts
+	truncate_data
+4
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data
+	inter
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data
+	inter
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts
+	processed_data
+3
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/processed_data
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts
+	original_data
+2
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/original_data
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts
+	helpers
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/helpers
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts
+	helpers
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb
+	scripts
+2
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts
+	helpers
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/helpers
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts
+	helpers
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/helpers
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts
+	truncate_data
+5
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data
+	inter
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data
+	inter
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts
+	truncate_data
+5
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data
+	inter
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data
+	us
+2
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data
+	inter
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter
+	age15.csv
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data
+	us
+2
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data
+	us
+2
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts
+	temp
+4
+d/home/sglavoie/dev/datopian/github/awesome-data-prb
+	scripts
+2
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts
+	temp
+4
+d/home/sglavoie/dev/datopian/github/awesome-data-prb
+	data
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/data
+	international
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb
+	data
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/data
+	international
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/data/international
+	age15
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/data/international/age15
+	data
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/data/international/age15/data
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/data/international/age15
+	data
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/data/international
+	age15
+1
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/data
+	us
+2
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/data/us
+	..
+0
+d/home/sglavoie/dev/datopian/github/awesome-data-prb/data
+	us
+2
+d/home/sglavoie/dev/datopian/github/awesome-data-prb
+	data
+1
+d/home/sglavoie/dev/datopian/github
+	..
+0
+d/home/sglavoie/dev/datopian
+	github
+1
+d/home/sglavoie/dev
+	datopian
+3
+d/home/sglavoie
+	.dotfiles
+8
+d/home/sglavoie/.dotfiles
+	tools
+7
+d/home/sglavoie/.dotfiles/tools
+	check_for_upgrade.sh
+1
+d
+
+# Right window history (oldest to newest):
+D/tmp
+	..
+0
+D/
+	home
+4
+D/home
+	sglavoie
+1
+D/home/sglavoie
+	dev
+12
+D/home/sglavoie/dev
+	datopian
+2
+D/home/sglavoie/dev/datopian
+	github
+1
+D/home/sglavoie/dev/datopian/github
+	..
+0
+D/home/sglavoie/dev/datopian
+	github
+1
+D/home/sglavoie/dev/datopian/github
+	..
+0
+D/home/sglavoie/dev/datopian
+	..
+0
+D/home/sglavoie/dev
+	..
+0
+D/home/sglavoie
+	Dropbox
+4
+D/home/sglavoie/Dropbox
+	career
+4
+D/home/sglavoie/Dropbox/career
+	datopian
+1
+D/home/sglavoie/Dropbox/career/datopian
+	onboarding
+3
+D/home/sglavoie/Dropbox/career/datopian/onboarding
+	..
+0
+D/home/sglavoie/Dropbox/career/datopian
+	datasets_license_inquiries
+2
+D/home/sglavoie/Dropbox/career/datopian/datasets_license_inquiries
+	..
+0
+D/home/sglavoie/Dropbox/career/datopian
+	..
+0
+D/home/sglavoie/Dropbox/career
+	..
+0
+D/home/sglavoie/Dropbox
+	..
+0
+D/home/sglavoie
+	dev
+12
+D/home/sglavoie/dev
+	datopian
+3
+D/home/sglavoie/dev/datopian
+	github
+1
+D/home/sglavoie/dev/datopian/github
+	awesome-data-prb
+2
+D/home/sglavoie/dev/datopian/github/awesome-data-prb
+	..
+0
+D/home/sglavoie/dev/datopian/github
+	awesome-data-prb
+2
+D/home/sglavoie/dev/datopian
+	github
+1
+D/home/sglavoie/dev
+	datopian
+3
+D/home/sglavoie
+	Dropbox
+4
+D/home/sglavoie/Dropbox
+	.custom
+2
+D/home/sglavoie/Dropbox/.custom
+	zsh
+7
+D/home/sglavoie/Dropbox/.custom/zsh
+	..
+0
+D/home/sglavoie/Dropbox/.custom
+	zsh
+7
+D/home/sglavoie/Dropbox/.custom/zsh
+	environ.variables
+1
+D/home/sglavoie/Dropbox/.custom
+	themes
+6
+D/home/sglavoie/Dropbox/.custom/themes
+	..
+0
+D/home/sglavoie/Dropbox/.custom
+	plugins
+5
+D/home/sglavoie/Dropbox/.custom/plugins
+	fzf
+2
+D/home/sglavoie/Dropbox/.custom/plugins/fzf
+	..
+0
+D/home/sglavoie/Dropbox/.custom/plugins
+	example
+1
+D/home/sglavoie/Dropbox/.custom/plugins/example
+	..
+0
+D/home/sglavoie/Dropbox/.custom/plugins
+	fzf
+1
+D/home/sglavoie/Dropbox/.custom
+	fonts
+4
+D/home/sglavoie/Dropbox/.custom/fonts
+	..
+0
+D/home/sglavoie/Dropbox/.custom
+	dmenu
+3
+D/home/sglavoie/Dropbox/.custom/dmenu
+	..
+0
+D/home/sglavoie/Dropbox/.custom
+	bash
+2
+D/home/sglavoie/Dropbox/.custom/bash
+	..
+0
+D/home/sglavoie/Dropbox/.custom
+	..
+0
+D/home/sglavoie/Dropbox
+	.custom
+2
+D/home/sglavoie/Dropbox/.custom
+	bootstrap.sh
+9
+D
+
+# Command line history (oldest to newest):
+:mkdir datasets_license_inquiries
+:mv
+:h
+:mkdir scripts
+:mkdir data
+:mkdir temp
+:q
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+pinternational
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/sglavoie/.local/share/vifm/Trash/000_.ipynb_checkpoints
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/sglavoie/.local/share/vifm/Trash/000_prb.txt
+	/home/sglavoie/prb.txt
+t/home/sglavoie/.local/share/vifm/Trash/000_E361162D5493F67F084A754B1F22288D99DA7EEE.torrent
+	/home/sglavoie/Downloads/E361162D5493F67F084A754B1F22288D99DA7EEE.torrent
+t/home/sglavoie/.local/share/vifm/Trash/000_helpers
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/helpers
+t/home/sglavoie/.local/share/vifm/Trash/000_original_data
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/original_data
+t/home/sglavoie/.local/share/vifm/Trash/000_population_reference_bureau
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/population_reference_bureau
+t/home/sglavoie/.local/share/vifm/Trash/000_processed_data
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/processed_data
+t/home/sglavoie/.local/share/vifm/Trash/001_population_reference_bureau
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/population_reference_bureau
+t/home/sglavoie/.local/share/vifm/Trash/000_helpers.py
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/helpers/helpers.py
+t/home/sglavoie/.local/share/vifm/Trash/000___pycache__
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/helpers/__pycache__
+t/home/sglavoie/.local/share/vifm/Trash/001_helpers
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/helpers
+t/home/sglavoie/.local/share/vifm/Trash/000_age15.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/age15.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_age65.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/age65.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_births.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/births.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_deaths.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/deaths.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_fertility.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/fertility.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_fp-demand-satisfied-married.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/fp-demand-satisfied-married.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_fp-total-modern.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/fp-total-modern.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_fp-unmet-total.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/fp-unmet-total.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_gross-national-income.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/gross-national-income.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_hh-one-person.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/hh-one-person.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_hh-size-av.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/hh-size-av.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_hiv-rate-female.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/hiv-rate-female.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_hiv-rate-male.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/hiv-rate-male.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_infant-mortality.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/infant-mortality.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_life-expectancy-birth-female.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/life-expectancy-birth-female.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_life-expectancy-birth-male.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/life-expectancy-birth-male.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_population-2035.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/population-2035.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_population-2050.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/population-2050.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_population.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/population.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_rate-natural-increase.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/rate-natural-increase.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_urban.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/inter/urban.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_age18.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us/age18.csv
+t/home/sglavoie/.local/share/vifm/Trash/001_age65.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us/age65.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_bachelors-degree.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us/bachelors-degree.csv
+t/home/sglavoie/.local/share/vifm/Trash/001_births.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us/births.csv
+t/home/sglavoie/.local/share/vifm/Trash/001_deaths.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us/deaths.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_elderly-support-ratio.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us/elderly-support-ratio.csv
+t/home/sglavoie/.local/share/vifm/Trash/001_fertility.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us/fertility.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_foreign-born.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us/foreign-born.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_gini.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us/gini.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_income.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us/income.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_living-alone.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us/living-alone.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_marriage-age-men.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us/marriage-age-men.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_marriage-age-women.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us/marriage-age-women.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_migration.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us/migration.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_population-change.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us/population-change.csv
+t/home/sglavoie/.local/share/vifm/Trash/001_population.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us/population.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_poverty.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us/poverty.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_race-ethnicity.csv
+	/home/sglavoie/dev/datopian/github/awesome-data-prb/scripts/truncate_data/us/race-ethnicity.csv
+t/home/sglavoie/.local/share/vifm/Trash/000_example.zsh
+	/home/sglavoie/Dropbox/.custom/zsh/example.zsh
+t/home/sglavoie/.local/share/vifm/Trash/000_themes
+	/home/sglavoie/Dropbox/.custom/themes
+t/home/sglavoie/.local/share/vifm/Trash/000_example
+	/home/sglavoie/Dropbox/.custom/plugins/example
+t/home/sglavoie/.local/share/vifm/Trash/000_.ipynb_checkpoints
+	/home/sglavoie/Dropbox/.custom/.ipynb_checkpoints
+
+# State:
+f
+i1
+[.0
+[F
+F
+I1
+].0
+]F
+s0

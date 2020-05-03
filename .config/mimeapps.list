@@ -1,0 +1,44 @@
+[Added Associations]
+x-scheme-handler/http=exo-web-browser.desktop
+x-scheme-handler/https=exo-web-browser.desktop
+text/plain=mousepad.desktop;vim.desktop;userapp-"nvim"-EDGII0.desktop;userapp-xfce4-terminal -e nvim"-1PJGI0.desktop;userapp-"xfce4-terminal -e nvim"-JAZII0.desktop;userapp-"xfce4-terminal -e 'nvim %F'"-A2OII0.desktop;userapp-"xfce4-terminal -e 'nvim %F'"-16HFI0.desktop;
+application/x-iwork-keynote-sffkey=userapp-"mousepad"-TQISH0.desktop;libreoffice-impress.desktop;
+application/pgp-keys=mousepad.desktop;
+application/pgp-encrypted=mousepad.desktop;
+application/x-shellscript=mousepad.desktop;vim.desktop;
+application/vnd.oasis.opendocument.spreadsheet=libreoffice-calc.desktop;
+image/png=ristretto.desktop;gimp.desktop;
+text/x-python=mousepad.desktop;
+application/x-desktop=mousepad.desktop;
+application/json=mousepad.desktop;
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop;atril.desktop;
+video/mp4=vlc.desktop;
+image/svg+xml=inkscape.desktop;brave-browser.desktop;ristretto.desktop;
+application/vnd.ms-excel=libreoffice-calc.desktop;
+application/epub+zip=calibre-gui.desktop;org.pwmt.zathura-cb.desktop;calibre-ebook-viewer.desktop;
+audio/x-wav=io.github.quodlibet.QuodLibet.desktop;
+application/vnd.oasis.opendocument.text=libreoffice-writer.desktop;
+application/x-bittorrent=transmission-gtk.desktop;
+image/jpeg=gimp.desktop;ristretto.desktop;
+text/csv=mousepad.desktop;vim.desktop;libreoffice-calc.desktop;
+text/html=brave-browser.desktop;
+text/x-chdr=mousepad.desktop;vim.desktop;userapp-"st -e nvim"-K54FI0.desktop;
+font/ttf=org.gnome.FontManager.desktop;org.gnome.FontViewer.desktop;
+text/markdown=mousepad.desktop;vim.desktop;calibre-ebook-viewer.desktop;
+text/css=mousepad.desktop;
+application/javascript=mousepad.desktop;
+application/zip=xarchiver.desktop;org.pwmt.zathura-cb.desktop;
+application/msword=libreoffice-writer.desktop;
+application/x-7z-compressed=xarchiver.desktop;org.pwmt.zathura-cb.desktop;
+video/x-matroska=vlc.desktop;
+text/calendar=mousepad.desktop;
+application/x-compressed-tar=xarchiver.desktop;
+application/x-xz-compressed-tar=xarchiver.desktop;
+application/sql=code.desktop;userapp-"sqlitebrowser"-6BOOJ0.desktop;
+
+[Default Applications]
+text/plain=userapp-"xfce4-terminal -e 'nvim %F'"-16HFI0.desktop
+image/png=ristretto.desktop
+text/x-chdr=userapp-"st -e nvim"-K54FI0.desktop
+x-scheme-handler/webcal=brave-browser.desktop
+application/sql=userapp-"sqlitebrowser"-6BOOJ0.desktop
