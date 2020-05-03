@@ -128,7 +128,7 @@ bindkey '^x^x' edit-command-line  # Open default editor
 ##### Functions
 
 # Select a configuration file with fzf and open it with Neovim
-conf() { du -a ~/.dotfiles/* ~/.config/* | cut -f1 --complement | fzf | xargs -r nvim ;}
+conf() { du -a ~/.config/* | cut -f1 --complement | fzf | xargs -r nvim ;}
 
 # Select a file from current folder and recursively with fzf and open it with Neovim
 se() { du -a ./* | cut -f1 --complement | fzf | xargs -r nvim ;}
@@ -163,10 +163,10 @@ dropbox-sync(){
 }
 
 # Load Zsh plugins
-source "$HOME/.dotfiles/plugins/forgit/forgit.plugin.zsh"
-source "$HOME/.dotfiles/plugins/git-prompt/git-prompt.plugin.zsh"
-source "$HOME/.dotfiles/plugins/git/git.plugin.zsh"
-source "$HOME/.dotfiles/plugins/gitignore/gitignore.plugin.zsh"
+source "$HOME/.zsh/plugins/forgit/forgit.plugin.zsh"
+source "$HOME/.zsh/plugins/git-prompt/git-prompt.plugin.zsh"
+source "$HOME/.zsh/plugins/git/git.plugin.zsh"
+source "$HOME/.zsh/plugins/gitignore/gitignore.plugin.zsh"
 
 # Load virtualenvwrapper
 source /usr/local/bin/virtualenvwrapper.sh

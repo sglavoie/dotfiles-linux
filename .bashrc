@@ -139,8 +139,8 @@ ex ()
 }
 
 source $HOME/.bash_aliases
-source $HOME/.dotfiles/config/git/git-completion.sh
-source $HOME/.dotfiles/config/git/git-prompt.sh
+source $HOME/.git-completion.sh
+source $HOME/.git-prompt.sh
 
 GIT_PS1_SHOWSTASHSTATE="true" # show '$' if there are stashed files
 GIT_PS1_SHOWUNTRACKEDFILES="true" # show '%' if there are untracked files
