@@ -347,12 +347,12 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Adjust size of current window vertically
-map <M-_> <C-w>+
-map <M--> <C-w>-
+map <M-k> <C-w>+
+map <M-j> <C-w>-
 
 " Adjust size of current window horizontally
-map <M->> <C-w>>
-map <M-<> <C-w><
+map <M-l> <C-w>>
+map <M-h> <C-w><
 
 " Add newline without leaving normal mode and stay on current line
 nnoremap <leader>j o<Esc>
@@ -385,7 +385,7 @@ map <leader>f gg=G''
 
 """" SEARCH
 " Bind K to grep word under cursor
-map <silent> <M-k> :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+map <silent> <M-S-k> :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Search with The Silver Search
 nnoremap \ :Ag<SPACE>
