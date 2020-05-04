@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=KeePassXC
+GenericName=Password Manager
+Comment=Community-driven port of the Windows application “KeePass Password Safe”
+Exec=keepassxc %f
+TryExec=keepassxc
+Icon=keepassxc
+StartupWMClass=keepassxc
+Terminal=false
+Type=Application
+Version=1.0
+Categories=Utility;Security;Qt;
+MimeType=application/x-keepass2;
+X-XFCE-Source=file:///usr/share/applications/org.keepassxc.KeePassXC.desktop

@@ -47,7 +47,7 @@
       <property name="&lt;Super&gt;apostrophe" type="string" value="xfce4-keyboard-settings"/>
       <property name="Print" type="string" value="xfce4-screenshooter"/>
       <property name="&lt;Shift&gt;Print" type="string" value="xfce4-screenshooter -r"/>
-      <property name="&lt;Alt&gt;&lt;Super&gt;b" type="string" value="/usr/bin/brave-browser"/>
+      <property name="XF86HomePage" type="string" value="/usr/bin/brave-browser"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
