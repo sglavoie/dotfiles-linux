@@ -7,13 +7,13 @@
 set $mod Mod4
 
 # Font for window titles
-font xft:JetBrainsMono-Regular 10
+font xft:JetBrainsMono-Regular 12
 
 # start a terminal
 bindsym $mod+Return     exec st
 
 # kill focused window
-bindsym $mod+Escape     kill
+bindsym $mod+q          kill
 
 # reload the configuration file
 bindsym $mod+Shift+c    reload
@@ -213,33 +213,13 @@ bindsym $mod+n    border normal
 ################################################################################
 # dmenu
 #######################################
-# Key with "question mark" above apostrophe: PDF that shows shortcuts in use
-bindsym $mod+apostrophe    exec --no-startup-id \
-    zathura ~/Dropbox/.custom/dmenu/shortcuts/shortcuts.pdf
-
-# start program launcher `dmenu` by topic
-## Custom software list
-bindsym $mod+d    exec --no-startup-id ~/Dropbox/.custom/dmenu/software.sh
-
-## Cheatsheets
+bindsym $mod+d         exec --no-startup-id ~/Dropbox/.custom/dmenu/software.sh
 bindsym $mod+Mod1+c    exec --no-startup-id ~/Dropbox/.custom/dmenu/cheatsheets.sh
-
-## Documents
 bindsym $mod+Mod1+d    exec --no-startup-id ~/Dropbox/.custom/dmenu/documents.sh
-
-## File manager
 bindsym $mod+Mod1+f    exec --no-startup-id ~/Dropbox/.custom/dmenu/filepaths.sh
-
-## Running scripts from dmenu
 bindsym $mod+Mod1+s    exec --no-startup-id ~/Dropbox/.custom/dmenu/scripts.sh
-
-## Display quotes
 bindsym $mod+Mod1+q    exec --no-startup-id ~/Dropbox/.custom/dmenu/quotes.sh
-
-## University stuff
 bindsym $mod+Mod1+u    exec --no-startup-id ~/Dropbox/.custom/dmenu/university.sh
-
-## Work
 bindsym $mod+Mod1+w    exec --no-startup-id ~/Dropbox/.custom/dmenu/work.sh
 
 ################################################################################
@@ -295,17 +275,19 @@ bindsym XF86HomePage                exec brave-browser
 bindsym XF86Mail                    exec st -e calcurse
 
 # Open applications on specific workspaces
-assign [class="Audacity"]           $ws4
-assign [class="Clementine"]         $ws5
-assign [class="Gimp"]               $ws4
-assign [class="Brave-browser"]      $ws3
-assign [class="Hexchat"]            $ws8
-assign [class="Inkscape"]           $ws4
-assign [class="Transmission"]       $ws9
-assign [class="firefox"]            $ws3
-assign [class="keepassxc"]          $ws9
-assign [class="vlc"]                $ws4
-assign [title="glances"]            $ws7
+assign [class="Audacity"]               $ws4
+assign [class="(?i)brave-browser"]      $ws3
+assign [class="Clementine"]             $ws5
+assign [class="Gimp"]                   $ws4
+assign [class="Hexchat"]                $ws8
+assign [class="Inkscape"]               $ws4
+assign [class="Transmission"]           $ws9
+assign [class="(?i)firefox"]            $ws3
+assign [class="(?i)google-chrome"]      $ws3
+assign [class="(?i)google-chrome-beta"] $ws9
+assign [class="keepassxc"]              $ws9
+assign [class="vlc"]                    $ws4
+assign [title="glances"]                $ws7
 
 # Open specific applications in floating mode
 for_window [class="(?i)virtualbox"]           floating enable border pixel 2
@@ -322,12 +304,9 @@ exec --no-startup-id               nitrogen --restore
 exec --no-startup-id               nm-applet
 exec --no-startup-id               pasystray
 exec --no-startup-id               copyq
+exec --no-startup-id               xfce4-power-manager
 exec_always --no-startup-id        unclutter --timeout 5 --jitter 20 --ignore-scrolling &
 exec_always --no-startup-id        xmodmap ~/.Xmodmap
-# exec --no-startup-id             /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# exec --no-startup-id             pamac-tray
-# exec --no-startup-id             xfce4-power-manager
-# exec --no-startup-id             nitrogen --restore; sleep 1; compton -b
 
 ################################################################################
 # keyboard / mouse
@@ -345,7 +324,7 @@ exec_always --no-startup-id    xset r rate 250 60
 bar {
     i3bar_command i3bar
     status_command i3status
-    position bottom
+    position top
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
     tray_output primary
