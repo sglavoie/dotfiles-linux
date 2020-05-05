@@ -8,6 +8,7 @@ Plug 'ycm-core/YouCompleteMe'
 """" Design & appearance
 Plug 'dracula/vim'
 Plug 'itchyny/lightline.vim'
+Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 
 """" Formatting
@@ -43,7 +44,7 @@ call plug#end()
 """ GENERAL SETTINGS
 """" APPEARANCE
 set background=dark
-colorscheme dracula
+colorscheme onedark
 
 """" VIM FEATURES
 " Set map leader as a space
@@ -54,6 +55,7 @@ filetype plugin on
 let python_highlight_all=1
 set autowrite  " Automatically :write before running commands
 set cmdwinheight=100  " Open command list window in maximized state
+set cursorline  " Highlight the screen line of the cursor
 set dictionary+=/usr/share/dict/words  " Default dict to use
 set diffopt+=vertical  " Always use vertical diffs
 set encoding=utf-8  " Default file encoding to use
@@ -73,9 +75,9 @@ set shiftwidth=4  " Number of spaces for indents
 set shortmess+=c  " Don't pass messages to ins-completion-menu
 set smartcase  " Match uppercase in search if used in pattern, else, no
 set softtabstop=4  " Number of spaces to insert when TAB is pressed
-set spelllang=en,es,fr  " Set automatic spell checking for those languages
 set spell  " enable spell checking by default
 set spellfile=~/.config/nvim/spell/en.utf-8.add
+set spelllang=en,es,fr  " Set automatic spell checking for those languages
 set splitbelow  " Put new window below current one when splitting
 set splitright  " Put new window to the right of the current one when splitting
 set tabstop=4  " Ideally, same value as 'shiftwidth'
@@ -151,7 +153,7 @@ map <C-p> :FZF<cr>
 
 """"" LIGHTLINE
 let g:lightline = {
-            \ 'colorscheme': 'one',
+            \ 'colorscheme': 'onedark',
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ],
             \             [ 'gitbranch'], ['readonly', 'relativepath'], ['modified' ] ]
