@@ -85,6 +85,7 @@ workspace_auto_back_and_forth    no
 bindsym $mod+Mod1+Tab            workspace next_on_output
 bindsym $mod+Shift+Tab           move container to workspace back_and_forth; workspace back_and_forth
 bindsym $mod+Tab                 workspace back_and_forth
+bindsym Mod1+Tab                 exec "rofi -theme purple -font 'JetBrainsMono 14' -show-icons -width 90 -show window"
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f    fullscreen toggle
