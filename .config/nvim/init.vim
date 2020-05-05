@@ -1,52 +1,64 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" NEOVIM CONFIGURATION FILE
-""" PLUGINS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" PLUGINS {{{
 call plug#begin($HOME . '/.local/share/nvim/plugged')
 
-"""" Code completion
+"""" Code completion {{{
 Plug 'ycm-core/YouCompleteMe'
+"""" }}}
 
-"""" Design & appearance
+"""" Design & appearance {{{
 Plug 'dracula/vim'
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
+"""" }}}
 
-"""" Formatting
-Plug 'psf/black', { 'tag': '19.10b0' }
+"""" Formatting {{{
+Plug 'psf/black', { 'tag': '19.10b0' }  " Python
+"""" }}}
 
-"""" Language specific
+"""" Language specific {{{
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'jmcantrell/vim-virtualenv'  " Python
 Plug 'mattn/emmet-vim'
 Plug 'mzlogin/vim-markdown-toc'
+"""" }}}
 
-"""" Moving/editing around
+"""" Moving/editing around {{{
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+"""" }}}
 
-"""" Note-taking
+"""" Note-taking {{{
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+"""" }}}
 
-"""" Useful features
+"""" Useful features {{{
 Plug 'junegunn/fzf', { 'dir': $HOME . '/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'preservim/nerdtree'
 Plug 'romainl/vim-qf'
+"""" }}}
 
-" Git related
+"""" Git related {{{
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
 Plug 'tpope/vim-fugitive'
+" }}}
 
 call plug#end()
+" }}}
 
-""" GENERAL SETTINGS
-"""" APPEARANCE
+""" GENERAL SETTINGS {{{
+"""" APPEARANCE {{{
 set background=dark
 colorscheme onedark
+"""" }}}
 
-"""" VIM FEATURES
+"""" VIM FEATURES {{{
 " Set map leader as a space
 let mapleader = " "
 let maplocalleader = " "
@@ -120,16 +132,21 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
 endif
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+"""" }}}
 
-"""" NEOVIM FEATURES
+"""" NEOVIM FEATURES {{{
 let g:python3_host_prog = $HOME . '/Programming/virtualenvs/nvim/bin/python'
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" }}}
 
-"""" PLUGINS SETTINGS
-""""" BLACK
+""" }}}
+
+""" PLUGINS SETTINGS {{{
+""""" BLACK {{{
 let g:black_linelength = 79
+""""" }}}
 
-""""" FZF
+""""" FZF {{{
 " Allows FZF to ignore patterns in .gitignore
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
@@ -150,8 +167,9 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '20%'})
 
 " Make use of FZF command instead of CtrlP
 map <C-p> :FZF<cr>
+""""" }}}
 
-""""" LIGHTLINE
+""""" LIGHTLINE {{{
 let g:lightline = {
             \ 'colorscheme': 'onedark',
             \ 'active': {
@@ -184,26 +202,31 @@ endfunction
 function! LightlineReadonly()
     return &readonly && &filetype !~# '\v(help|fugitive)' ? 'RO' : ''
 endfunction
+""""" }}}
 
-""""" NERDTREE
+""""" NERDTREE {{{
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1  " show hidden (dot) files
+""""" }}}
 
-""""" MARKDOWN-PREVIEW.NVIM
+""""" MARKDOWN-PREVIEW.NVIM {{{
 let g:mkdp_browser = 'brave-browser'
+""""" }}}
 
-""""" VIM-GITGUTTER
+""""" VIM-GITGUTTER {{{
 " Move to next/previous Git hunk (change)
 nmap <M-}> <Plug>(GitGutterNextHunk)
 nmap <M-{> <Plug>(GitGutterPrevHunk)
 
 " Fold all unchanged lines, leaving just the hunks visible (toggle)
 nmap <M-z> :GitGutterFold<CR>
+""""" }}}
 
-""""" VIM-HIGHLIGHTEDYANK
+""""" VIM-HIGHLIGHTEDYANK {{{
 let g:highlightedyank_highlight_duration = 500
+""""" }}}
 
-""""" VIMWIKI
+""""" VIMWIKI {{{
 " 'a' for 'all' (regenerate all HTML pages in wiki)
 nnoremap <Leader>wa :VimwikiAll2HTML<CR>
 
@@ -238,13 +261,74 @@ let wiki_3.path_html = '~/Dropbox/career/datopian/wiki/html/'
 let wiki_3.index = 'index'
 
 let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
+""""" }}}
 
-""""" YOUCOMPLETEME
+""""" YOUCOMPLETEME {{{
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+""""" }}}
+""" }}}
 
-""" MAPPINGS
-"""" BUFFERS
+""" AUTO EVENTS {{{
+" Source: https://github.com/thoughtbot/dotfiles/blob/master/vimrc
+" When editing a file, always jump to the last known cursor position.
+" Don't do it for commit messages, when the position is invalid, or when
+" inside an event handler (happens when dropping a file on gvim).
+autocmd BufReadPost *
+            \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+            \   exe "normal g`\"" |
+            \ endif
+
+" Proper PEP-8 indentation style
+autocmd BufNewFile,BufRead *.py
+    \ set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79
+    \ expandtab autoindent fileformat=unix
+
+" Full stack development options
+autocmd BufRead *.html,*.js,*.htm,*.css,*.xml,*.xhtml,*.scss setlocal
+            \ shiftwidth=2 tabstop=2 softtabstop=2
+
+" Disables automatic commenting on newline (from https://lukesmith.xyz/)
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+""" }}}
+
+""" CUSTOM COMMANDS {{{
+" 'MakeTags' command to generate ctags in project
+command! MakeTags !ctags -R .
+" Clear all opening and closing tags in XML and HTML
+command! RemoveHTMLTags %s/<\_.\{-1,\}>//g
+
+" Format an URL slug appropriately by converting to lowercase, removing spaces
+" and replacing them by hyphens
+command! MakeSlug norm gg:t2cwSlugf:wv$gugv:s/\%V /-/g
+nnoremap <F9> :MakeSlug<CR>
+""" }}}
+
+""" GIT {{{
+" Add git capability to the status line with vim-fugitive
+set statusline+=%{fugitive#statusline()}
+
+" Git status when appropriate
+nnoremap <leader>s :Gstatus<CR>
+
+" Git diff when appropriate
+nnoremap <leader>dd :Gdiff<CR>
+
+" Git diff split current buffer
+nnoremap <leader>D :Gdiffsplit<CR>
+""" }}}
+
+""" PYTHON {{{
+" Abbreviations
+ab ifname if __name__ == "__main__":
+
+" Mappings: find previous/next function definition
+nnoremap <F2> ?def <CR>
+nnoremap <F3> /def <CR>
+""" }}}
+
+""" MAPPINGS {{{
+"""" BUFFERS {{{
 " Make the current window the only one visible
 nnoremap <leader>o :on<CR>
 
@@ -292,16 +376,19 @@ nnoremap <leader>p :Buffers<CR>
 
 " Redraw screen and clear highlighted search as well
 nnoremap <silent> <C-c> :<C-u>nohlsearch<CR><C-l>
+"""" }}}
 
-"""" DATE AND TIME
+"""" DATE AND TIME {{{
 " Insert the current date and time in the format 'YYYY-mm-dd HH:MM'
 inoremap <F5> <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
+"""" }}}
 
-"""" FORMATTING
+"""" FORMATTING {{{
 " Black
 nnoremap <F7> :Black<CR>
+"""" }}}
 
-"""" FUNCTIONS
+"""" FUNCTIONS {{{
 " Remove all whitespace at the end of every line in the file.
 noremap <F5> :%s/\s\+$//<CR>:echo 'all whitespace removed.'<CR>
 
@@ -340,8 +427,9 @@ function! Redir(cmd)
     put = '----'
 endfunction
 command! -nargs=1 Redir silent call Redir(<f-args>)
+"""" }}}
 
-"""" MOVEMENTS
+"""" MOVEMENTS {{{
 " Move between windows
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -378,21 +466,24 @@ inoremap kj <esc>
 
 " Allows to expand directory without filename of current open buffer
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+"""" }}}
 
-"""" PROGRAMMING
+"""" PROGRAMMING {{{
 map <silent> <M-m> :make<CR>
 map <silent> <M-n> :cnext<CR>
 map <silent> <M-p> :cprevious<CR>
 map <leader>f gg=G''
+"""" }}}
 
-"""" SEARCH
+"""" SEARCH {{{
 " Bind K to grep word under cursor
 map <silent> <M-S-k> :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Search with The Silver Search
 nnoremap \ :Ag<SPACE>
+"""" }}}
 
-"""" SPELLING
+"""" SPELLING {{{
 function! s:fixLineSpellError()
     " Found on Stack Exchange: https://vi.stackexchange.com/a/19792
     " get current line number
@@ -422,8 +513,9 @@ nnoremap <M-s> ]s
 " Add/remove word under cursor to user dictionary
 nnoremap <M-g> zg
 nnoremap <M-w> zw
+"""" }}}
 
-"""" TERMINAL SPECIFIC
+"""" TERMINAL SPECIFIC {{{
 " Exit from terminal buffer (Neovim) more easily (remaps Esc key in terminal)
 tnoremap <C-[> <C-\><C-n>
 
@@ -444,57 +536,7 @@ nnoremap <leader>h :tabnew<CR>:help<CR><C-w><C-w>:quit<CR>
 
 " Save file and regenerate ctags
 nnoremap <leader>W :w<CR>:MakeTags<CR>:echo 'ctags have been updated.'<CR>
+"""" }}}
+""" }}}
 
-""" AUTO EVENTS
-" Source: https://github.com/thoughtbot/dotfiles/blob/master/vimrc
-" When editing a file, always jump to the last known cursor position.
-" Don't do it for commit messages, when the position is invalid, or when
-" inside an event handler (happens when dropping a file on gvim).
-autocmd BufReadPost *
-            \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-            \   exe "normal g`\"" |
-            \ endif
-
-" Proper PEP-8 indentation style
-autocmd BufNewFile,BufRead *.py
-    \ set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79
-    \ expandtab autoindent fileformat=unix
-
-" Full stack development options
-autocmd BufRead *.html,*.js,*.htm,*.css,*.xml,*.xhtml,*.scss setlocal
-            \ shiftwidth=2 tabstop=2 softtabstop=2
-
-" Disables automatic commenting on newline (from https://lukesmith.xyz/)
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-""" CUSTOM COMMANDS
-" 'MakeTags' command to generate ctags in project
-command! MakeTags !ctags -R .
-" Clear all opening and closing tags in XML and HTML
-command! RemoveHTMLTags %s/<\_.\{-1,\}>//g
-
-" Format an URL slug appropriately by converting to lowercase, removing spaces
-" and replacing them by hyphens
-command! MakeSlug norm gg:t2cwSlugf:wv$gugv:s/\%V /-/g
-nnoremap <F9> :MakeSlug<CR>
-
-""" GIT SECTION
-" Add git capability to the status line with vim-fugitive
-set statusline+=%{fugitive#statusline()}
-
-" Git status when appropriate
-nnoremap <leader>s :Gstatus<CR>
-
-" Git diff when appropriate
-nnoremap <leader>dd :Gdiff<CR>
-
-" Git diff split current buffer
-nnoremap <leader>D :Gdiffsplit<CR>
-
-""" PYTHON SECTION
-" Abbreviations
-ab ifname if __name__ == "__main__":
-
-" Mappings: find previous/next function definition
-nnoremap <F2> ?def <CR>
-nnoremap <F3> /def <CR>
+" vim:fdm=marker
