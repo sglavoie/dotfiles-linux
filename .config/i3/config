@@ -85,7 +85,7 @@ workspace_auto_back_and_forth    no
 bindsym $mod+Mod1+Tab            workspace next_on_output
 bindsym $mod+Shift+Tab           move container to workspace back_and_forth; workspace back_and_forth
 bindsym $mod+Tab                 workspace back_and_forth
-bindsym Mod1+Tab                 exec "rofi -theme purple -font 'JetBrainsMono 14' -show-icons -width 90 -show window"
+bindsym Mod/1+Tab                 exec "rofi -theme purple -font 'JetBrainsMono 14' -show-icons -width 90 -show window"
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f    fullscreen toggle
@@ -305,7 +305,6 @@ exec --no-startup-id               nitrogen --restore
 exec --no-startup-id               nm-applet
 exec --no-startup-id               pasystray
 exec --no-startup-id               copyq
-exec --no-startup-id               xfce4-power-manager
 exec_always --no-startup-id        unclutter --timeout 5 --jitter 20 --ignore-scrolling &
 exec_always --no-startup-id        xmodmap ~/.Xmodmap
 
