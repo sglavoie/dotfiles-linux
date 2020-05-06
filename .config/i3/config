@@ -85,7 +85,7 @@ workspace_auto_back_and_forth    no
 bindsym $mod+Mod1+Tab            workspace next_on_output
 bindsym $mod+Shift+Tab           move container to workspace back_and_forth; workspace back_and_forth
 bindsym $mod+Tab                 workspace back_and_forth
-bindsym Mod/1+Tab                 exec "rofi -theme purple -font 'JetBrainsMono 14' -show-icons -width 90 -show window"
+bindsym Mod1+Tab                 exec "rofi -theme purple -font 'JetBrainsMono 14' -show-icons -width 90 -show window"
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f    fullscreen toggle
@@ -276,16 +276,17 @@ bindsym XF86HomePage                exec brave-browser
 bindsym XF86Mail                    exec st -e calcurse
 
 # Open applications on specific workspaces
-assign [class="Audacity"]               $ws4
 assign [class="(?i)brave-browser"]      $ws3
+assign [class="(?i)code"]               $ws1
+assign [class="(?i)firefox"]            $ws3
+assign [class="(?i)google-chrome"]      $ws3
+assign [class="(?i)google-chrome-beta"] $ws9
+assign [class="Audacity"]               $ws4
 assign [class="Clementine"]             $ws5
 assign [class="Gimp"]                   $ws4
 assign [class="Hexchat"]                $ws8
 assign [class="Inkscape"]               $ws4
 assign [class="Transmission"]           $ws9
-assign [class="(?i)firefox"]            $ws3
-assign [class="(?i)google-chrome"]      $ws3
-assign [class="(?i)google-chrome-beta"] $ws9
 assign [class="keepassxc"]              $ws9
 assign [class="vlc"]                    $ws4
 assign [title="glances"]                $ws7
