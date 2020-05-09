@@ -36,11 +36,12 @@ Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 """" }}}
 
 """" Useful features {{{
+Plug 'SirVer/ultisnips'
 Plug 'junegunn/fzf', { 'dir': $HOME . '/.fzf', 'do': './install --all' }
-Plug 'yuki-ycino/fzf-preview.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'preservim/nerdtree'
 Plug 'romainl/vim-qf'
+Plug 'yuki-ycino/fzf-preview.vim'
 """" }}}
 
 """" Git related {{{
@@ -419,6 +420,13 @@ let NERDTreeShowHidden=1  " show hidden (dot) files
 let g:mkdp_browser = 'brave-browser'
 """"" }}}
 
+""""" ULTISNIP {{{
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-f>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsEditSplit="vertical"
+""""" }}}
+
 """"" VIM-GITGUTTER {{{
 " Move to next/previous Git hunk (change)
 nmap <M-}> <Plug>(GitGutterNextHunk)
@@ -525,9 +533,6 @@ nnoremap <leader>D :Gdiffsplit<CR>
 """ }}}
 
 """ PYTHON {{{
-" Abbreviations
-ab ifname if __name__ == "__main__":
-
 " Mappings: find previous/next function definition
 nnoremap <F2> ?def <CR>
 nnoremap <F3> /def <CR>
@@ -725,7 +730,7 @@ nnoremap <M-w> zw
 tnoremap <C-[> <C-\><C-n>
 
 " Open terminal buffer (Neovim) in new tab in insert mode
-command! Terminal norm :tabnew<CR>:te<CR>i
+nnoremap <M-t> :tabnew<CR>:te<CR>i
 
 " Switch to terminal buffer automatically (when only one terminal is open)
 nnoremap <M-0> :b term://<CR>
