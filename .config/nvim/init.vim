@@ -5,7 +5,7 @@
 call plug#begin($HOME . '/.local/share/nvim/plugged')
 
 """" Code completion {{{
-Plug 'ycm-core/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 """" }}}
 
 """" Design & appearance {{{
@@ -37,7 +37,7 @@ Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 
 """" Useful features {{{
 Plug 'junegunn/fzf', { 'dir': $HOME . '/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'yuki-ycino/fzf-preview.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'preservim/nerdtree'
 Plug 'romainl/vim-qf'
@@ -55,7 +55,7 @@ call plug#end()
 """ GENERAL SETTINGS {{{
 """" APPEARANCE {{{
 set background=dark
-colorscheme onedark
+colorscheme gruvbox
 """" }}}
 
 """" VIM FEATURES {{{
@@ -146,9 +146,132 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let g:black_linelength = 79
 """"" }}}
 
+""""" COC.NVIM {{{
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json,python setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current line.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Introduce function text object
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+
+" Use <TAB> for selections ranges.
+" NOTE: Requires 'textDocument/selectionRange' support from the language server.
+" coc-tsserver, coc-python are the examples of servers that support it.
+nmap <silent> <S-TAB> <Plug>(coc-range-select)
+xmap <silent> <S-TAB> <Plug>(coc-range-select)
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+
+" Add `:Fold` command to fold current buffer.
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" Add `:OR` command for organize imports of the current buffer.
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Mappings using CoCList:
+" Show all diagnostics.
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions.
+nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" Show commands.
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document.
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols.
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list.
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+""""" }}}
+
 """"" FZF {{{
 " Allows FZF to ignore patterns in .gitignore
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_OPTS = "--bind ctrl-b:preview-up --bind ctrl-f:preview-down"
 
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
@@ -165,16 +288,52 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " (expand word completing window)
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '20%'})
 
-" Make use of FZF command instead of CtrlP
-map <C-p> :FZF<cr>
+" Make use of FZF command instead of CtrlP - Git files
+map <C-p> :FzfPreviewGitFiles<CR>
+
+" Git files with modified status
+map <C-M-p> :FzfPreviewGitStatus<CR>
+
+" All files
+map <M-S-p> :FzfPreviewDirectoryFiles<CR>
+
+" All lines in loaded buffers
+map <M-S-l> :FzfPreviewBufferLines<CR>
+
+" All lines in current buffer
+map <C-M-l> :FzfPreviewLines<CR>
+
+" All tags in current buffer
+nnoremap <leader>t :FzfPreviewBufferTags<CR>
+
+" Grep project files from args word
+map <M-S-k> :FzfPreviewProjectCommandGrep<space>
+
+" Open list of buffers ready for fuzzy finder
+nnoremap <leader>b :FzfPreviewBuffers<CR>
+
+" Select mark
+nnoremap <leader>m :FzfPreviewMarks<CR>
+
+" Select jump list item
+nnoremap <leader>j :FzfPreviewJumps<CR>
+
+" Select change list item
+nnoremap <leader>c :FzfPreviewChanges<CR>
+
+" Select location list item
+nnoremap <leader>l :FzfPreviewLocationList<CR>
+
+" Select quickfix list item
+nnoremap <leader>qq :FzfPreviewQuickFix<CR>
 """"" }}}
 
 """"" LIGHTLINE {{{
 let g:lightline = {
-            \ 'colorscheme': 'onedark',
+            \ 'colorscheme': 'powerline',
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ],
-            \             [ 'gitbranch'], ['readonly', 'relativepath'], ['modified' ] ]
+            \             [ 'gitbranch'], ['readonly', 'relativepath'], ['modified' ], [ 'coc_error', 'coc_warning', 'coc_hint', 'coc_info' ] ]
             \ },
             \ 'component_function': {
             \   'fileformat': 'LightlineFileformat',
@@ -183,7 +342,54 @@ let g:lightline = {
             \   'gitbranch': 'fugitive#head',
             \   'readonly': 'LightlineReadonly',
             \ },
+            \ 'component_expand': {
+            \   'coc_error'        : 'LightlineCocErrors',
+            \   'coc_warning'      : 'LightlineCocWarnings',
+            \   'coc_info'         : 'LightlineCocInfos',
+            \   'coc_hint'         : 'LightlineCocHints',
+            \   'coc_fix'          : 'LightlineCocFixes',
+            \ },
             \ }
+
+let g:lightline.component_type = {
+\   'coc_error'        : 'error',
+\   'coc_warning'      : 'warning',
+\   'coc_info'         : 'tabsel',
+\   'coc_hint'         : 'middle',
+\   'coc_fix'          : 'middle',
+\ }
+
+function! s:lightline_coc_diagnostic(kind, sign) abort
+  let info = get(b:, 'coc_diagnostic_info', 0)
+  if empty(info) || get(info, a:kind, 0) == 0
+    return ''
+  endif
+  try
+    let s = g:coc_user_config['diagnostic'][a:sign . 'Sign']
+  catch
+    let s = ''
+  endtry
+  return printf('%s %d', s, info[a:kind])
+endfunction
+
+function! LightlineCocErrors() abort
+  return s:lightline_coc_diagnostic('error', 'error')
+endfunction
+
+function! LightlineCocWarnings() abort
+  return s:lightline_coc_diagnostic('warning', 'warning')
+endfunction
+
+function! LightlineCocInfos() abort
+  return s:lightline_coc_diagnostic('information', 'info')
+endfunction
+
+function! LightlineCocHints() abort
+  return s:lightline_coc_diagnostic('hints', 'hint')
+endfunction
+\ }
+
+autocmd User CocDiagnosticChange call lightline#update()
 
 function! LightlineFileformat()
     return winwidth(0) > 70 ? &fileformat : ''
@@ -339,10 +545,10 @@ nnoremap <leader>w :write<CR>
 nnoremap <leader>y :%y<CR>
 
 " Remove all buffers except the active one.
-nnoremap <leader>b :%bd\|e#\|bd#<CR>
+nnoremap <leader>B :%bd\|e#\|bd#<CR>
 
 " Edit Neovim configuration file in a new tab
-nnoremap <leader>c :tabedit ~/.config/nvim/init.vim<CR>
+nnoremap <leader>C :tabedit ~/.config/nvim/init.vim<CR>
 
 " Close active buffer if there are no pending changes to save
 nnoremap <leader>x :bd<CR>
@@ -351,9 +557,6 @@ nnoremap <M-q> :bd<CR>
 " Close active buffer even if there are pending changes to save
 nnoremap <leader>X :bd!<CR>
 nnoremap <M-Q> :bd!<CR>
-
-" Close current window (closes Vim if there's only one window)
-nnoremap <leader>q :q<CR>
 
 " Close all buffers without saving
 nnoremap <leader>Q :qall!<CR>
@@ -368,14 +571,19 @@ nnoremap <M-3> :b#<CR>
 nnoremap <M-4> :bf<CR>
 nnoremap <M-5> :bl<CR>
 
-" List buffers and quickly jump to one by entering a number
-nnoremap gb :ls<CR>:b<Space>
-
-" Open list of buffers ready for fuzzy finder
-nnoremap <leader>p :Buffers<CR>
-
 " Redraw screen and clear highlighted search as well
 nnoremap <silent> <C-c> :<C-u>nohlsearch<CR><C-l>
+"""" }}}
+
+"""" COLORS {{{
+command! Colors :call fzf#run({
+\   'source':
+\     map(split(globpath(&rtp, "colors/*.vim"), "\n"),
+\         "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
+\   'sink':    'colo',
+\   'options': '+m',
+\   'left':    30
+\ })
 """" }}}
 
 """" DATE AND TIME {{{
@@ -444,10 +652,6 @@ map <M-j> <C-w>-
 map <M-l> <C-w>>
 map <M-h> <C-w><
 
-" Add newline without leaving normal mode and stay on current line
-nnoremap <leader>j o<Esc>
-nnoremap <leader>k O<Esc>
-
 " Moves more easily with long lines that wrap without compromising default
 " hjkl behavior
 nmap <Down> gj
@@ -476,9 +680,6 @@ map <leader>f gg=G''
 """" }}}
 
 """" SEARCH {{{
-" Bind K to grep word under cursor
-map <silent> <M-S-k> :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
 " Search with The Silver Search
 nnoremap \ :Ag<SPACE>
 """" }}}
@@ -520,7 +721,7 @@ nnoremap <M-w> zw
 tnoremap <C-[> <C-\><C-n>
 
 " Open terminal buffer (Neovim) in new tab in insert mode
-nnoremap <M-t> :tabnew<CR>:te<CR>i
+command! Terminal norm :tabnew<CR>:te<CR>i
 
 " Switch to terminal buffer automatically (when only one terminal is open)
 nnoremap <M-0> :b term://<CR>
