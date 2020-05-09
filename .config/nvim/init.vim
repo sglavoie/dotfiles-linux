@@ -594,6 +594,10 @@ inoremap <F5> <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
 """" FORMATTING {{{
 " Black
 nnoremap <F7> :Black<CR>
+
+" Move selection up/down and reformat properly along the way
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv
 """" }}}
 
 """" FUNCTIONS {{{
