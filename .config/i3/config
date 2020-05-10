@@ -382,7 +382,7 @@ bar {
         statusline #FDFFFC
         separator  #64A312
 #                          border    backgr.    text
-        focused_workspace  #FFFFFF   #1264A3    #FFFFFF
+        focused_workspace  #000000   #FFFF00    #000000
         active_workspace   #64A312   #1264A3    #FFFFFF
         inactive_workspace #222D32   #64A312    #000000
         binding_mode       #FFFFFF   #1264A3    #FFFFFF
@@ -392,7 +392,7 @@ bar {
 
 # Theme colors
 # class                   border  backgr. text    indic.  child_border
-  client.focused          #F9FAF9 #1264A3 #FFFFFF #FDFFFC #00FF00
+  client.focused          #F9FAF9 #1264A3 #FFFFFF #FDFFFC #FFFF00
   client.focused_inactive #222D32 #020D14 #CFD8DC #454948
   client.unfocused        #061229 #061229 #CFD8DC #454948
   client.urgent           #FFFFFF #CD2553 #FDFFFC #FDFFFC
