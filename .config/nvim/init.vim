@@ -24,6 +24,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'jmcantrell/vim-virtualenv'  " Python
 Plug 'mattn/emmet-vim'
 Plug 'mzlogin/vim-markdown-toc'
+Plug 'tmhedberg/SimpylFold'  " Folds in Python
 """" }}}
 
 """" Moving/editing around {{{
