@@ -20,6 +20,7 @@ Plug 'psf/black', { 'tag': '19.10b0' }  " Python
 """" }}}
 
 """" Language specific {{{
+Plug 'ap/vim-css-color'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'jmcantrell/vim-virtualenv'  " Python
 Plug 'mattn/emmet-vim'
