@@ -1,7 +1,7 @@
-call plug#begin($HOME . '/.local/share/nvim/plugged')
+call plug#begin($HOME . '/.config/nvim/plugged')
 
 """" Code completion {{{
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': ['python', 'javascript']}
 """" }}}
 
 """" Design & appearance {{{
@@ -12,16 +12,16 @@ Plug 'morhetz/gruvbox'
 """" }}}
 
 """" Formatting {{{
-Plug 'psf/black', { 'tag': '19.10b0' }  " Python
+Plug 'psf/black', { 'tag': '19.10b0', 'for': 'python' }
 """" }}}
 
 """" Language specific {{{
-Plug 'ap/vim-css-color'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-Plug 'jmcantrell/vim-virtualenv'  " Python
-Plug 'mattn/emmet-vim'
-Plug 'mzlogin/vim-markdown-toc'
-Plug 'tmhedberg/SimpylFold'  " Folds in Python
+Plug 'ap/vim-css-color', { 'for': 'css' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 'markdown' }
+Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript'] }
+Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
+Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
 """" }}}
 
 """" Moving/editing around {{{
@@ -34,18 +34,18 @@ Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 """" }}}
 
 """" Useful features {{{
-Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips', { 'for': 'python' }
 Plug 'junegunn/fzf', { 'dir': $HOME . '/.fzf', 'do': './install --all' }
 Plug 'machakann/vim-highlightedyank'
-Plug 'preservim/nerdtree'
-Plug 'romainl/vim-qf'
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'romainl/vim-qf', { 'on': ['Keep', 'Reject'] }
 Plug 'yuki-ycino/fzf-preview.vim'
 Plug 'junegunn/fzf.vim'
 """" }}}
 
 """" Git related {{{
 Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/gv.vim'
+Plug 'junegunn/gv.vim', { 'on': ['GV', 'GV!'] }
 Plug 'tpope/vim-fugitive'
 " }}}
 

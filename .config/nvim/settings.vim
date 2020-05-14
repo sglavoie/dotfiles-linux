@@ -94,11 +94,6 @@ autocmd BufReadPost *
             \   exe "normal g`\"" |
             \ endif
 
-" Proper PEP-8 indentation style
-autocmd BufNewFile,BufRead *.py
-    \ set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79
-    \ expandtab autoindent fileformat=unix
-
 " Full stack development options
 autocmd BufRead *.html,*.js,*.htm,*.css,*.xml,*.xhtml,*.scss setlocal
             \ shiftwidth=2 tabstop=2 softtabstop=2

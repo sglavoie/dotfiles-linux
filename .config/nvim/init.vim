@@ -1,13 +1,10 @@
 " NEOVIM CONFIGURATION FILE
 
-"" PLUGINS INITIALIZATION
+"" PLUGINS
 source ~/.config/nvim/plugins.vim
 
 "" SETTINGS
 source ~/.config/nvim/settings.vim
 
-"" PLUGINS SETTINGS & MAPPINGS
-source ~/.config/nvim/plugins_config.vim
-
-"" MAPPINGS (Vim only)
+"" MAPPINGS
 source ~/.config/nvim/mappings.vim

@@ -203,4 +203,36 @@ nnoremap <F2> ?def <CR>
 nnoremap <F3> /def <CR>
 """ }}}
 
+""" VIMWIKI {{{
+" 'a' for 'all' (regenerate all HTML pages in wiki)
+nnoremap <Leader>wa :VimwikiAll2HTML<CR>
+
+" 'b' for 'reBuild' ('r' is for renaming wiki page)
+nnoremap <Leader>wb :VimwikiRebuildTags<CR>
+
+" 'c' for 'content' (stands for "table of Content". 't' as in already Taken)
+nnoremap <Leader>wc :VimwikiTOC<CR>
+
+" 'f' for 'find' ('s' is for selecting wiki)
+nnoremap <Leader>wf :VimwikiSearchTags<space>
+
+" 'g' for 'generate'
+nnoremap <Leader>wg :VimwikiGenerateTagLinks<CR>
+" Registered Wikis
+let wiki_1 = {}
+let wiki_1.path = '~/Dropbox/notes/'
+let wiki_1.path_html = '~/Dropbox/notes/html/'
+let wiki_1.index = 'index'
+
+let wiki_2 = {}
+let wiki_2.path = '~/Dropbox/university/notes/'
+let wiki_2.path_html = '~/Dropbox/university/notes/html/'
+
+let wiki_3 = {}
+let wiki_3.path = '~/Dropbox/career/datopian/wiki/'
+let wiki_3.path_html = '~/Dropbox/career/datopian/wiki/html/'
+let wiki_3.index = 'index'
+
+let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
+""" }}}
 " vim:fdm=marker
