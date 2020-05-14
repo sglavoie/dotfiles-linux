@@ -1,7 +1,3 @@
-if ! exists(':FZF')
-    finish
-endif
-
 " Allows FZF to ignore patterns in .gitignore
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 let $FZF_DEFAULT_OPTS = "--bind ctrl-b:preview-up --bind ctrl-f:preview-down"
