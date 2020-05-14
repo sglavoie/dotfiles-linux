@@ -14,3 +14,6 @@ nnoremap <leader>D :Gdiffsplit<CR>
 " Add git capability to the status line with vim-fugitive
 set statusline+=%{fugitive#statusline()}
 
+" Merge conflicts from left or right (//2 appear on the left)
+nmap <leader>gh :diffget //2<CR>
+nmap <leader>gl :diffget //3<CR>
