@@ -1,7 +1,8 @@
 call plug#begin($HOME . '/.config/nvim/plugged')
 
 """" Code completion {{{
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'for': ['python', 'javascript']}
+Plug 'neoclide/coc.nvim', {'branch': 'release',
+            \ 'for': ['python', 'javascript', 'cpp', 'c']}
 """" }}}
 
 """" Design & appearance {{{
