@@ -8,9 +8,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release',
 """" Design & appearance {{{
 Plug 'ayu-theme/ayu-vim'
 Plug 'dracula/vim'
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
 """" }}}
 
 """" Formatting {{{
