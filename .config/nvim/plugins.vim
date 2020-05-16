@@ -6,6 +6,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release',
 """" }}}
 
 """" Design & appearance {{{
+Plug 'ayu-theme/ayu-vim'
 Plug 'dracula/vim'
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
@@ -40,7 +41,6 @@ Plug 'junegunn/fzf', { 'dir': $HOME . '/.fzf', 'do': './install --all' }
 Plug 'machakann/vim-highlightedyank'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'romainl/vim-qf', { 'on': ['Keep', 'Reject'] }
-Plug 'yuki-ycino/fzf-preview.vim'
 Plug 'junegunn/fzf.vim'
 """" }}}
 

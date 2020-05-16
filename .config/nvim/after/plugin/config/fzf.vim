@@ -18,43 +18,34 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '20%'})
 
 " Make use of FZF command instead of CtrlP - Git files
-map <C-p> :FzfPreviewGitFiles<CR>
+map <C-p> :GFiles<CR>
 
 " Git files with modified status
-map <C-M-p> :FzfPreviewGitStatus<CR>
+map <C-M-p> :GFiles?<CR>
 
 " All files
-map <M-S-p> :FzfPreviewDirectoryFiles<CR>
+map <M-S-p> :Files<CR>
 
 " All lines in loaded buffers
-map <M-S-l> :FzfPreviewBufferLines<CR>
+map <M-S-l> :Lines<CR>
 
 " All lines in current buffer
-map <C-M-l> :FzfPreviewLines<CR>
+map <C-M-l> :BLines<CR>
+
+" All tags in loaded buffers
+nnoremap <leader>T :Tags<CR>
 
 " All tags in current buffer
-nnoremap <leader>t :FzfPreviewBufferTags<CR>
-
-" Grep project files from args word
-map <M-S-k> :FzfPreviewProjectCommandGrep<space>
+nnoremap <leader>t :BTags<CR>
 
 " Open list of buffers ready for fuzzy finder
-nnoremap <leader>b :FzfPreviewBuffers<CR>
+nnoremap <leader>b :Buffers<CR>
 
 " Select mark
-nnoremap <leader>m :FzfPreviewMarks<CR>
+nnoremap <leader>m :Marks<CR>
 
-" Select jump list item
-nnoremap <leader>j :FzfPreviewJumps<CR>
-
-" Select change list item
-nnoremap <leader>c :FzfPreviewChanges<CR>
-
-" Select location list item
-nnoremap <leader>l :FzfPreviewLocationList<CR>
-
-" Select quickfix list item
-nnoremap <leader>qq :FzfPreviewQuickFix<CR>
+" Navigate inside Vim help tags
+nnoremap <leader>hh :Helptags<CR>
 
 command! Colors :call fzf#run({
 \   'source':

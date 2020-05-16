@@ -190,9 +190,6 @@ tnoremap <C-j> <C-\><C-N><C-w>j
 tnoremap <C-k> <C-\><C-N><C-w>k
 tnoremap <C-l> <C-\><C-N><C-w>l
 
-" Display help in new tab
-nnoremap <leader>h :tabnew<CR>:help<CR><C-w><C-w>:quit<CR>
-
 " Save file and regenerate ctags
 nnoremap <leader>W :w<CR>:MakeTags<CR>:echo 'ctags have been updated.'<CR>
 """" }}}

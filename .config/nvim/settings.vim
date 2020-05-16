@@ -1,6 +1,7 @@
 """" APPEARANCE {{{
-set background=dark
-colorscheme gruvbox
+" set background=dark
+let ayucolor="dark"
+colorscheme ayu
 """" }}}
 
 """" VIM FEATURES {{{
