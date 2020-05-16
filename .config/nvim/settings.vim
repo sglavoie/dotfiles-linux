@@ -19,6 +19,7 @@ set encoding=utf-8  " Default file encoding to use
 set expandtab  " Use spaces instead of tabs
 set history=1000  " Command history (default: 10,000)
 set lazyredraw  " Don't redraw screen when running macros
+set linebreak  " break long lines by words
 set list listchars=tab:>_,trail:-,nbsp:+
 set nojoinspaces  " Use one space, not two, after punctuation
 set noshowmode  " Don't display the mode being used (insert, normal, etc.)
