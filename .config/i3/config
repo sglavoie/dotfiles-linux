@@ -273,6 +273,11 @@ bindsym $mod+Mod1+u    exec --no-startup-id ~/Dropbox/.custom/dmenu/university.s
 bindsym $mod+Mod1+w    exec --no-startup-id ~/Dropbox/.custom/dmenu/work.sh
 
 ################################################################################
+# shortcuts
+#######################################
+bindsym $mod+Mod1+r    exec --no-startup-id thunar ~/Desktop
+
+################################################################################
 # sound
 #######################################
 exec --no-startup-id volumeicon
