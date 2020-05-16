@@ -10,7 +10,7 @@ set $mod Mod4
 font xft:JetBrainsMono-Regular 12
 
 # start a terminal
-bindsym $mod+Return     exec st
+bindsym $mod+Return     exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+q          kill
@@ -51,7 +51,7 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+Delete    exec --no-startup-id    st -e slock
+bindsym $mod+Delete    exec --no-startup-id    xfce4-terminal -e slock
 
 # hide/unhide i3status bar
 bindsym $mod+m    bar mode toggle
@@ -276,7 +276,7 @@ bindsym $mod+Mod1+w    exec --no-startup-id ~/Dropbox/.custom/dmenu/work.sh
 # sound
 #######################################
 exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m    exec st -e 'alsamixer'
+bindsym $mod+Ctrl+m    exec xfce4-terminal -e 'alsamixer'
 
 # Control volume
 bindsym XF86AudioRaiseVolume        exec "amixer -q sset Master,0 5%+ unmute && \
@@ -315,12 +315,12 @@ bindsym $mod+Shift+d --release      exec "killall dunst; exec notify-send 'resta
 bindsym $mod+Shift+g                exec gimp
 bindsym $mod+Shift+i                exec inkscape
 bindsym $mod+Shift+t                exec thunar
-bindsym $mod+Shift+v                exec st -e vifm
+bindsym $mod+Shift+v                exec xfce4-terminal -e vifm
 bindsym $mod+Shift+x --release      exec --no-startup-id xkill
 bindsym Print --release             exec --no-startup-id xfce4-screenshooter --region --save ~/Pictures/screenshots/
 bindsym XF86Calculator              exec galculator
 bindsym XF86HomePage                exec brave-browser
-bindsym XF86Mail                    exec st -e calcurse
+bindsym XF86Mail                    exec xfce4-terminal -e calcurse
 
 # Open applications on specific workspaces
 assign [class="(?i)brave-browser"]      $ws3
