@@ -55,3 +55,6 @@ command! Colors :call fzf#run({
 \   'options': '+m',
 \   'left':    30
 \ })
+
+" Access color schemes with FZF
+nnoremap <M-c> :Colors<CR>
