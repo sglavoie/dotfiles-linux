@@ -1,0 +1,15 @@
+# Open document in fit-width mode by default
+set adjust-open "best-fit"
+
+# One page per row by default
+set pages-per-row 1
+
+# Remove options at the bottom (toggle with Ctrl+n)
+set guioptions ""
+
+# Set font to use for table of contents and other GUI options
+set font "iosevka 16"
+
+# Make inverse colors look better by keeping color hue
+set recolor-reverse-video "true"
+set recolor-keephue "true"
