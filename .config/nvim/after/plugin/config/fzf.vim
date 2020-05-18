@@ -17,14 +17,14 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " (expand word completing window)
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '20%'})
 
-" Make use of FZF command instead of CtrlP - Git files
-map <C-p> :GFiles<CR>
+" Make use of FZF command instead of CtrlP – All files
+map <C-p> :Files<CR>
+
+" Git files
+map <C-M-p> :GFiles<CR>
 
 " Git files with modified status
-map <C-M-p> :GFiles?<CR>
-
-" All files
-map <M-S-p> :Files<CR>
+map <M-S-p> :GFiles?<CR>
 
 " All lines in loaded buffers
 map <M-S-l> :Lines<CR>
