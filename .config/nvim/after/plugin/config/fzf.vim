@@ -18,34 +18,34 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '20%'})
 
 " Make use of FZF command instead of CtrlP – All files
-map <C-p> :Files<CR>
+map <C-p> :Files!<CR>
 
 " Git files
-map <C-M-p> :GFiles<CR>
+map <C-M-p> :GFiles!<CR>
 
 " Git files with modified status
-map <M-S-p> :GFiles?<CR>
+map <M-S-p> :GFiles!?<CR>
 
 " All lines in loaded buffers
-map <M-S-l> :Lines<CR>
+map <M-S-l> :Lines!<CR>
 
 " All lines in current buffer
-map <C-M-l> :BLines<CR>
+map <C-M-l> :BLines!<CR>
 
 " All tags in loaded buffers
-nnoremap <leader>T :Tags<CR>
+nnoremap <leader>T :Tags!<CR>
 
 " All tags in current buffer
-nnoremap <leader>t :BTags<CR>
+nnoremap <leader>t :BTags!<CR>
 
 " Open list of buffers ready for fuzzy finder
-nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>b :Buffers!<CR>
 
 " Select mark
-nnoremap <leader>m :Marks<CR>
+nnoremap <leader>m :Marks!<CR>
 
 " Navigate inside Vim help tags
-nnoremap <leader>hh :Helptags<CR>
+nnoremap <leader>hh :Helptags!<CR>
 
 command! Colors :call fzf#run({
 \   'source':
