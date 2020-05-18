@@ -248,16 +248,16 @@ bindsym $mod+Mod1+KP_Subtract    scratchpad show, resize set 1300 700, move posi
 # Borders
 #######################################
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 2
+new_window pixel 3
 new_float normal
-default_floating_border pixel 2
+default_floating_border pixel 3
 
 # Hide borders
 hide_edge_borders smart
 
 # change borders
 bindsym $mod+b    border none
-bindsym $mod+y    border pixel 2
+bindsym $mod+y    border pixel 3
 bindsym $mod+n    border normal
 
 ################################################################################
@@ -397,7 +397,7 @@ bar {
 
 # Theme colors
 # class                   border  backgr. text    indic.  child_border
-  client.focused          #F9FAF9 #1264A3 #FFFFFF #FDFFFC #FFFF00
+  client.focused          #F9FAF9 #1264A3 #FFFFFF #FF0000 #1257f8
   client.focused_inactive #222D32 #020D14 #CFD8DC #454948
   client.unfocused        #061229 #061229 #CFD8DC #454948
   client.urgent           #FFFFFF #CD2553 #FDFFFC #FDFFFC
