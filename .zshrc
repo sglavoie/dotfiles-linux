@@ -169,7 +169,7 @@ source "$HOME/.zsh/plugins/git/git.plugin.zsh"
 source "$HOME/.zsh/plugins/gitignore/gitignore.plugin.zsh"
 
 # Load virtualenvwrapper
-source /usr/local/bin/virtualenvwrapper.sh
+source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
 
 ################################################################################

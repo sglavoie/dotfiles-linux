@@ -1,4 +1,4 @@
-call plug#begin($HOME . '/.config/nvim/plugged')
+call plug#begin($HOME . '/.local/share/nvim/plugged')
 
 """" Code completion {{{
 Plug 'neoclide/coc.nvim', {'branch': 'release',
@@ -42,7 +42,7 @@ Plug 'SirVer/ultisnips', { 'for': 'python' }
 Plug 'junegunn/fzf', { 'dir': $HOME . '/.fzf', 'do': './install --all' }
 Plug 'machakann/vim-highlightedyank'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'romainl/vim-qf', { 'on': ['Keep', 'Reject'] }
+Plug 'romainl/vim-qf'
 Plug 'junegunn/fzf.vim'
 """" }}}
 

@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "/home/sglavoie/Programming/virtualenvs/nvim/bin/python",
-    "clangd.path": "/home/sglavoie/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
+    "python.pythonPath": "/home/sebastien/Programming/virtualenvs/nvim/bin/python",
+    "clangd.path": "/home/sebastien/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
 }

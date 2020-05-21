@@ -7,10 +7,10 @@
 set $mod Mod4
 
 # Font for window titles
-font xft:JetBrainsMono-Regular 12
+font xft:JetBrainsMono-Regular 14
 
 # start a terminal
-bindsym $mod+Return     exec xfce4-terminal
+bindsym $mod+Return     exec gnome-terminal
 
 # kill focused window
 bindsym $mod+q          kill
@@ -51,7 +51,7 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+Delete    exec --no-startup-id    xfce4-terminal -e slock
+bindsym $mod+Delete    exec --no-startup-id    gnome-terminal -e slock
 
 # hide/unhide i3status bar
 bindsym $mod+m    bar mode toggle
@@ -60,7 +60,7 @@ bindsym $mod+m    bar mode toggle
 # navigation
 #######################################
 # Set up monitor at launch automatically and set laptop screen as the primary one
-exec_always xrandr --output DP3 --off --output DP2 --off --output DP1 --off --output HDMI3 --off --output HDMI2 --off --output HDMI1 --off --output LVDS1 --primary --mode 1366x768 --pos 0x1080 --rotate normal --output VGA1 --mode 1920x1080 --pos 1366x0 --rotate normal
+exec_always xrandr --output eDP --primary --mode 1920x1080 --pos 1920x1080 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-0 --off --output DisplayPort-1 --off
 
 # Container focuses where the mouse is (yes/no)
 focus_follows_mouse    no
@@ -148,28 +148,28 @@ bindsym $mod+F11 workspace $ws20
 bindsym $mod+F12 workspace $ws21
 
 # determine which workspace appears on which screen
-workspace 0 output  VGA1
-workspace 1 output  VGA1
-workspace 2 output  VGA1
-workspace 3 output  VGA1
-workspace 4 output  VGA1
-workspace 5 output  VGA1
-workspace 6 output  VGA1
-workspace 7 output  VGA1
-workspace 8 output  VGA1
-workspace 9 output  VGA1
-workspace 10 output VGA1
-workspace 11 output VGA1
-workspace 12 output VGA1
-workspace 13 output VGA1
-workspace 14 output VGA1
-workspace 15 output VGA1
-workspace 16 output LVDS1
-workspace 17 output LVDS1
-workspace 18 output LVDS1
-workspace 19 output LVDS1
-workspace 20 output LVDS1
-workspace 21 output LVDS1
+workspace 0 output  HDMI-A-0
+workspace 1 output  HDMI-A-0
+workspace 2 output  HDMI-A-0
+workspace 3 output  HDMI-A-0
+workspace 4 output  HDMI-A-0
+workspace 5 output  HDMI-A-0
+workspace 6 output  HDMI-A-0
+workspace 7 output  HDMI-A-0
+workspace 8 output  HDMI-A-0
+workspace 9 output  HDMI-A-0
+workspace 10 output HDMI-A-0
+workspace 11 output HDMI-A-0
+workspace 12 output HDMI-A-0
+workspace 13 output HDMI-A-0
+workspace 14 output HDMI-A-0
+workspace 15 output HDMI-A-0
+workspace 16 output eDP
+workspace 17 output eDP
+workspace 18 output eDP
+workspace 19 output eDP
+workspace 20 output eDP
+workspace 21 output eDP
 
 # move focused container to workspace and switch to workspace
 bindsym $mod+Shift+0   move container to workspace $ws0;  workspace $ws0
@@ -202,9 +202,9 @@ bindsym $mod+Shift+F12 move container to workspace $ws21; workspace $ws21
 workspace_layout    default
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s    layout stacking
-bindsym $mod+w    layout tabbed
-bindsym $mod+e    layout toggle split
+bindsym $mod+s      layout stacking
+bindsym $mod+w      layout tabbed
+bindsym $mod+e      layout toggle split
 
 #start in opposite orientation from your monitor
 default_orientation    vertical
@@ -234,15 +234,11 @@ bindsym $mod+a    focus parent
 # Scratchpad
 #######################################
 # Move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus    move scratchpad
+bindsym $mod+minus     move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-# Monitor
-bindsym $mod+Mod1+KP_Add         scratchpad show, resize set 1900 1000, move position center
-
-# Laptop
-bindsym $mod+Mod1+KP_Subtract    scratchpad show, resize set 1300 700, move position center
+bindsym $mod+plus      scratchpad show, resize set 1900 1000, move position center
 
 ################################################################################
 # Borders
@@ -275,57 +271,35 @@ bindsym $mod+Mod1+w    exec --no-startup-id ~/Dropbox/.custom/dmenu/work.sh
 ################################################################################
 # shortcuts
 #######################################
-bindsym $mod+Mod1+r    exec --no-startup-id thunar ~/Desktop
+bindsym $mod+Mod1+r    exec --no-startup-id nautilus ~/Desktop
 
 ################################################################################
 # sound
 #######################################
-exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m    exec xfce4-terminal -e 'alsamixer'
-
-# Control volume
-bindsym XF86AudioRaiseVolume        exec "amixer -q sset Master,0 5%+ unmute && \
-    notify-send -t 800 `amixer sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }'`"
-bindsym XF86AudioLowerVolume        exec "amixer -q sset Master,0 5%- unmute && \
-    notify-send -t 800 `amixer sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }'`"
-bindsym XF86AudioMute               exec "amixer -q sset Master,0 toggle && \
-    notify-send -t 800 `amixer sget Master | grep 'Left:' | awk -F'[][]' '{ print $4 }'`"
-bindsym $mod+Home     exec "notify-send -t 800 `amixer \
-    | grep 'Left:' | awk -F'[][]' '{ print $2 }' | head -1`"
-
-# Take care of ears by default
-exec_always --no-startup-id amixer set Master 50%
-
-# Set default output level for microphone
-exec_always --no-startup-id amixer set Capture 70%
+exec --no-startup-id   volumeicon
+bindsym $mod+Ctrl+m    exec gnome-terminal -e 'alsamixer'
 
 ################################################################################
 # brightness
 #######################################
 # Control brightness more precisely through software `brightnessctl`
-bindsym $mod+KP_Add         exec "brightnessctl s 1%+"
-bindsym $mod+KP_Subtract    exec "brightnessctl s 1%-"
+bindsym XF86MonBrightnessDown     exec "light -U 10"
+bindsym XF86MonBrightnessUp       exec "light -A 10"
 
-## Max value is 4882 in this case, so get current value and convert it to percentage
-bindsym $mod+KP_Enter    exec "notify-send -t 800 `bc <<< \`brightnessctl g\`/48.82`%"
 
 ################################################################################
 # applications
 #######################################
 # Start
-bindsym $mod+BackSpace              exec xfce4-taskmanager
-bindsym $mod+Mod1+Home              exec flameshot
-bindsym $mod+Print --release        exec --no-startup-id xfce4-screenshooter --window --save ~/Pictures/screenshots/
+bindsym $mod+BackSpace              exec gnome-terminal -e glances
+bindsym $mod+Print --release        exec --no-startup-id flameshot screen --path ~/Pictures/screenshots/
 bindsym $mod+Shift+d --release      exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Shift+g                exec gimp
 bindsym $mod+Shift+i                exec inkscape
-bindsym $mod+Shift+t                exec thunar
-bindsym $mod+Shift+v                exec xfce4-terminal -e vifm
+bindsym $mod+Shift+t                exec nautilus
+bindsym $mod+Shift+v                exec gnome-terminal -e vifm
 bindsym $mod+Shift+x --release      exec --no-startup-id xkill
-bindsym Print --release             exec --no-startup-id xfce4-screenshooter --region --save ~/Pictures/screenshots/
-bindsym XF86Calculator              exec galculator
-bindsym XF86HomePage                exec brave-browser
-bindsym XF86Mail                    exec xfce4-terminal -e calcurse
+bindsym Print --release             exec --no-startup-id flameshot gui --path ~/Pictures/screenshots/
 
 # Open applications on specific workspaces
 assign [class="(?i)brave-browser"]      $ws3
@@ -357,7 +331,6 @@ exec --no-startup-id                          nm-applet
 exec --no-startup-id                          pasystray
 exec --no-startup-id                          copyq
 exec_always --no-startup-id                   unclutter --timeout 5 --jitter 20 --ignore-scrolling &
-exec_always --no-startup-id                   xmodmap ~/.Xmodmap
 
 ################################################################################
 # keyboard / mouse
