@@ -276,8 +276,19 @@ bindsym $mod+Mod1+r    exec --no-startup-id nautilus ~/Desktop
 ################################################################################
 # sound
 #######################################
-exec --no-startup-id   volumeicon
-bindsym $mod+Ctrl+m    exec gnome-terminal -e 'alsamixer'
+set $volumepath ~/.config/i3-volume/volume
+set $statuscmd i3status
+
+# Signal used to update the status line
+set $statussig SIGUSR1
+
+# Amount to increase/decrease volume as a percentage
+set $volumestep 5
+
+bindsym XF86AudioRaiseVolume exec $volumepath -np -i $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioLowerVolume exec $volumepath -np -d $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioMute        exec $volumepath -mn -t $statuscmd -u $statussig
+bindsym XF86AudioMicMute exec pactl set-source-mute alsa_input.pci-0000_03_00.6.analog-stereo toggle
 
 ################################################################################
 # brightness
