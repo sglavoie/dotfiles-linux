@@ -13,7 +13,7 @@ font xft:JetBrainsMono-Regular 14
 bindsym $mod+Return     exec gnome-terminal
 
 # kill focused window
-bindsym $mod+q          kill
+bindsym $mod+Escape     kill
 
 # reload the configuration file
 bindsym $mod+Shift+c    reload
