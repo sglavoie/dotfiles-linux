@@ -10,7 +10,7 @@ export VISUAL='nvim'
 export WORKON_HOME="$HOME/Programming/virtualenvs"
 export PROJECT_HOME="$HOME/dev"
 
-export BROWSER='/usr/bin/brave'
+export BROWSER='/usr/bin/brave-browser'
 
 # Get colorized output for `man` pages with `bat`
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
