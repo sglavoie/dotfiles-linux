@@ -21,7 +21,6 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.cache/zsh/history
 
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
