@@ -1,7 +1,7 @@
 """" APPEARANCE {{{
 " set background=dark
-let ayucolor="dark"
-colorscheme ayu
+" let ayucolor="dark"
+colorscheme palenight
 """" }}}
 
 """" VIM FEATURES {{{
