@@ -104,23 +104,11 @@ set $ws1  "1:Code"
 set $ws2  "2:Term"
 set $ws3  "3:Web"
 set $ws4  "4:Multi"
-set $ws5  "5:Music"
-set $ws6  "6:Files"
-set $ws7  "7:Read"
-set $ws8  "8:Write"
+set $ws5  "5:Files"
+set $ws6  "6:Read"
+set $ws7  "7:Write"
+set $ws8  "8:Misc"
 set $ws9  "9:Notes"
-set $ws10 "11:Code"
-set $ws11 "12:Term"
-set $ws12 "13:Web"
-set $ws13 "14:Multi"
-set $ws14 "15:Music"
-set $ws15 "16:Files"
-set $ws16 "17:Read"
-set $ws17 "18:Write"
-set $ws18 "19:Notes"
-set $ws19 "20:Server"
-set $ws20 "21:Downloads"
-set $ws21 "22:Misc"
 
 
 # switch to workspace
@@ -134,21 +122,9 @@ bindsym $mod+6   workspace $ws6
 bindsym $mod+7   workspace $ws7
 bindsym $mod+8   workspace $ws8
 bindsym $mod+9   workspace $ws9
-bindsym $mod+F1  workspace $ws10
-bindsym $mod+F2  workspace $ws11
-bindsym $mod+F3  workspace $ws12
-bindsym $mod+F4  workspace $ws13
-bindsym $mod+F5  workspace $ws14
-bindsym $mod+F6  workspace $ws15
-bindsym $mod+F7  workspace $ws16
-bindsym $mod+F8  workspace $ws17
-bindsym $mod+F9  workspace $ws18
-bindsym $mod+F10 workspace $ws19
-bindsym $mod+F11 workspace $ws20
-bindsym $mod+F12 workspace $ws21
 
 # determine which workspace appears on which screen
-workspace 0 output  HDMI-A-0
+workspace 0 output  eDP
 workspace 1 output  HDMI-A-0
 workspace 2 output  HDMI-A-0
 workspace 3 output  HDMI-A-0
@@ -156,20 +132,8 @@ workspace 4 output  HDMI-A-0
 workspace 5 output  HDMI-A-0
 workspace 6 output  HDMI-A-0
 workspace 7 output  HDMI-A-0
-workspace 8 output  HDMI-A-0
-workspace 9 output  HDMI-A-0
-workspace 10 output HDMI-A-0
-workspace 11 output HDMI-A-0
-workspace 12 output HDMI-A-0
-workspace 13 output HDMI-A-0
-workspace 14 output HDMI-A-0
-workspace 15 output HDMI-A-0
-workspace 16 output eDP
-workspace 17 output eDP
-workspace 18 output eDP
-workspace 19 output eDP
-workspace 20 output eDP
-workspace 21 output eDP
+workspace 8 output  eDP
+workspace 9 output  eDP
 
 # move focused container to workspace and switch to workspace
 bindsym $mod+Shift+0   move container to workspace $ws0;  workspace $ws0
@@ -182,18 +146,6 @@ bindsym $mod+Shift+6   move container to workspace $ws6;  workspace $ws6
 bindsym $mod+Shift+7   move container to workspace $ws7;  workspace $ws7
 bindsym $mod+Shift+8   move container to workspace $ws8;  workspace $ws8
 bindsym $mod+Shift+9   move container to workspace $ws9;  workspace $ws9
-bindsym $mod+Shift+F1  move container to workspace $ws10; workspace $ws10
-bindsym $mod+Shift+F2  move container to workspace $ws11; workspace $ws11
-bindsym $mod+Shift+F3  move container to workspace $ws12; workspace $ws12
-bindsym $mod+Shift+F4  move container to workspace $ws13; workspace $ws13
-bindsym $mod+Shift+F5  move container to workspace $ws14; workspace $ws14
-bindsym $mod+Shift+F6  move container to workspace $ws15; workspace $ws15
-bindsym $mod+Shift+F7  move container to workspace $ws16; workspace $ws16
-bindsym $mod+Shift+F8  move container to workspace $ws17; workspace $ws17
-bindsym $mod+Shift+F9  move container to workspace $ws18; workspace $ws18
-bindsym $mod+Shift+F10 move container to workspace $ws19; workspace $ws19
-bindsym $mod+Shift+F11 move container to workspace $ws20; workspace $ws20
-bindsym $mod+Shift+F12 move container to workspace $ws21; workspace $ws21
 
 ################################################################################
 # Layout
@@ -264,6 +216,7 @@ bindsym $mod+Mod1+c    exec --no-startup-id ~/Dropbox/.custom/dmenu/cheatsheets.
 bindsym $mod+Mod1+d    exec --no-startup-id ~/Dropbox/.custom/dmenu/documents.sh
 bindsym $mod+Mod1+f    exec --no-startup-id ~/Dropbox/.custom/dmenu/filepaths.sh
 bindsym $mod+Mod1+s    exec --no-startup-id ~/Dropbox/.custom/dmenu/scripts.sh
+bindsym $mod+Mod1+r    exec --no-startup-id ~/Dropbox/.custom/dmenu/reading.sh
 bindsym $mod+Mod1+q    exec --no-startup-id ~/Dropbox/.custom/dmenu/quotes.sh
 bindsym $mod+Mod1+u    exec --no-startup-id ~/Dropbox/.custom/dmenu/university.sh
 bindsym $mod+Mod1+w    exec --no-startup-id ~/Dropbox/.custom/dmenu/work.sh
@@ -271,7 +224,7 @@ bindsym $mod+Mod1+w    exec --no-startup-id ~/Dropbox/.custom/dmenu/work.sh
 ################################################################################
 # shortcuts
 #######################################
-bindsym $mod+Mod1+r    exec --no-startup-id nautilus ~/Desktop
+bindsym $mod+control+r    exec --no-startup-id nautilus ~/Desktop
 
 ################################################################################
 # sound
@@ -307,7 +260,7 @@ bindsym $mod+Print --release        exec --no-startup-id flameshot screen --path
 bindsym $mod+Shift+d --release      exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Shift+g                exec gimp
 bindsym $mod+Shift+i                exec inkscape
-bindsym $mod+Shift+t                exec nautilus
+bindsym $mod+Shift+n                exec nautilus
 bindsym $mod+Shift+v                exec gnome-terminal -e vifm
 bindsym $mod+Shift+x --release      exec --no-startup-id xkill
 bindsym Print --release             exec --no-startup-id flameshot gui --path ~/Pictures/screenshots/
@@ -318,11 +271,12 @@ assign [class="(?i)code"]               $ws1
 assign [class="(?i)firefox"]            $ws3
 assign [class="(?i)google-chrome"]      $ws3
 assign [class="Audacity"]               $ws4
-assign [class="Clementine"]             $ws5
+assign [class="Clementine"]             $ws4
 assign [class="Gimp"]                   $ws4
 assign [class="Inkscape"]               $ws4
 assign [class="Transmission"]           $ws9
-assign [class="keepassxc"]              $ws9
+assign [class="keepassxc"]              $ws8
+assign [class="(?i)org.gnome.Nautilus"] $ws5
 assign [class="vlc"]                    $ws4
 assign [title="glances"]                $ws6
 
