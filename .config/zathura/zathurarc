@@ -13,3 +13,6 @@ set font "iosevka 16"
 # Make inverse colors look better by keeping color hue
 set recolor-reverse-video "true"
 set recolor-keephue "true"
+
+# Allow to open links in web browser without issue
+set sandbox none
