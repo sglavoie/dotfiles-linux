@@ -250,6 +250,9 @@ bindsym XF86AudioMicMute exec pactl set-source-mute alsa_input.pci-0000_03_00.6.
 bindsym XF86MonBrightnessDown     exec "light -U 10"
 bindsym XF86MonBrightnessUp       exec "light -A 10"
 
+# Toggle laptop screen
+bindsym $mod+Control+b            exec --no-startup-id ~/.local/bin/toggle_laptop_brightness
+
 
 ################################################################################
 # applications
