@@ -1,4 +1,5 @@
 {
     "python.pythonPath": "/home/sebastien/Programming/virtualenvs/nvim/bin/python",
+    "python.jediEnabled": false,
     "clangd.path": "/home/sebastien/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
 }
