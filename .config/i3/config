@@ -99,7 +99,6 @@ bindsym $mod+z                   exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
 bindsym $mod+x                   exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
 # Workspace names
-set $ws0  "10:Server"
 set $ws1  "1:Code"
 set $ws2  "2:Term"
 set $ws3  "3:Web"
@@ -109,10 +108,9 @@ set $ws6  "6:Read"
 set $ws7  "7:Write"
 set $ws8  "8:Misc"
 set $ws9  "9:Notes"
-
+set $ws10  "10:Server"
 
 # switch to workspace
-bindsym $mod+0   workspace $ws0
 bindsym $mod+1   workspace $ws1
 bindsym $mod+2   workspace $ws2
 bindsym $mod+3   workspace $ws3
@@ -122,18 +120,19 @@ bindsym $mod+6   workspace $ws6
 bindsym $mod+7   workspace $ws7
 bindsym $mod+8   workspace $ws8
 bindsym $mod+9   workspace $ws9
+bindsym $mod+0   workspace $ws10
 
 # determine which workspace appears on which screen
-workspace 0 output  eDP
-workspace 1 output  HDMI-A-0
-workspace 2 output  HDMI-A-0
-workspace 3 output  HDMI-A-0
-workspace 4 output  HDMI-A-0
-workspace 5 output  HDMI-A-0
-workspace 6 output  HDMI-A-0
-workspace 7 output  HDMI-A-0
-workspace 8 output  eDP
-workspace 9 output  eDP
+workspace 1  output  HDMI-A-0
+workspace 2  output  HDMI-A-0
+workspace 3  output  HDMI-A-0
+workspace 4  output  HDMI-A-0
+workspace 5  output  HDMI-A-0
+workspace 6  output  HDMI-A-0
+workspace 7  output  HDMI-A-0
+workspace 8  output  eDP
+workspace 9  output  eDP
+workspace 10 output  eDP
 
 # move focused container to workspace and switch to workspace
 bindsym $mod+Shift+0   move container to workspace $ws0;  workspace $ws0
