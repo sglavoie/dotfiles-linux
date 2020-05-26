@@ -21,7 +21,7 @@ Plug 'psf/black', { 'tag': '19.10b0', 'for': 'python' }
 
 """" Language specific {{{
 Plug 'ap/vim-css-color', { 'for': 'css' }
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 'markdown' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript'] }
 Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
