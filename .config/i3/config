@@ -135,16 +135,16 @@ workspace 9  output  eDP
 workspace 10 output  eDP
 
 # move focused container to workspace and switch to workspace
-bindsym $mod+Shift+0   move container to workspace $ws0;  workspace $ws0
-bindsym $mod+Shift+1   move container to workspace $ws1;  workspace $ws1
-bindsym $mod+Shift+2   move container to workspace $ws2;  workspace $ws2
-bindsym $mod+Shift+3   move container to workspace $ws3;  workspace $ws3
-bindsym $mod+Shift+4   move container to workspace $ws4;  workspace $ws4
-bindsym $mod+Shift+5   move container to workspace $ws5;  workspace $ws5
-bindsym $mod+Shift+6   move container to workspace $ws6;  workspace $ws6
-bindsym $mod+Shift+7   move container to workspace $ws7;  workspace $ws7
-bindsym $mod+Shift+8   move container to workspace $ws8;  workspace $ws8
-bindsym $mod+Shift+9   move container to workspace $ws9;  workspace $ws9
+bindsym $mod+Shift+1   move container to workspace $ws1;   workspace $ws1
+bindsym $mod+Shift+2   move container to workspace $ws2;   workspace $ws2
+bindsym $mod+Shift+3   move container to workspace $ws3;   workspace $ws3
+bindsym $mod+Shift+4   move container to workspace $ws4;   workspace $ws4
+bindsym $mod+Shift+5   move container to workspace $ws5;   workspace $ws5
+bindsym $mod+Shift+6   move container to workspace $ws6;   workspace $ws6
+bindsym $mod+Shift+7   move container to workspace $ws7;   workspace $ws7
+bindsym $mod+Shift+8   move container to workspace $ws8;   workspace $ws8
+bindsym $mod+Shift+9   move container to workspace $ws9;   workspace $ws9
+bindsym $mod+Shift+0   move container to workspace $ws10;  workspace $ws10
 
 ################################################################################
 # Layout
@@ -284,7 +284,7 @@ assign [class="(?i)zathura"]            $ws6
 assign [title="(?i)libreoffice"]        $ws7
 assign [class="keepassxc"]              $ws8
 assign [class="obs"]                    $ws8
-assign [class="Transmission"]           $ws9
+assign [class="Transmission"]           $ws8
 
 # Automatically switch to workspace when opening those
 for_window [class="(?i)code"]               workspace $ws1
