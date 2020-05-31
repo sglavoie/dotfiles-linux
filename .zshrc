@@ -39,24 +39,12 @@ source ~/Dropbox/.custom/zsh/environ.variables
 
 SSH_ENV=$HOME/.ssh/environment
 
-# start the ssh-agent
-function start_agent {
-    echo "Initializing new SSH agent..."
-    # spawn ssh-agent
-    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
-    echo succeeded
-    chmod 600 "${SSH_ENV}"
-    . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add
-}
-
-if [ -f "${SSH_ENV}" ]; then
-     . "${SSH_ENV}" > /dev/null
-     ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-        start_agent;
-    }
-else
-    start_agent;
+# is this an interactive shell?
+if [[ $- == *i* ]]; then
+    # set up ssh key server
+    if [[ -x /usr/bin/keychain ]]; then
+        eval $(keychain --quiet --eval id_rsa id_rsa_datopian --agents "ssh,gpg" --gpg2 833371F52C5B4CDC AEEA3CA3509B4582)
+    fi
 fi
 
 bindkey '^x^x' edit-command-line  # Open default editor
