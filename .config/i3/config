@@ -150,7 +150,7 @@ bindsym $mod+Shift+0   move container to workspace $ws10;  workspace $ws10
 # Layout
 #######################################
 # set default desktop layout (default is tiling), <stacking|tabbed>
-workspace_layout    default
+workspace_layout    tabbed
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s      layout stacking
@@ -161,7 +161,7 @@ bindsym $mod+e      layout toggle split
 default_orientation    vertical
 
 #toggles split at each new window (Fibonnaci layout)
-for_window [class=".*"]    split toggle
+# for_window [class=".*"]    split toggle
 
 # toggle the way a split happens in the focused window
 bindsym $mod+t    split toggle
@@ -178,8 +178,9 @@ floating_modifier    $mod
 # toggle sticky
 bindsym $mod+Shift+s    sticky toggle
 
-# focus the parent container
+# focus the surrounding containers
 bindsym $mod+a    focus parent
+bindsym $mod+c    focus child
 
 ################################################################################
 # Scratchpad
@@ -339,7 +340,7 @@ exec_always --no-startup-id                   xset r rate 250 60
 bar {
     i3bar_command i3bar
     status_command i3status
-    position top
+    position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
     tray_output primary
