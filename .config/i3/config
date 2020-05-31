@@ -362,9 +362,9 @@ bar {
 
 # Theme colors
 # class                   border  backgr. text    indic.  child_border
-  client.focused          #F9FAF9 #1264A3 #FFFFFF #FF0000 #1257f8
+  client.focused          #000000 #00C8FF #000000 #FF0000 #00C8FF
   client.focused_inactive #222D32 #020D14 #CFD8DC #454948
-  client.unfocused        #061229 #061229 #CFD8DC #454948
+  client.unfocused        #061229 #061229 #74848B #454948
   client.urgent           #FFFFFF #CD2553 #FDFFFC #FDFFFC
   client.placeholder      #F9FAF9 #061229 #FFFFFF #061229
   client.background       #061229
