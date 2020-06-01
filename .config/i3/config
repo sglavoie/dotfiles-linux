@@ -7,7 +7,7 @@
 set $mod Mod4
 
 # Font for window titles
-font xft:JetBrainsMono-Regular 14
+font xft:JetBrainsMono-Regular 13
 
 # start a terminal
 bindsym $mod+Return     exec alacritty
