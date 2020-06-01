@@ -17,7 +17,7 @@ general {
 order += "cpu_usage"
 order += "load"
 order += "disk /"
-# order += "memory"
+order += "memory"
 # order += "disk /home"
 order += "wireless _first_"
 # order += "battery all"
@@ -34,12 +34,12 @@ load {
         max_threshold = 2.0
 }
 
-# memory {
-#         format = " %used (%available) "
-#         threshold_degraded = "10%"
-#         threshold_critical = "5%"
-#         format_degraded = " Memory LOW: %free "
-# }
+memory {
+        format = "U · %used (F · %available) "
+        threshold_degraded = "15%"
+        threshold_critical = "5%"
+        format_degraded = " Memory LOW: %free "
+}
 
 disk "/" {
         # format = " hdd %avail "
