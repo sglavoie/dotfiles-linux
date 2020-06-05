@@ -1,3 +1,6 @@
+# Load multiple SSH keys
+zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_gitlab
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/dev/git-scripts:$HOME/.local/bin:$HOME/.node/bin:$PATH"
@@ -14,9 +17,6 @@ export BROWSER='/usr/bin/brave-browser'
 
 # Get colorized output for `man` pages with `bat`
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
-# ssh
-export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 # History in cache directory:
 HISTSIZE=10000
@@ -37,16 +37,6 @@ bindkey -s '^o' 'lfcd\n'
 # Read external environment variables
 source ~/Dropbox/.custom/zsh/environ.variables
 
-SSH_ENV=$HOME/.ssh/environment
-
-# is this an interactive shell?
-if [[ $- == *i* ]]; then
-    # set up ssh key server
-    if [[ -x /usr/bin/keychain ]]; then
-        eval $(keychain --quiet --eval id_rsa id_rsa_datopian --agents "ssh,gpg" --gpg2 833371F52C5B4CDC AEEA3CA3509B4582)
-    fi
-fi
-
 bindkey '^x^x' edit-command-line  # Open default editor
 
 ##### Functions
@@ -62,7 +52,9 @@ sc() { du -a ~/Dropbox/university/* | cut -f1 --complement | fzf | xargs -r xdg-
 
 renamemusic() {
 for f in *.mp3 *.flac *.wav *.ogg; do
-    mv "$f" `echo $f | tr -cd "a-zA-Z0-9\-_\ \." | sed s/' - '/'-'/g | sed s/' '/_/g | sed s/__/_/g | sed s/'('//g | sed s/')'//g`
+    mv "$f" `echo $f | tr -cd "a-zA-Z0-9\-_\ \." \
+        | sed s/' - '/'-'/g | sed s/' '/_/g \
+        | sed s/__/_/g | sed s/'('//g | sed s/')'//g`
 done
 }
 
@@ -139,7 +131,7 @@ ZSH_THEME="gallifrey"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf gitignore zsh-autosuggestions history-substring-search)
+plugins=(git ssh-agent fzf gitignore zsh-autosuggestions history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -149,16 +141,6 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
