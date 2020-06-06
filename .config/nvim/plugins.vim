@@ -6,6 +6,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release',
 """" }}}
 
 """" Design & appearance {{{
+Plug 'arcticicestudio/nord-vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'dracula/vim'
 Plug 'drewtempelmeyer/palenight.vim'
