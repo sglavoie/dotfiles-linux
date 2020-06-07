@@ -50,6 +50,12 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+# Resize without entering "resize mode"
+bindsym $mod+Control+h        exec --no-startup-id i3-resize left
+bindsym $mod+Control+j        exec --no-startup-id i3-resize down
+bindsym $mod+Control+k        exec --no-startup-id i3-resize up
+bindsym $mod+Control+l        exec --no-startup-id i3-resize right
+
 # Lock screen
 bindsym $mod+Delete    exec --no-startup-id    alacritty -e slock
 
@@ -149,9 +155,6 @@ bindsym $mod+Shift+8     move container to workspace $ws8;   workspace $ws8
 bindsym $mod+Shift+9     move container to workspace $ws9;   workspace $ws9
 bindsym $mod+Shift+0     move container to workspace $ws10;  workspace $ws10
 
-# Focus cycles between monitors
-bindsym $mod+masculine   focus output left
-
 ################################################################################
 # Layout
 #######################################
@@ -234,6 +237,9 @@ bindsym $mod+d         exec --no-startup-id ~/Dropbox/.custom/dmenu/software.sh
 # shortcuts
 #######################################
 bindsym $mod+control+r    exec --no-startup-id nautilus ~/Desktop
+
+# Simple calculator in terminal
+bindsym $mod+masculine    exec alacritty -e bc
 
 ################################################################################
 # sound
