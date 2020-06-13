@@ -90,7 +90,7 @@ fi
 
 unset use_color safe_term match_lhs sh
 
-# alias cp="cp -i"                          # confirm before overwriting something
+alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
@@ -137,22 +137,3 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
-
-source $HOME/.bash_aliases
-source $HOME/.git-completion.sh
-source $HOME/.git-prompt.sh
-
-GIT_PS1_SHOWSTASHSTATE="true" # show '$' if there are stashed files
-GIT_PS1_SHOWUNTRACKEDFILES="true" # show '%' if there are untracked files
-GIT_PS1_SHOWUPSTREAM="auto" # show
-
-PS1='\[\033[01;94m\][\h\[\033[01;32m\] \W \[\033[01;95m\]$(__git_ps1 "(%s)")\[\033[01;94m\]]\$\[\033[00m\] '
-
-export PATH="$HOME/dev/git-scripts:$HOME/.local/bin:$HOME/.node/bin:$PATH"
-export VISUAL=nvim
-export EDITOR="$VISUAL"
-export WORKON_HOME="$HOME/Programming/virtualenvs"
-export PROJECT_HOME="$HOME/dev"
-
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash

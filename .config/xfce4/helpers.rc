@@ -1,3 +1,4 @@
-WebBrowser=brave-browser
-TerminalEmulator=xfce4-terminal
+FileManager=Thunar
+MailReader=thunderbird
 
+WebBrowser=google-chrome

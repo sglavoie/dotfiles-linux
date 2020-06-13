@@ -1,5 +1,5 @@
 # Load multiple SSH keys
-zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_gitlab
+zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_datopian
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -62,10 +62,10 @@ done
 [ -f "$HOME/.bash_aliases" ] && source "$HOME/.bash_aliases"
 
 # Load virtualenvwrapper
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/sebastien/.oh-my-zsh"
+export ZSH="/home/sglavoie/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -150,3 +150,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

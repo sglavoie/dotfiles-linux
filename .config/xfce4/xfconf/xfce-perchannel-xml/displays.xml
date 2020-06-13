@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <channel name="displays" version="1.0">
+  <property name="ActiveProfile" type="string" value="Default"/>
   <property name="Default" type="empty">
-    <property name="LVDS-1" type="string" value="Laptop">
+    <property name="eDP" type="string" value="Laptop">
       <property name="Active" type="bool" value="true"/>
-      <property name="Resolution" type="string" value="1366x768"/>
-      <property name="RefreshRate" type="double" value="60.031185"/>
+      <property name="EDID" type="string" value="46a651e4f950cc28a5b59f5d45c2d067db18952d"/>
+      <property name="Resolution" type="string" value="1920x1080"/>
+      <property name="RefreshRate" type="double" value="60.026748"/>
       <property name="Rotation" type="int" value="0"/>
       <property name="Reflection" type="string" value="0"/>
       <property name="Primary" type="bool" value="true"/>
       <property name="Position" type="empty">
         <property name="X" type="int" value="1920"/>
-        <property name="Y" type="int" value="312"/>
+        <property name="Y" type="int" value="0"/>
       </property>
     </property>
-    <property name="VGA-1" type="string" value="2. HP 25&quot;">
+    <property name="HDMI-A-0" type="string" value="HP 25&quot;">
       <property name="Active" type="bool" value="true"/>
+      <property name="EDID" type="string" value="c168f5876095491d067d45a5a63fb0d4dc40f98d"/>
       <property name="Resolution" type="string" value="1920x1080"/>
       <property name="RefreshRate" type="double" value="60.000000"/>
       <property name="Rotation" type="int" value="0"/>
@@ -26,27 +29,31 @@
         <property name="Y" type="int" value="0"/>
       </property>
     </property>
-    <property name="LVDS1" type="string" value="Laptop">
+  </property>
+  <property name="Fallback" type="empty">
+    <property name="eDP" type="string" value="Laptop">
       <property name="Active" type="bool" value="true"/>
-      <property name="Resolution" type="string" value="1366x768"/>
-      <property name="RefreshRate" type="double" value="60.031185"/>
+      <property name="EDID" type="string" value="46a651e4f950cc28a5b59f5d45c2d067db18952d"/>
+      <property name="Resolution" type="string" value="1920x1080"/>
+      <property name="RefreshRate" type="double" value="60.026748"/>
       <property name="Rotation" type="int" value="0"/>
       <property name="Reflection" type="string" value="0"/>
       <property name="Primary" type="bool" value="true"/>
       <property name="Position" type="empty">
-        <property name="X" type="int" value="0"/>
-        <property name="Y" type="int" value="312"/>
+        <property name="X" type="int" value="1920"/>
+        <property name="Y" type="int" value="0"/>
       </property>
     </property>
-    <property name="VGA1" type="string" value="2. HP 25&quot;">
+    <property name="HDMI-A-0" type="string" value="HP 25&quot;">
       <property name="Active" type="bool" value="true"/>
+      <property name="EDID" type="string" value="c168f5876095491d067d45a5a63fb0d4dc40f98d"/>
       <property name="Resolution" type="string" value="1920x1080"/>
       <property name="RefreshRate" type="double" value="60.000000"/>
       <property name="Rotation" type="int" value="0"/>
       <property name="Reflection" type="string" value="0"/>
       <property name="Primary" type="bool" value="false"/>
       <property name="Position" type="empty">
-        <property name="X" type="int" value="1366"/>
+        <property name="X" type="int" value="0"/>
         <property name="Y" type="int" value="0"/>
       </property>
     </property>

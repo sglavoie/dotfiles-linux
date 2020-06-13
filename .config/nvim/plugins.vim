@@ -1,10 +1,5 @@
 call plug#begin($HOME . '/.local/share/nvim/plugged')
 
-"""" Code completion {{{
-Plug 'neoclide/coc.nvim', {'branch': 'release',
-            \ 'for': ['python', 'javascript', 'cpp', 'c']}
-"""" }}}
-
 """" Design & appearance {{{
 Plug 'arcticicestudio/nord-vim'
 Plug 'ayu-theme/ayu-vim'
@@ -17,7 +12,7 @@ Plug 'tomasr/molokai'
 """" }}}
 
 """" Formatting {{{
-Plug 'psf/black', { 'tag': '19.10b0', 'for': 'python' }
+Plug 'psf/black'
 """" }}}
 
 """" Language specific {{{
@@ -41,10 +36,10 @@ Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 """" Useful features {{{
 Plug 'SirVer/ultisnips', { 'for': 'python' }
 Plug 'junegunn/fzf', { 'dir': $HOME . '/.fzf', 'do': './install --all' }
-Plug 'machakann/vim-highlightedyank'
-Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'romainl/vim-qf'
 Plug 'junegunn/fzf.vim'
+Plug 'machakann/vim-highlightedyank'
+Plug 'romainl/vim-qf'
+Plug 'vifm/vifm.vim'
 """" }}}
 
 """" Git related {{{
