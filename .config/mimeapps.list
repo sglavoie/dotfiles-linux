@@ -1,11 +1,9 @@
 [Default Applications]
 application/octet-stream=mousepad.desktop
-application/pdf=qpdfview.desktop
-application/pdf=qpdfview.desktop
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
 application/x-gettext-translation=mousepad.desktop
 application/xml=mousepad.desktop
 application/x-wine-extension-ini=mousepad.desktop
-image/gif=viewnior.desktop;gimp.desktop
 image/gif=viewnior.desktop;gimp.desktop
 image/jpeg=viewnior.desktop;gimp.desktop
 image/png=viewnior.desktop;gimp.desktop
@@ -16,6 +14,25 @@ video/x-flv=vlc.desktop
 video/x-ms-wmv=vlc.desktop
 video/x-ogm+ogg=vlc.desktop
 video/x-theora+ogg=vlc.desktop
+application/geo+json=google-chrome.desktop
+application/jrd+json=google-chrome.desktop
+application/json=google-chrome.desktop
+application/x-xpinstall=google-chrome.desktop
+application/json-patch+json=google-chrome.desktop
+application/x-ipynb+json=google-chrome.desktop
+application/ld+json=google-chrome.desktop
 
 [Added Associations]
 text/plain=nvim.desktop;
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+application/geo+json=google-chrome.desktop;
+application/jrd+json=google-chrome.desktop;
+application/json=nvim.desktop;mousepad.desktop;google-chrome.desktop;
+application/x-xpinstall=google-chrome.desktop;
+application/json-patch+json=nvim.desktop;google-chrome.desktop;
+application/x-ipynb+json=nvim.desktop;google-chrome.desktop;
+application/ld+json=firefox.desktop;google-chrome.desktop;
+video/mp4=smplayer.desktop;audacious.desktop;
+video/x-matroska=smplayer.desktop;
+x-scheme-handler/http=exo-web-browser.desktop;
+x-scheme-handler/https=exo-web-browser.desktop;
