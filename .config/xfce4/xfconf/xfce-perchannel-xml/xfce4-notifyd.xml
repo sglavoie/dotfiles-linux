@@ -8,10 +8,12 @@
   <property name="theme" type="string" value="Bright"/>
   <property name="applications" type="empty">
     <property name="known_applications" type="array">
+      <value type="string" value="clementine"/>
       <value type="string" value="google-chrome"/>
       <value type="string" value="nm-applet"/>
       <value type="string" value="org.manjaro.pamac.manager"/>
       <value type="string" value="Package Manager"/>
+      <value type="string" value="thunar"/>
       <value type="string" value="Xfce volume control"/>
       <value type="string" value="Xfce4-notifyd settings"/>
       <value type="string" value="xfce4-power-manager"/>
@@ -21,4 +23,7 @@
   <property name="expire-timeout" type="int" value="10"/>
   <property name="initial-opacity" type="double" value="0.950000"/>
   <property name="do-slideout" type="bool" value="false"/>
+  <property name="plugin" type="empty">
+    <property name="log-only-today" type="bool" value="false"/>
+  </property>
 </channel>

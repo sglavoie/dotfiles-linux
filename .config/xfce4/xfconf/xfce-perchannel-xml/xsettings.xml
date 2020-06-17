@@ -2,16 +2,16 @@
 
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
-    <property name="ThemeName" type="string" value="Adwaita-dark"/>
-    <property name="IconThemeName" type="string" value="Papirus-Maia"/>
+    <property name="ThemeName" type="string" value="Matcha-dark-azul"/>
+    <property name="IconThemeName" type="string" value="Arc"/>
     <property name="DoubleClickTime" type="int" value="532"/>
     <property name="DoubleClickDistance" type="int" value="8"/>
     <property name="DndDragThreshold" type="int" value="8"/>
     <property name="CursorBlink" type="bool" value="true"/>
     <property name="CursorBlinkTime" type="int" value="869"/>
     <property name="SoundThemeName" type="string" value="default"/>
-    <property name="EnableEventSounds" type="bool" value="false"/>
-    <property name="EnableInputFeedbackSounds" type="bool" value="false"/>
+    <property name="EnableEventSounds" type="bool" value="true"/>
+    <property name="EnableInputFeedbackSounds" type="bool" value="true"/>
   </property>
   <property name="Xft" type="empty">
     <property name="DPI" type="int" value="96"/>
@@ -23,7 +23,7 @@
   <property name="Gtk" type="empty">
     <property name="CanChangeAccels" type="bool" value="false"/>
     <property name="ColorPalette" type="string" value="black:white:gray50:red:purple:blue:light blue:green:yellow:orange:lavender:brown:goldenrod4:dodger blue:pink:light green:gray10:gray30:gray75:gray90"/>
-    <property name="FontName" type="string" value="Noto Sans 10"/>
+    <property name="FontName" type="string" value="Cantarell 10"/>
     <property name="MonospaceFontName" type="empty"/>
     <property name="IconSizes" type="string" value=""/>
     <property name="KeyThemeName" type="string" value=""/>
@@ -32,8 +32,8 @@
     <property name="MenuImages" type="bool" value="true"/>
     <property name="ButtonImages" type="bool" value="true"/>
     <property name="MenuBarAccel" type="string" value="F10"/>
-    <property name="CursorThemeName" type="string" value="xcursor-breeze"/>
-    <property name="CursorThemeSize" type="int" value="16"/>
+    <property name="CursorThemeName" type="string" value="capitaine-cursors"/>
+    <property name="CursorThemeSize" type="int" value="32"/>
     <property name="DecorationLayout" type="empty"/>
     <property name="IMPreeditStyle" type="string" value=""/>
     <property name="IMStatusStyle" type="string" value=""/>
