@@ -40,6 +40,7 @@ Plug 'SirVer/ultisnips', { 'for': 'python' }
 Plug 'junegunn/fzf', { 'dir': $HOME . '/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'machakann/vim-highlightedyank'
+Plug 'mbbill/undotree'
 Plug 'romainl/vim-qf'
 Plug 'vifm/vifm.vim'
 """" }}}
