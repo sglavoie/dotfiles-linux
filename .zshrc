@@ -50,8 +50,8 @@ se() { du -a ./* | cut -f1 --complement | fzf | xargs -r nvim ;}
 # Select a file recursively from university folder with fzf and open it with default app
 sc() { du -a ~/Dropbox/university/* | cut -f1 --complement | fzf | xargs -r xdg-open ;}
 
-renamemusic() {
-for f in *.mp3 *.flac *.wav *.ogg; do
+renamemp3() {
+for f in *.mp3; do
     mv "$f" `echo $f | tr -cd "a-zA-Z0-9\-_\ \." \
         | sed s/' - '/'-'/g | sed s/' '/_/g \
         | sed s/__/_/g | sed s/'('//g | sed s/')'//g`

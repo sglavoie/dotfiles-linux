@@ -3,7 +3,7 @@
 nnoremap <leader>o :on<CR>
 
 " Save the current buffer
-nnoremap <leader>w :write<CR>
+nnoremap <M-w> :write<CR>
 
 " Copy the content of the entire buffer
 nnoremap <leader>y :%y<CR>
@@ -16,11 +16,7 @@ nnoremap <leader>C :tabedit ~/.config/nvim/init.vim<CR>
 
 " Close active buffer if there are no pending changes to save
 nnoremap <leader>x :bd<CR>
-nnoremap <M-q> :bd<CR>
-
-" Close active buffer even if there are pending changes to save
-nnoremap <leader>X :bd!<CR>
-nnoremap <M-Q> :bd!<CR>
+nnoremap <M-q> :bd!<CR>
 
 " Close all buffers without saving
 nnoremap <leader>Q :qall!<CR>
@@ -45,7 +41,6 @@ inoremap <F5> <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
 """" }}}
 
 """" FORMATTING {{{
-
 " Move selection up/down and reformat properly along the way
 vnoremap K :m '<-2<CR>gv=gv
 vnoremap J :m '>+1<CR>gv=gv
@@ -66,7 +61,7 @@ let s:activatedh = 0
 function! ToggleH()
     if s:activatedh == 0
         let s:activatedh = 1
-        highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+        highlight OverLength ctermbg=red ctermfg=white guibg=#692929
         match OverLength /\%81v.\+/
     else
         let s:activatedh = 0
@@ -201,20 +196,21 @@ nnoremap <F3> /def <CR>
 """ }}}
 
 """ VIMWIKI {{{
-" 'a' for 'all' (regenerate all HTML pages in wiki)
+" 'a' for 'All' (regenerate all HTML pages in wiki)
 nnoremap <Leader>wa :VimwikiAll2HTML<CR>
 
 " 'b' for 'reBuild' ('r' is for renaming wiki page)
 nnoremap <Leader>wb :VimwikiRebuildTags<CR>
 
-" 'c' for 'content' (stands for "table of Content". 't' as in already Taken)
+" 'c' for 'Content' (stands for "table of Content". 't' as in already Taken)
 nnoremap <Leader>wc :VimwikiTOC<CR>
 
-" 'f' for 'find' ('s' is for selecting wiki)
+" 'f' for 'Find' ('s' is for selecting wiki)
 nnoremap <Leader>wf :VimwikiSearchTags<space>
 
-" 'g' for 'generate'
+" 'g' for 'Generate'
 nnoremap <Leader>wg :VimwikiGenerateTagLinks<CR>
+
 " Registered Wikis
 let wiki_1 = {}
 let wiki_1.path = '~/Dropbox/notes/'
@@ -232,4 +228,5 @@ let wiki_3.index = 'index'
 
 let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
 """ }}}
+
 " vim:fdm=marker

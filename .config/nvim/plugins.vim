@@ -1,22 +1,24 @@
 call plug#begin($HOME . '/.local/share/nvim/plugged')
 
+"""" Code completion {{{
+Plug 'neoclide/coc.nvim', {'branch': 'release',
+            \ 'for': ['python', 'javascript', 'cpp', 'c']}
+"""" }}}
+
 """" Design & appearance {{{
 Plug 'arcticicestudio/nord-vim'
-Plug 'ayu-theme/ayu-vim'
-Plug 'dracula/vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
-Plug 'tomasr/molokai'
 """" }}}
 
 """" Formatting {{{
-Plug 'psf/black'
+Plug 'psf/black', { 'tag': '19.10b0', 'for': 'python' }
 """" }}}
 
 """" Language specific {{{
-Plug 'ap/vim-css-color', { 'for': 'css' }
+Plug 'ap/vim-css-color'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript', 'markdown'] }
@@ -30,7 +32,7 @@ Plug 'tpope/vim-surround'
 """" }}}
 
 """" Note-taking {{{
-Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+Plug 'vimwiki/vimwiki'
 """" }}}
 
 """" Useful features {{{
@@ -43,7 +45,6 @@ Plug 'vifm/vifm.vim'
 """" }}}
 
 """" Git related {{{
-Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim', { 'on': ['GV', 'GV!'] }
 Plug 'tpope/vim-fugitive'
 " }}}

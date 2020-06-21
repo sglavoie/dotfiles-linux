@@ -1,5 +1,5 @@
 let g:lightline = {
-            \ 'colorscheme': 'nord',
+            \ 'colorscheme': 'onedark',
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ],
             \             [ 'gitbranch'], ['readonly', 'relativepath'], ['modified' ], [ 'coc_error', 'coc_warning', 'coc_hint', 'coc_info' ] ]

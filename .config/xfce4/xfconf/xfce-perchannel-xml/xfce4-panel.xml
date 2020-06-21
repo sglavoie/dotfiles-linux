@@ -19,8 +19,8 @@
         <value type="int" value="6"/>
         <value type="int" value="9"/>
         <value type="int" value="12"/>
-        <value type="int" value="5"/>
         <value type="int" value="10"/>
+        <value type="int" value="5"/>
       </property>
       <property name="role" type="string" value="xfce4-panel-12965750720"/>
       <property name="length-adjust" type="bool" value="true"/>
@@ -54,6 +54,7 @@
       </property>
       <property name="show-frame" type="bool" value="false"/>
       <property name="names-ordered" type="array">
+        <value type="string" value="drop-down terminal"/>
         <value type="string" value="xfce terminal"/>
         <value type="string" value="blueman"/>
         <value type="string" value="orage"/>
@@ -94,7 +95,7 @@
     </property>
     <property name="plugin-9" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="audacious;chrome.instance153274;chrome.instance1596;chrome.instance1612;chrome.instance1976;chrome.instance2035;chrome.instance28268;chrome.instance4237;chrome.instance6917;clementine;smplayer;vlc"/>
+      <property name="mpris-players" type="string" value="audacious;chrome.instance1378;chrome.instance1389;chrome.instance14330;chrome.instance153274;chrome.instance1596;chrome.instance1612;chrome.instance1809;chrome.instance1844;chrome.instance1976;chrome.instance2035;chrome.instance28268;chrome.instance33608;chrome.instance4237;chrome.instance56205;chrome.instance6917;clementine;smplayer;vlc"/>
     </property>
     <property name="plugin-8" type="string" value="whiskermenu"/>
     <property name="plugin-5" type="string" value="clock"/>
