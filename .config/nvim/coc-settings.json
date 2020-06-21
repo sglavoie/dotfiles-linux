@@ -7,7 +7,7 @@
           "args": [],
           // custom config path
           // "args": ["-c", "~/.config/efm-langserver/config.yaml"],
-          "filetypes": ["vim", "eruby", "markdown"]
+          "filetypes": ["vim", "markdown"]
         }
   }
 }
