@@ -163,10 +163,6 @@ nnoremap <Char-186> :set spell!<CR>
 " Go to previous/next spelling error
 nnoremap <M-S-s> [s
 nnoremap <M-s> ]s
-
-" Add/remove word under cursor to user dictionary
-nnoremap <M-g> zg
-nnoremap <M-w> zw
 """" }}}
 
 """" TERMINAL SPECIFIC {{{
