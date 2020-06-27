@@ -9,11 +9,7 @@ export PATH="$HOME/dev/git-scripts:$HOME/.local/bin:$HOME/.node/bin:$PATH"
 export EDITOR='nvim'
 export VISUAL='nvim'
 
-# Set variables for Python virtual envs
-export WORKON_HOME="$HOME/Programming/virtualenvs"
-export PROJECT_HOME="$HOME/dev"
-
-export BROWSER='/usr/bin/brave-browser'
+export BROWSER='/usr/bin/google-chrome-stable'
 
 # Get colorized output for `man` pages with `bat`
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -60,9 +56,6 @@ done
 
 # Load aliases if existent.
 [ -f "$HOME/.bash_aliases" ] && source "$HOME/.bash_aliases"
-
-# Load virtualenvwrapper
-source /usr/bin/virtualenvwrapper.sh
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/sglavoie/.oh-my-zsh"
