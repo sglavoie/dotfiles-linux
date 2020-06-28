@@ -3,7 +3,7 @@ zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_datopian
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$HOME/dev/git-scripts:$HOME/.local/bin:$HOME/.node/bin:$PATH"
+export PATH="$HOME/dev/git-scripts:$HOME/.local/bin:$HOME/.node/bin:$HOME/.cargo/bin:$PATH"
 
 # Set default editor to use
 export EDITOR='nvim'
