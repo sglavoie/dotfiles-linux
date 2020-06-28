@@ -9,6 +9,7 @@
           // "args": ["-c", "~/.config/efm-langserver/config.yaml"],
           "filetypes": ["vim", "markdown"]
         }
-  }
+  },
+  "clangd.path": "/home/sglavoie/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
 }
 
