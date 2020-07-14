@@ -327,22 +327,24 @@ for_window [class="vlc"]                    workspace $ws4
 for_window [title="(?i)libreoffice"]        workspace $ws7
 
 # Open specific applications in floating mode
-for_window [class="(?i)virtualbox"]           floating enable border pixel 2
-for_window [class="GParted"]                  floating enable border pixel 2
-for_window [class="Lightdm-settings"]         floating enable pixel 2
-for_window [class="Lxappearance"]             floating enable sticky enable border pixel 2
-for_window [class="Nitrogen"]                 floating enable sticky enable border pixel 2
-for_window [title="File Transfer*"]           floating enable border pixel 2
-for_window [title="alsamixer"]                floating enable border pixel 2
-for_window [class="(?i)zoom"]                 floating enable border pixel 2
+for_window [class="(?i)virtualbox"]    floating enable border pixel 2
+for_window [class="GParted"]           floating enable border pixel 2
+for_window [class="Lightdm-settings"]  floating enable pixel 2
+for_window [class="Lxappearance"]      floating enable sticky enable border pixel 2
+for_window [class="Nitrogen"]          floating enable sticky enable border pixel 2
+for_window [title="File Transfer*"]    floating enable border pixel 2
+for_window [title="alsamixer"]         floating enable border pixel 2
+for_window [class="(?i)zoom"]          floating enable border pixel 2
 
 # Autostart applications
-exec --no-startup-id                          google-chrome-stable
-exec --no-startup-id                          todoist
-exec --no-startup-id                          brightnessctl s 80%
-exec --no-startup-id                          nitrogen --restore
-exec --no-startup-id                          nm-applet
-exec --no-startup-id                          pasystray
+exec --no-startup-id    /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id    brightnessctl s 40%
+exec --no-startup-id    google-chrome-stable
+exec --no-startup-id    nitrogen --restore
+exec --no-startup-id    nm-applet
+exec --no-startup-id    pasystray
+exec --no-startup-id    todoist
+exec --no-startup-id    xfce4-clipman
 # exec_always --no-startup-id                   unclutter --timeout 5 --jitter 20 --ignore-scrolling &
 
 ################################################################################
