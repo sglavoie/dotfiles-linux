@@ -51,25 +51,25 @@ mode "resize" {
 }
 
 # Resize without entering "resize mode"
-bindsym $mod+Control+h        exec --no-startup-id i3-resize left
-bindsym $mod+Control+j        exec --no-startup-id i3-resize down
-bindsym $mod+Control+k        exec --no-startup-id i3-resize up
-bindsym $mod+Control+l        exec --no-startup-id i3-resize right
+bindsym $mod+Control+l resize shrink width 10 px or 10 ppt
+bindsym $mod+Control+k resize grow height 10 px or 10 ppt
+bindsym $mod+Control+j resize shrink height 10 px or 10 ppt
+bindsym $mod+Control+h resize grow width 10 px or 10 ppt
 
 # Lock screen
-bindsym $mod+Delete    exec --no-startup-id    alacritty -e slock
+bindsym $mod+Delete    exec --no-startup-id    i3lock -c 000000
 
 # hide/unhide i3status bar
 bindsym $mod+m    bar mode toggle
 
 ################################################################################
 # navigation
-#######################################
+######################################
 # Set up monitor at launch automatically and set laptop screen as the primary one.
-# Set monitor to the left (being on the horizontal axis makes it possible to focus
-# left/right and jump from one monitor to the next, which is not possible if the
+# Set monitor to the top (being on the vertical axis makes it possible to focus
+# bottom/top and jump from one monitor to the next, which is not possible if the
 # monitor is set to top-left or top-right in diagonal, for instance)
-exec_always xrandr --output eDP --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-0 --off --output DisplayPort-1 --off
+exec_always xrandr --output eDP --primary --mode 1920x1080 --pos 0x1080 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-0 --off --output DisplayPort-1 --off
 
 # Container focuses where the mouse is (yes/no)
 focus_follows_mouse    no
@@ -108,16 +108,16 @@ bindsym $mod+z                   exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
 bindsym $mod+g                   exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
 # Workspace names
-set $ws1  "1:Code"
-set $ws2  "2:Term"
-set $ws3  "3:Web"
-set $ws4  "4:Multi"
-set $ws5  "5:Files"
-set $ws6  "6:Read"
-set $ws7  "7:Write"
-set $ws8  "8:Misc"
-set $ws9  "9:Notes"
-set $ws10  "10:Server"
+set $ws1   "1"
+set $ws2   "2"
+set $ws3   "3"
+set $ws4   "4"
+set $ws5   "5"
+set $ws6   "6"
+set $ws7   "7"
+set $ws8   "8"
+set $ws9   "9"
+set $ws10  "10"
 
 # switch to workspace
 bindsym $mod+1   workspace $ws1
@@ -138,7 +138,7 @@ workspace 3  output  HDMI-A-0
 workspace 4  output  HDMI-A-0
 workspace 5  output  HDMI-A-0
 workspace 6  output  HDMI-A-0
-workspace 7  output  HDMI-A-0
+workspace 7  output  eDP
 workspace 8  output  eDP
 workspace 9  output  eDP
 workspace 10 output  eDP
@@ -236,10 +236,13 @@ bindsym $mod+d         exec --no-startup-id ~/Dropbox/.custom/dmenu/software.sh
 ################################################################################
 # shortcuts
 #######################################
-bindsym $mod+control+r    exec --no-startup-id nautilus ~/Desktop
+bindsym $mod+control+r    exec --no-startup-id thunar ~/Desktop
 
 # Simple calculator in terminal
 bindsym $mod+masculine    exec alacritty -e bc
+
+# Focus applications
+bindsym $mod+q [class="Todoist"] focus
 
 ################################################################################
 # sound
@@ -262,8 +265,8 @@ bindsym XF86AudioMicMute exec pactl set-source-mute alsa_input.pci-0000_03_00.6.
 # brightness
 #######################################
 # Control brightness more precisely through software `brightnessctl`
-bindsym XF86MonBrightnessDown     exec "light -U 10"
-bindsym XF86MonBrightnessUp       exec "light -A 10"
+bindsym XF86MonBrightnessDown     exec "light -U 5"
+bindsym XF86MonBrightnessUp       exec "light -A 5"
 
 # Toggle laptop screen
 bindsym $mod+Control+b            exec --no-startup-id ~/.local/bin/toggle_laptop_brightness
@@ -275,10 +278,11 @@ bindsym $mod+Control+b            exec --no-startup-id ~/.local/bin/toggle_lapto
 # Start
 bindsym $mod+BackSpace              exec alacritty -e glances
 bindsym $mod+Print --release        exec --no-startup-id flameshot screen --path ~/Pictures/screenshots/
+bindsym $mod+Shift+a                exec audacious
 bindsym $mod+Shift+d --release      exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Shift+g                exec gimp
 bindsym $mod+Shift+i                exec inkscape
-bindsym $mod+Shift+n                exec nautilus
+bindsym $mod+Shift+t                exec thunar
 bindsym $mod+Shift+v                exec alacritty -e vifm
 bindsym $mod+Shift+w                exec --no-startup-id google-chrome-stable
 bindsym $mod+Shift+x --release      exec --no-startup-id xkill
@@ -291,10 +295,11 @@ assign [class="(?i)firefox"]            $ws3
 assign [class="(?i)google-chrome"]      $ws3
 assign [class="(?i)scribus"]            $ws4
 assign [class="Audacity"]               $ws4
+assign [class="Audacious"]              $ws4
 assign [class="Gimp"]                   $ws4
 assign [class="Inkscape"]               $ws4
 assign [class="vlc"]                    $ws4
-assign [class="(?i)zoom"]               $ws4
+assign [class="(?i)zoom"]               $ws10
 assign [class="(?i)org.gnome.Nautilus"] $ws5
 assign [class="(?i)zathura"]            $ws6
 assign [title="(?i)libreoffice"]        $ws7
@@ -303,22 +308,23 @@ assign [class="obs"]                    $ws8
 assign [class="Transmission"]           $ws8
 
 # Automatically switch to workspace when opening those
-for_window [class="(?i)code"]               workspace $ws1
 for_window [class="(?i)brave-browser"]      workspace $ws3
+for_window [class="(?i)code"]               workspace $ws1
 for_window [class="(?i)firefox"]            workspace $ws3
 for_window [class="(?i)google-chrome"]      workspace $ws3
+for_window [class="(?i)org.gnome.Nautilus"] workspace $ws5
 for_window [class="(?i)scribus"]            workspace $ws4
+for_window [class="(?i)zathura"]            workspace $ws6
+for_window [class="(?i)zoom"]               workspace $ws10
+for_window [class="Audacious"]              workspace $ws4
 for_window [class="Gimp"]                   workspace $ws4
 for_window [class="Inkscape"]               workspace $ws4
-for_window [class="audacity"]               workspace $ws4
-for_window [class="vlc"]                    workspace $ws4
-for_window [class="(?i)zoom"]               workspace $ws4
-for_window [class="(?i)org.gnome.Nautilus"] workspace $ws5
-for_window [class="(?i)zathura"]            workspace $ws6
-for_window [title="(?i)libreoffice"]        workspace $ws7
 for_window [class="Transmission"]           workspace $ws8
+for_window [class="audacity"]               workspace $ws4
 for_window [class="keepassxc"]              workspace $ws8
 for_window [class="obs"]                    workspace $ws8
+for_window [class="vlc"]                    workspace $ws4
+for_window [title="(?i)libreoffice"]        workspace $ws7
 
 # Open specific applications in floating mode
 for_window [class="(?i)virtualbox"]           floating enable border pixel 2
@@ -328,15 +334,16 @@ for_window [class="Lxappearance"]             floating enable sticky enable bord
 for_window [class="Nitrogen"]                 floating enable sticky enable border pixel 2
 for_window [title="File Transfer*"]           floating enable border pixel 2
 for_window [title="alsamixer"]                floating enable border pixel 2
+for_window [class="(?i)zoom"]                 floating enable border pixel 2
 
 # Autostart applications
 exec --no-startup-id                          google-chrome-stable
-exec --no-startup-id                          brightnessctl s 90%
-exec --no-startup-id                          copyq
+exec --no-startup-id                          todoist
+exec --no-startup-id                          brightnessctl s 80%
 exec --no-startup-id                          nitrogen --restore
 exec --no-startup-id                          nm-applet
 exec --no-startup-id                          pasystray
-exec_always --no-startup-id                   unclutter --timeout 5 --jitter 20 --ignore-scrolling &
+# exec_always --no-startup-id                   unclutter --timeout 5 --jitter 20 --ignore-scrolling &
 
 ################################################################################
 # keyboard / mouse
@@ -354,7 +361,7 @@ exec_always --no-startup-id                   xset r rate 250 60
 bar {
     i3bar_command i3bar
     status_command i3status
-    position bottom
+    position top
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
     tray_output primary
