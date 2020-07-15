@@ -81,6 +81,8 @@ bindsym $mod+u    [urgent=latest] focus
 bindsym $mod+h    focus left
 bindsym $mod+j    focus down
 bindsym $mod+k    focus up
+bindsym $mod+Down focus down
+bindsym $mod+Up   focus up
 bindsym $mod+l    focus right
 
 # move focused window
@@ -102,6 +104,8 @@ bindsym $mod+f    fullscreen toggle
 # Navigate workspaces next / previous
 bindsym $mod+Mod1+l              workspace next
 bindsym $mod+Mod1+h              workspace prev
+bindsym $mod+Right                workspace next
+bindsym $mod+Left               workspace prev
 
 # Bindings to "mark" and "goto" mark specified with 1 character
 bindsym $mod+z                   exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
