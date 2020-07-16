@@ -102,10 +102,12 @@ bindsym Mod1+Tab                 exec "rofi -theme purple -font 'JetBrainsMono 1
 bindsym $mod+f    fullscreen toggle
 
 # Navigate workspaces next / previous
-bindsym $mod+Mod1+l              workspace next
-bindsym $mod+Mod1+h              workspace prev
-bindsym $mod+Right                workspace next
-bindsym $mod+Left               workspace prev
+bindsym $mod+Mod1+l         workspace next
+bindsym $mod+Mod1+h         workspace prev
+bindsym $mod+Shift+Right    workspace next
+bindsym $mod+Shift+Left     workspace prev
+bindsym $mod+Right          workspace next_on_output
+bindsym $mod+Left           workspace prev_on_output
 
 # Bindings to "mark" and "goto" mark specified with 1 character
 bindsym $mod+z                   exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
