@@ -286,6 +286,7 @@ bindsym $mod+BackSpace              exec alacritty -e glances
 bindsym $mod+Print --release        exec --no-startup-id flameshot screen --path ~/Pictures/screenshots/
 bindsym $mod+Shift+a                exec audacious
 bindsym $mod+Shift+d --release      exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+Shift+f                exec --no-startup-id firefox
 bindsym $mod+Shift+g                exec gimp
 bindsym $mod+Shift+i                exec inkscape
 bindsym $mod+Shift+t                exec thunar
@@ -342,7 +343,7 @@ for_window [class="(?i)zoom"]          floating enable border pixel 2
 
 # Autostart applications
 exec --no-startup-id         brightnessctl s 40%
-exec --no-startup-id         google-chrome-stable
+exec --no-startup-id         firefox
 exec --no-startup-id         nitrogen --restore
 exec --no-startup-id         nm-applet
 exec --no-startup-id         pasystray
