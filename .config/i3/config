@@ -37,6 +37,8 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
+bindsym $mod+Shift+Escape exec --no-startup-id systemctl poweroff
+
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
@@ -92,10 +94,11 @@ bindsym $mod+Shift+k    move up
 bindsym $mod+Shift+l    move right
 
 # workspace back and forth (with/without active container)
-workspace_auto_back_and_forth    no
-bindsym $mod+Mod1+Tab            workspace next_on_output
+workspace_auto_back_and_forth    yes
 bindsym $mod+Shift+Tab           move container to workspace back_and_forth; workspace back_and_forth
 bindsym $mod+Tab                 workspace back_and_forth
+
+# switch to any window with rofi
 bindsym Mod1+Tab                 exec "rofi -theme purple -font 'JetBrainsMono 14' -show-icons -width 90 -show window"
 
 # toggle fullscreen mode for the focused container
@@ -107,6 +110,7 @@ bindsym $mod+Mod1+h         workspace prev
 bindsym $mod+Shift+Right    workspace next
 bindsym $mod+Shift+Left     workspace prev
 bindsym $mod+Right          workspace next_on_output
+bindsym $mod+Mod1+Tab       workspace next_on_output
 bindsym $mod+Left           workspace prev_on_output
 
 # Bindings to "mark" and "goto" mark specified with 1 character
@@ -262,10 +266,10 @@ set $statussig SIGUSR1
 # Amount to increase/decrease volume as a percentage
 set $volumestep 5
 
-bindsym XF86AudioRaiseVolume exec $volumepath -np -i $volumestep -t $statuscmd -u $statussig
-bindsym XF86AudioLowerVolume exec $volumepath -np -d $volumestep -t $statuscmd -u $statussig
-bindsym XF86AudioMute        exec $volumepath -mn -t $statuscmd -u $statussig
-bindsym XF86AudioMicMute exec pactl set-source-mute alsa_input.pci-0000_03_00.6.analog-stereo toggle
+bindsym XF86AudioRaiseVolume    exec $volumepath -np -i $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioLowerVolume    exec $volumepath -np -d $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioMute           exec $volumepath -mn -t $statuscmd -u $statussig
+bindsym XF86AudioMicMute        exec pactl set-source-mute alsa_input.pci-0000_03_00.6.analog-stereo toggle
 
 ################################################################################
 # brightness
@@ -277,7 +281,6 @@ bindsym XF86MonBrightnessUp       exec "light -A 5"
 # Toggle laptop screen
 bindsym $mod+Control+b            exec --no-startup-id ~/.local/bin/toggle_laptop_brightness
 
-
 ################################################################################
 # applications
 #######################################
@@ -287,11 +290,9 @@ bindsym $mod+Print --release        exec --no-startup-id flameshot screen --path
 bindsym $mod+Shift+a                exec audacious
 bindsym $mod+Shift+d --release      exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Shift+f                exec --no-startup-id firefox
-bindsym $mod+Shift+g                exec gimp
-bindsym $mod+Shift+i                exec inkscape
 bindsym $mod+Shift+t                exec thunar
 bindsym $mod+Shift+v                exec alacritty -e vifm
-bindsym $mod+Shift+w                exec --no-startup-id google-chrome-stable
+bindsym $mod+Shift+g                exec --no-startup-id google-chrome-stable
 bindsym $mod+Shift+x --release      exec --no-startup-id xkill
 bindsym Print --release             exec --no-startup-id flameshot gui --path ~/Pictures/screenshots/
 
