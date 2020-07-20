@@ -42,10 +42,10 @@ bindsym $mod+Shift+Escape exec --no-startup-id systemctl poweroff
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
-        bindsym h resize     shrink width 5 px or 5 ppt
-        bindsym j resize     grow height 5 px or 5 ppt
-        bindsym k resize       shrink height 5 px or 5 ppt
-        bindsym l resize    grow width 5 px or 5 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
 
         # exit resize mode: Enter or Escape
         bindsym Return mode "default"
@@ -59,7 +59,7 @@ bindsym $mod+Control+j resize shrink height 10 px or 10 ppt
 bindsym $mod+Control+h resize grow width 10 px or 10 ppt
 
 # Lock screen
-bindsym $mod+Delete    exec --no-startup-id    i3lock -c 000000
+bindsym $mod+Delete    exec --no-startup-id i3lock -c 000000
 
 # hide/unhide i3status bar
 bindsym $mod+m    bar mode toggle
@@ -99,7 +99,7 @@ bindsym $mod+Shift+Tab           move container to workspace back_and_forth; wor
 bindsym $mod+Tab                 workspace back_and_forth
 
 # switch to any window with rofi
-bindsym Mod1+Tab                 exec "rofi -theme Arc-Dark -font 'JetBrainsMono 14' -show-icons -width 90 -show window"
+bindsym Mod1+Tab    exec "rofi -theme Arc-Dark -font 'JetBrainsMono 14' -show-icons -width 90 -show window"
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f    fullscreen toggle
@@ -114,56 +114,56 @@ bindsym $mod+Mod1+Tab       workspace next_on_output
 bindsym $mod+Left           workspace prev_on_output
 
 # Bindings to "mark" and "goto" mark specified with 1 character
-bindsym $mod+z                   exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
-bindsym $mod+g                   exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
+bindsym $mod+z    exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+bindsym $mod+g    exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
 # Workspace names
-set $ws1   "1"
-set $ws2   "2"
-set $ws3   "3"
-set $ws4   "4"
-set $ws5   "5"
-set $ws6   "6"
-set $ws7   "7"
-set $ws8   "8"
-set $ws9   "9"
-set $ws10  "10"
+set $ws1  "1"
+set $ws2  "2"
+set $ws3  "3"
+set $ws4  "4"
+set $ws5  "5"
+set $ws6  "6"
+set $ws7  "7"
+set $ws8  "8"
+set $ws9  "9"
+set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1   workspace $ws1
-bindsym $mod+2   workspace $ws2
-bindsym $mod+3   workspace $ws3
-bindsym $mod+4   workspace $ws4
-bindsym $mod+5   workspace $ws5
-bindsym $mod+6   workspace $ws6
-bindsym $mod+7   workspace $ws7
-bindsym $mod+8   workspace $ws8
-bindsym $mod+9   workspace $ws9
-bindsym $mod+0   workspace $ws10
+bindsym $mod+1    workspace $ws1
+bindsym $mod+2    workspace $ws2
+bindsym $mod+3    workspace $ws3
+bindsym $mod+4    workspace $ws4
+bindsym $mod+5    workspace $ws5
+bindsym $mod+6    workspace $ws6
+bindsym $mod+7    workspace $ws7
+bindsym $mod+8    workspace $ws8
+bindsym $mod+9    workspace $ws9
+bindsym $mod+0    workspace $ws10
 
 # determine which workspace appears on which screen
-workspace 1  output  HDMI-A-0
-workspace 2  output  HDMI-A-0
-workspace 3  output  HDMI-A-0
-workspace 4  output  HDMI-A-0
-workspace 5  output  HDMI-A-0
-workspace 6  output  HDMI-A-0
-workspace 7  output  eDP
-workspace 8  output  eDP
-workspace 9  output  eDP
-workspace 10 output  eDP
+workspace 1  output HDMI-A-0
+workspace 2  output HDMI-A-0
+workspace 3  output HDMI-A-0
+workspace 4  output HDMI-A-0
+workspace 5  output HDMI-A-0
+workspace 6  output HDMI-A-0
+workspace 7  output eDP
+workspace 8  output eDP
+workspace 9  output eDP
+workspace 10 output eDP
 
 # move focused container to workspace and switch to workspace
-bindsym $mod+Shift+1     move container to workspace $ws1;   workspace $ws1
-bindsym $mod+Shift+2     move container to workspace $ws2;   workspace $ws2
-bindsym $mod+Shift+3     move container to workspace $ws3;   workspace $ws3
-bindsym $mod+Shift+4     move container to workspace $ws4;   workspace $ws4
-bindsym $mod+Shift+5     move container to workspace $ws5;   workspace $ws5
-bindsym $mod+Shift+6     move container to workspace $ws6;   workspace $ws6
-bindsym $mod+Shift+7     move container to workspace $ws7;   workspace $ws7
-bindsym $mod+Shift+8     move container to workspace $ws8;   workspace $ws8
-bindsym $mod+Shift+9     move container to workspace $ws9;   workspace $ws9
-bindsym $mod+Shift+0     move container to workspace $ws10;  workspace $ws10
+bindsym $mod+Shift+1    move container to workspace $ws1;  workspace $ws1
+bindsym $mod+Shift+2    move container to workspace $ws2;  workspace $ws2
+bindsym $mod+Shift+3    move container to workspace $ws3;  workspace $ws3
+bindsym $mod+Shift+4    move container to workspace $ws4;  workspace $ws4
+bindsym $mod+Shift+5    move container to workspace $ws5;  workspace $ws5
+bindsym $mod+Shift+6    move container to workspace $ws6;  workspace $ws6
+bindsym $mod+Shift+7    move container to workspace $ws7;  workspace $ws7
+bindsym $mod+Shift+8    move container to workspace $ws8;  workspace $ws8
+bindsym $mod+Shift+9    move container to workspace $ws9;  workspace $ws9
+bindsym $mod+Shift+0    move container to workspace $ws10; workspace $ws10
 
 ################################################################################
 # Layout
@@ -172,9 +172,9 @@ bindsym $mod+Shift+0     move container to workspace $ws10;  workspace $ws10
 workspace_layout    tabbed
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s      layout stacking
-bindsym $mod+w      layout tabbed
-bindsym $mod+e      layout toggle split
+bindsym $mod+s    layout stacking
+bindsym $mod+w    layout tabbed
+bindsym $mod+e    layout toggle split
 
 #start in opposite orientation from your monitor
 default_orientation    vertical
@@ -205,11 +205,11 @@ bindsym $mod+c    focus child
 # Scratchpad
 #######################################
 # Move the currently focused window to the scratchpad
-bindsym $mod+minus     move scratchpad
+bindsym $mod+minus    move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+plus      scratchpad show, resize set 1900 1000, move position center
+bindsym $mod+plus    scratchpad show, resize set 1900 1000, move position center
 
 ################################################################################
 # Borders
@@ -275,26 +275,26 @@ bindsym XF86AudioMicMute        exec pactl set-source-mute alsa_input.pci-0000_0
 # brightness
 #######################################
 # Control brightness more precisely through software `brightnessctl`
-bindsym XF86MonBrightnessDown     exec "light -U 5"
-bindsym XF86MonBrightnessUp       exec "light -A 5"
+bindsym XF86MonBrightnessDown    exec "light -U 5"
+bindsym XF86MonBrightnessUp      exec "light -A 5"
 
 # Toggle laptop screen
-bindsym $mod+Control+b            exec --no-startup-id ~/.local/bin/toggle_laptop_brightness
+bindsym $mod+Control+b    exec --no-startup-id ~/.local/bin/toggle_laptop_brightness
 
 ################################################################################
 # applications
 #######################################
 # Start
-bindsym $mod+BackSpace              exec alacritty -e glances
-bindsym $mod+Print --release        exec --no-startup-id flameshot screen --path ~/Pictures/screenshots/
-bindsym $mod+Shift+a                exec audacious
-bindsym $mod+Shift+d --release      exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym $mod+Shift+f                exec --no-startup-id firefox
-bindsym $mod+Shift+t                exec thunar
-bindsym $mod+Shift+v                exec alacritty -e vifm
-bindsym $mod+Shift+g                exec --no-startup-id google-chrome-stable
-bindsym $mod+Shift+x --release      exec --no-startup-id xkill
-bindsym Print --release             exec --no-startup-id flameshot gui --path ~/Pictures/screenshots/
+bindsym $mod+BackSpace            exec alacritty -e glances
+bindsym $mod+Print --release      exec --no-startup-id flameshot screen --path ~/Pictures/screenshots/
+bindsym $mod+Shift+a              exec audacious
+bindsym $mod+Shift+d --release    exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+Shift+f              exec --no-startup-id firefox
+bindsym $mod+Shift+t              exec thunar
+bindsym $mod+Shift+v              exec alacritty -e vifm
+bindsym $mod+Shift+g              exec --no-startup-id google-chrome-stable
+bindsym $mod+Shift+x --release    exec --no-startup-id xkill
+bindsym Print --release           exec --no-startup-id flameshot gui --path ~/Pictures/screenshots/
 
 # Open applications on specific workspaces
 assign [class="(?i)code"]               $ws1
@@ -303,7 +303,6 @@ assign [class="(?i)firefox"]            $ws3
 assign [class="(?i)google-chrome"]      $ws3
 assign [class="(?i)scribus"]            $ws4
 assign [class="Audacity"]               $ws4
-assign [class="Audacious"]              $ws4
 assign [class="Gimp"]                   $ws4
 assign [class="Inkscape"]               $ws4
 assign [class="vlc"]                    $ws4
@@ -322,7 +321,6 @@ for_window [class="(?i)google-chrome"]      workspace $ws3
 for_window [class="(?i)org.gnome.Nautilus"] workspace $ws5
 for_window [class="(?i)scribus"]            workspace $ws4
 for_window [class="(?i)zathura"]            workspace $ws6
-for_window [class="Audacious"]              workspace $ws4
 for_window [class="Gimp"]                   workspace $ws4
 for_window [class="Inkscape"]               workspace $ws4
 for_window [class="Transmission"]           workspace $ws8
@@ -333,33 +331,33 @@ for_window [class="vlc"]                    workspace $ws4
 for_window [title="(?i)libreoffice"]        workspace $ws7
 
 # Open specific applications in floating mode
-for_window [class="(?i)virtualbox"]    floating enable border pixel 2
-for_window [class="GParted"]           floating enable border pixel 2
-for_window [class="Lightdm-settings"]  floating enable pixel 2
-for_window [class="Lxappearance"]      floating enable sticky enable border pixel 2
-for_window [class="Nitrogen"]          floating enable sticky enable border pixel 2
-for_window [title="File Transfer*"]    floating enable border pixel 2
-for_window [title="alsamixer"]         floating enable border pixel 2
-for_window [class="(?i)zoom"]          floating enable border pixel 2
+for_window [class="(?i)virtualbox"]   floating enable border pixel 2
+for_window [class="GParted"]          floating enable border pixel 2
+for_window [class="Lightdm-settings"] floating enable pixel 2
+for_window [class="Lxappearance"]     floating enable sticky enable border pixel 2
+for_window [class="Nitrogen"]         floating enable sticky enable border pixel 2
+for_window [title="File Transfer*"]   floating enable border pixel 2
+for_window [title="alsamixer"]        floating enable border pixel 2
+for_window [class="(?i)zoom"]         floating enable border pixel 2
 
 # Autostart applications
-exec --no-startup-id         brightnessctl s 40%
-exec --no-startup-id         firefox
-exec --no-startup-id         nitrogen --restore
-exec --no-startup-id         nm-applet
-exec --no-startup-id         pasystray
-exec --no-startup-id         todoist
-exec --no-startup-id         xfce4-clipman
-exec_always --no-startup-id  unclutter --timeout 3 --jitter 20 --ignore-scrolling &
+exec --no-startup-id        brightnessctl s 40%
+exec --no-startup-id        firefox
+exec --no-startup-id        nitrogen --restore
+exec --no-startup-id        nm-applet
+exec --no-startup-id        pasystray
+exec --no-startup-id        todoist
+exec --no-startup-id        xfce4-clipman
+exec_always --no-startup-id unclutter --timeout 3 --jitter 20 --ignore-scrolling &
 
 ################################################################################
 # keyboard / mouse
 #######################################
 # Set compose key to Right Ctrl
-exec_always --no-startup-id                   setxkbmap -option "compose:rctrl"
+exec_always --no-startup-id    setxkbmap -option "compose:rctrl"
 
 # Delay, interval
-exec_always --no-startup-id                   xset r rate 250 60
+exec_always --no-startup-id    xset r rate 250 60
 
 ################################################################################
 # colors
@@ -379,7 +377,7 @@ bar {
         background #222222
         statusline #dddddd
         separator #666666
-#                          border    backgr.    text
+#                         border  backgr. text
         focused_workspace #0088CC #0088CC #ffffff #cccccc
         active_workspace #333333 #333333 #ffffff #181715
         inactive_workspace #333333 #333333 #888888 #AAAAAA
@@ -388,10 +386,10 @@ bar {
 }
 
 # Theme colors
-# class                   border  backgr. text    indic.  child_border
+# class          border  backgr. text    indic.  child_border
   client.focused #0088CC #0088CC #ffffff #dddddd
   client.focused_inactive #333333 #333333 #888888 #292d2e
   client.unfocused #333333 #333333 #888888 #292d2e
   client.urgent #2f343a #900000 #ffffff #900000
-  client.placeholder      #F9FAF9 #061229 #FFFFFF #061229
-  client.background       #061229
+  client.placeholder #F9FAF9 #061229 #FFFFFF #061229
+  client.background #061229
