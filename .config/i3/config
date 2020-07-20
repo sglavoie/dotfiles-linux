@@ -94,7 +94,7 @@ bindsym $mod+Shift+k    move up
 bindsym $mod+Shift+l    move right
 
 # workspace back and forth (with/without active container)
-workspace_auto_back_and_forth    yes
+workspace_auto_back_and_forth    no
 bindsym $mod+Shift+Tab           move container to workspace back_and_forth; workspace back_and_forth
 bindsym $mod+Tab                 workspace back_and_forth
 
@@ -376,23 +376,22 @@ bar {
     bindsym button5 nop
 
     colors {
-        background #000000
-        statusline #FDFFFC
-        separator  #64A312
+        background #222222
+        statusline #dddddd
+        separator #666666
 #                          border    backgr.    text
-        focused_workspace  #000000   #FFFF00    #000000
-        active_workspace   #20394D   #20394D    #FFFFFF
-        inactive_workspace #222D32   #64A312    #000000
-        binding_mode       #FFFFFF   #1264A3    #FFFFFF
-        urgent_workspace   #FFFFFF   #CD2553    #FDFFFC
+        focused_workspace #0088CC #0088CC #ffffff #cccccc
+        active_workspace #333333 #333333 #ffffff #181715
+        inactive_workspace #333333 #333333 #888888 #AAAAAA
+        urgent_workspace #2f343a #900000 #ffffff #FFFFFF
     }
 }
 
 # Theme colors
 # class                   border  backgr. text    indic.  child_border
-  client.focused          #000000 #00C8FF #000000 #FF0000 #00C8FF
-  client.focused_inactive #222D32 #020D14 #CFD8DC #454948
-  client.unfocused        #061229 #061229 #74848B #454948
-  client.urgent           #FFFFFF #CD2553 #FDFFFC #FDFFFC
+  client.focused #0088CC #0088CC #ffffff #dddddd
+  client.focused_inactive #333333 #333333 #888888 #292d2e
+  client.unfocused #333333 #333333 #888888 #292d2e
+  client.urgent #2f343a #900000 #ffffff #900000
   client.placeholder      #F9FAF9 #061229 #FFFFFF #061229
   client.background       #061229
