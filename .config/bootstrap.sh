@@ -1,7 +1,4 @@
 #!/bin/bash
-# Bash
-ln -sf ~/Dropbox/.custom/bash/.bash_aliases ~/.bash_aliases
-
 # Fonts
 ln -nsf ~/Dropbox/.custom/fonts ~/.fonts
 
