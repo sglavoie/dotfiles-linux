@@ -14,6 +14,8 @@ export BROWSER='/usr/bin/google-chrome-stable'
 # Get colorized output for `man` pages with `bat`
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
