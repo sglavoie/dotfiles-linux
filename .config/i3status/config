@@ -35,7 +35,7 @@ load {
 }
 
 memory {
-        format = "U · %used (F · %available) "
+        format = " %used (F · %available) "
         threshold_degraded = "15%"
         threshold_critical = "5%"
         format_degraded = " Memory LOW: %free "
@@ -73,5 +73,5 @@ wireless _first_ {
 
 tztime local {
         # format = "%Y-%m-%d %H:%M:%S"
-        format = " %d.%m.%Y · %H:%M "
+        format = " %a %d %b %Y %I:%M %p %Z"
 }
