@@ -254,6 +254,10 @@ bindsym $mod+masculine    exec alacritty -e bc
 # Focus applications
 bindsym $mod+q [class="Todoist"] focus
 
+# Display multiple time zones around the world
+bindsym $mod+Mod1+t    exec --no-startup-id ~/Dropbox/.custom/dmenu/times.sh
+
+
 ################################################################################
 # sound
 #######################################
