@@ -346,14 +346,15 @@ for_window [title="alsamixer"]        floating enable border pixel 2
 for_window [class="(?i)zoom"]         floating enable border pixel 2
 
 # Autostart applications
-exec --no-startup-id         brightnessctl s 40%
-exec --no-startup-id         google-chrome-stable
-exec --no-startup-id         nitrogen --restore
-exec --no-startup-id         nm-applet
-exec --no-startup-id         pasystray
-exec --no-startup-id         todoist
-exec --no-startup-id         xfce4-clipman
-exec_always --no-startup-id  unclutter --timeout 3 --jitter 20 --ignore-scrolling &
+exec --no-startup-id    brightnessctl s 40%
+exec --no-startup-id    google-chrome-stable
+exec --no-startup-id    nitrogen --restore
+exec --no-startup-id    nm-applet
+exec --no-startup-id    pasystray
+exec --no-startup-id    todoist
+exec --no-startup-id    xfce4-clipman
+exec --no-startup-id    unclutter --timeout 5 --jitter 20 --ignore-scrolling &
+exec --no-startup-id    compton -CG --config /dev/null
 
 ################################################################################
 # keyboard / mouse
