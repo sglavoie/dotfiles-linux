@@ -353,7 +353,7 @@ exec --no-startup-id    nm-applet
 exec --no-startup-id    pasystray
 exec --no-startup-id    todoist
 exec --no-startup-id    xfce4-clipman
-exec --no-startup-id    unclutter --timeout 5 --jitter 20 --ignore-scrolling &
+exec --no-startup-id    unclutter --jitter 40 --ignore-scrolling &
 exec --no-startup-id    compton -CG --config /dev/null
 
 ################################################################################
