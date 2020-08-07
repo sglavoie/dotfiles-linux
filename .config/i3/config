@@ -289,7 +289,7 @@ bindsym $mod+Control+b    exec --no-startup-id ~/.local/bin/toggle_laptop_bright
 # applications
 #######################################
 # Start
-bindsym $mod+BackSpace              exec alacritty -e glances
+bindsym $mod+BackSpace              exec alacritty -e bashtop
 bindsym $mod+Print --release        exec --no-startup-id flameshot screen --path ~/Pictures/screenshots/
 bindsym $mod+Shift+a                exec audacious
 bindsym $mod+Shift+d --release      exec "killall dunst; exec notify-send 'restart dunst'"
