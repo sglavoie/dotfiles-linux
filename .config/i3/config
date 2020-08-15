@@ -3,28 +3,35 @@
 ################################################################################
 # General settings
 
-# Set mod key (Mod1=<Alt>, Mod4=<Super>)
+# set mod key (Mod1=Alt, Mod4=Super)
+# ⇒ the main modifier used to trigger shortcuts
 set $mod Mod4
 
-# Font for window titles
+# font for window titles
+# ⇒ this is what you see in your i3bar
 font xft:JetBrainsMono-Regular 12
 
-# start a terminal
+# launch a terminal
 bindsym $mod+Return     exec alacritty
 
 # kill focused window
+# ⇒ usual way to close applications
 bindsym $mod+x          kill
 
 # reload the configuration file
+# ⇒ apply changes from this file on the fly
 bindsym $mod+Shift+c    reload
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# restart i3 inplace
+# ⇒ preserves your layout/session, can be used when upgrading i3
 bindsym $mod+Shift+r    restart
 
-# exit i3 (logs you out of your X session)
+# exit i3
+# ⇒ logs you out of your X session
 bindsym $mod+Shift+e    exec --no-startup-id i3-msg exit
 
-# Set shut down, restart and locking features
+# set shut down, restart and locking features
+# ⇒ type `$mod+Shift+Delete` then either `e`, `r` or `s`
 bindsym $mod+Shift+Delete   mode "$mode_system"
 set $mode_system (e)xit, (r)eboot, (s)hutdown
 mode "$mode_system" {
@@ -32,54 +39,72 @@ mode "$mode_system" {
     bindsym r    exec --no-startup-id systemctl reboot
     bindsym s    exec --no-startup-id systemctl poweroff
 
-    # exit system mode: "Enter" or "Escape"
+    # exit system mode with "Enter" or "Escape"
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
+# shut down the system without confirmation
+# ⇒ this shortcut is hard to trigger with one hand on purpose!
 bindsym $mod+Shift+Escape exec --no-startup-id systemctl poweroff
 
-# Resize window (you can also use the mouse for that)
+# resize windows
+# you can also use the mouse for that:
+# for tiled windows ⇒
+  # drag the border with LeftClick or RightClick
+# for floating windows ⇒
+  # `mod + RightClick`, then drag
+
+# resize with smaller steps to get more control
 bindsym $mod+r mode "resize"
 mode "resize" {
-        bindsym h resize shrink width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
+        bindsym h resize shrink width 2 px or 2 ppt
+        bindsym j resize grow height 2 px or 2 ppt
+        bindsym k resize shrink height 2 px or 2 ppt
+        bindsym l resize grow width 2 px or 2 ppt
 
         # exit resize mode: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
-# Resize without entering "resize mode"
+# resize without entering "resize mode"
+# ⇒ I find this more convenient. I usually don't care about
+# precise window sizes, so here the steps are far greater.
+# If I want more control, then entering resize mode will do.
 bindsym $mod+Control+l resize shrink width 10 px or 10 ppt
 bindsym $mod+Control+k resize grow height 10 px or 10 ppt
 bindsym $mod+Control+j resize shrink height 10 px or 10 ppt
 bindsym $mod+Control+h resize grow width 10 px or 10 ppt
 
-# Lock screen
+# lock the screen with a black color background
 bindsym $mod+Delete    exec --no-startup-id i3lock -c 000000
 
-# hide/unhide i3status bar
+# hide/unhide i3status bar (applies to all monitors)
 bindsym $mod+m    bar mode toggle
 
 ################################################################################
 # navigation
 ######################################
-# Set up monitor at launch automatically and set laptop screen as the primary one.
-# Set monitor to the top (being on the vertical axis makes it possible to focus
-# bottom/top and jump from one monitor to the next, which is not possible if the
-# monitor is set to top-left or top-right in diagonal, for instance)
-exec_always xrandr --output eDP --primary --mode 1920x1080 --pos 0x1080 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-0 --off --output DisplayPort-1 --off
+# Set up monitor at launch automatically and set laptop screen as the
+# primary one. Set monitor to the top (being on the vertical axis
+# makes it possible to focus bottom/top and jump from one monitor to
+# the next, which is not possible if the monitor is set to top-left or
+# top-right in diagonal, for instance)
+exec_always xrandr --output eDP --primary --mode 1920x1080 --pos 0x1080 \
+    --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate normal \
+    --output DisplayPort-0 --off --output DisplayPort-1 --off
 
-# Container focuses where the mouse is (yes/no)
+# container focuses where the mouse is (yes/no)
 focus_follows_mouse    no
 
-# Go to last urgent workspace
+# go to last urgent workspace
+# ⇒ this is the worspace that turns "red" by default when something happens
+#   in an unfocused workspace, like an application pop-up
 bindsym $mod+u    [urgent=latest] focus
 
 # change focus
+# ⇒ works in all modes: tabbed, stacked, etc.
 bindsym $mod+h    focus left
 bindsym $mod+j    focus down
 bindsym $mod+k    focus up
@@ -87,37 +112,62 @@ bindsym $mod+Down focus down
 bindsym $mod+Up   focus up
 bindsym $mod+l    focus right
 
-# move focused window
+# move focused window (works in all modes)
 bindsym $mod+Shift+h    move left
 bindsym $mod+Shift+j    move down
 bindsym $mod+Shift+k    move up
 bindsym $mod+Shift+l    move right
 
-# workspace back and forth (with/without active container)
+# for example, switching from workspace 1 to workspace 2 (e.g. mod+2) then
+# typing again mod+2 would bring you back to workspace 1 without having to
+# remember that you came from workspace 1 in the first place.
 workspace_auto_back_and_forth    no
-bindsym $mod+Shift+Tab           move container to workspace back_and_forth; workspace back_and_forth
-bindsym $mod+Tab                 workspace back_and_forth
 
-# switch to any window with rofi
-bindsym Mod1+Tab    exec "rofi -theme Arc-Dark -font 'JetBrainsMono 14' -show-icons -width 90 -show window"
+# alternate between the last two workspaces that have been used
+bindsym $mod+Tab    workspace back_and_forth
+
+# move a container (window or group of windows if you grouped them) to the
+# "alternate" workspace you visited last
+# (the one brought with $mod+Tab in this case)
+bindsym $mod+Shift+Tab           move container to workspace back_and_forth; \
+                                 workspace back_and_forth
+
+# switch to any window with Rofi
+# ⇒ this simulates the familiar behavior of Alt+Tab on Windows and allows you
+#   to find windows by typing, but uses a better operating system to do it ;).
+bindsym Mod1+Tab    exec "rofi -theme Arc-Dark -font 'JetBrainsMono 14' \
+                    -show-icons -width 90 -show window"
 
 # toggle fullscreen mode for the focused container
+# ⇒ this hides the i3bar for the current monitor
+# ⇒ you can still leave the i3bar hidden and switch to other workspaces
 bindsym $mod+f    fullscreen toggle
 
-# Navigate workspaces next / previous
+# navigate workspaces next / previous
+# ⇒ works for all monitors and will go in increasing order
+#   if workspaces 1 to 6 are on monitorX and workspaces
+#   7 to 10 are on monitorY as in this config, this will switch
+#   to any workspace where there is at least one container
 bindsym $mod+Mod1+l         workspace next
 bindsym $mod+Mod1+h         workspace prev
 bindsym $mod+Shift+Right    workspace next
 bindsym $mod+Shift+Left     workspace prev
+
+# the difference with the above is that it limits movements to the
+# the current monitor only
 bindsym $mod+Right          workspace next_on_output
 bindsym $mod+Mod1+Tab       workspace next_on_output
 bindsym $mod+Left           workspace prev_on_output
 
 # Bindings to "mark" and "goto" mark specified with 1 character
+# ⇒ rarely used, but can still be useful if you have many containers open
 bindsym $mod+z    exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
 bindsym $mod+g    exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
-# Workspace names
+# Workspace names — can be customized with emojis and names
+# ⇒ I find I like minimalism best and just mentally associate
+#   one workspace number with a specific type of task
+# ⇒ those are set across all monitors
 set $ws1  "1"
 set $ws2  "2"
 set $ws3  "3"
@@ -129,7 +179,7 @@ set $ws8  "8"
 set $ws9  "9"
 set $ws10 "10"
 
-# switch to workspace
+# switch to workspace (no matter which monitor it is set to)
 bindsym $mod+1    workspace $ws1
 bindsym $mod+2    workspace $ws2
 bindsym $mod+3    workspace $ws3
@@ -142,6 +192,7 @@ bindsym $mod+9    workspace $ws9
 bindsym $mod+0    workspace $ws10
 
 # determine which workspace appears on which screen
+# ⇒ with a single output screen, this is not necessary
 workspace 1  output HDMI-A-0
 workspace 2  output HDMI-A-0
 workspace 3  output HDMI-A-0
@@ -186,9 +237,17 @@ default_orientation    vertical
 bindsym $mod+t    split toggle
 
 # toggle tiling / floating
+# ⇒ this works on a container with any number of windows!
+#   if you select multiple windows with `$mod+a` (see below)
+#   to group them and then toggle them, the whole group will
+#   either tile or float
 bindsym $mod+Shift+space    floating toggle
 
 # change focus between tiling / floating windows
+# ⇒ If you leave a floating window on top of other tiled windows,
+#   you can switch the focus from the one on top to the one(s) in
+#   the background (useful with apps like Zoom or Google Meet that
+#   you want to keep in the foreground)
 bindsym $mod+space    focus mode_toggle
 
 # Use Mouse+$mod to drag floating windows
@@ -241,7 +300,6 @@ bindsym $mod+Mod1+u    exec --no-startup-id ~/Dropbox/.custom/dmenu/university.s
 bindsym $mod+Mod1+w    exec --no-startup-id ~/Dropbox/.custom/dmenu/work.sh
 bindsym $mod+Shift+u   exec --no-startup-id ~/Dropbox/.custom/dmenu/university_launchers.sh
 bindsym $mod+d         exec --no-startup-id ~/Dropbox/.custom/dmenu/software.sh
-
 
 ################################################################################
 # shortcuts
