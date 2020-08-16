@@ -56,16 +56,13 @@ alias v='vim'
 alias ..='cd ..'
 alias ...='cd ../../../'
 alias ....='cd ../../../../'
-alias cdalias='cd ~/Dropbox/.custom/bash'
 alias cdcustom='cd ~/Dropbox/.custom'
 alias cddmenu='cd ~/Dropbox/.custom/dmenu'
-alias cddot='cd ~/.dotfiles'
 alias cdzsh='cd ~/Dropbox/.custom/zsh'
 alias cheat='cd ~/Dropbox/Programming/cheatsheets'
 
 # Work paths
 alias cddatopian='cd ~/Dropbox/career/datopian'
-alias cdplaybook='cd ~/dev/datopian/gitlab/playbook'
 
 # Colorize the grep command output for ease of use (good for log files)
 alias grep='grep --color=auto'
@@ -79,7 +76,7 @@ alias cdfcs='cd ~/Dropbox/university/modules/level4/fundamentals_of_computer_sci
 alias cdmath='cd ~/Dropbox/university/modules/level4/discrete_mathematics'
 alias cdnotes='cd ~/Dropbox/notes'
 alias cdnummath='cd ~/Dropbox/university/modules/level4/mathematics_for_CS'
-alias cdoop='cd ~/Dropbox/university/modules/level5/object_oriented_programming/mid-term/'
+alias cdoop='cd ~/Dropbox/university/modules/level5/object_oriented_programming/end-term/OtoDecks'
 alias cdprog1='cd ~/Dropbox/university/modules/level4/introduction_to_programming_i'
 alias cdprog='cd ~/Dropbox/university/modules/level4/introduction_to_programming_ii/mid-term'
 alias cdweb='cd ~/Dropbox/university/modules/level4/web_development'
@@ -103,6 +100,7 @@ alias cdhackerrank='cd ~/dev/sglavoie/programming-challenges/hackerrank'
 # Python related
 alias alearning='source ~/Programming/virtualenvs/learning/bin/activate'
 alias ap='source .venv/bin/activate'
+alias avenv='source venv/bin/activate'
 alias arepl='source ~/Programming/virtualenvs/repl/bin/activate'
 alias b='python3 ~/Programming/scripts/rsync_backup.py'
 alias cleanhistory='python \
