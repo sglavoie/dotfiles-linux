@@ -6,9 +6,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release',
 """" }}}
 
 """" Design & appearance {{{
-Plug 'drewtempelmeyer/palenight.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 """" }}}
 
