@@ -2,11 +2,10 @@ call plug#begin($HOME . '/.local/share/nvim/plugged')
 
 """" Code completion {{{
 Plug 'neoclide/coc.nvim', {'branch': 'release',
-            \ 'for': ['python', 'javascript', 'cpp', 'c', 'json']}
+            \ 'for': ['python', 'javascript', 'cpp', 'c', 'json', 'h']}
 """" }}}
 
 """" Design & appearance {{{
-Plug 'arcticicestudio/nord-vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
@@ -18,7 +17,6 @@ Plug 'psf/black', { 'tag': '19.10b0', 'for': 'python' }
 """" }}}
 
 """" Language specific {{{
-Plug 'ap/vim-css-color'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript', 'markdown'] }
@@ -36,7 +34,7 @@ Plug 'vimwiki/vimwiki'
 """" }}}
 
 """" Useful features {{{
-Plug 'SirVer/ultisnips', { 'for': 'python' }
+Plug 'SirVer/ultisnips', { 'for': ['javascript', 'python'] }
 Plug 'junegunn/fzf', { 'dir': $HOME . '/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'machakann/vim-highlightedyank'
