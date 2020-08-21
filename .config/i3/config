@@ -372,26 +372,28 @@ assign [class="vlc"]                    $ws4
 assign [class="(?i)org.gnome.Nautilus"] $ws5
 assign [class="(?i)zathura"]            $ws6
 assign [title="(?i)libreoffice"]        $ws7
+assign [class="Transmission"]           $ws8
 assign [class="keepassxc"]              $ws8
 assign [class="obs"]                    $ws8
-assign [class="Transmission"]           $ws8
+assign [class="Todoist"]                $ws10
 
 # Automatically switch to workspace when opening those
-for_window [class="(?i)brave-browser"]      workspace $ws3
 for_window [class="(?i)code"]               workspace $ws1
+for_window [class="(?i)brave-browser"]      workspace $ws3
 for_window [class="(?i)firefox"]            workspace $ws3
 for_window [class="(?i)google-chrome"]      workspace $ws3
-for_window [class="(?i)org.gnome.Nautilus"] workspace $ws5
 for_window [class="(?i)scribus"]            workspace $ws4
-for_window [class="(?i)zathura"]            workspace $ws6
 for_window [class="Gimp"]                   workspace $ws4
 for_window [class="Inkscape"]               workspace $ws4
-for_window [class="Transmission"]           workspace $ws8
 for_window [class="audacity"]               workspace $ws4
+for_window [class="vlc"]                    workspace $ws4
+for_window [class="(?i)org.gnome.Nautilus"] workspace $ws5
+for_window [class="(?i)zathura"]            workspace $ws6
+for_window [title="(?i)libreoffice"]        workspace $ws7
+for_window [class="Transmission"]           workspace $ws8
 for_window [class="keepassxc"]              workspace $ws8
 for_window [class="obs"]                    workspace $ws8
-for_window [class="vlc"]                    workspace $ws4
-for_window [title="(?i)libreoffice"]        workspace $ws7
+for_window [class="Todoist"]                workspace $ws10
 
 # Open specific applications in floating mode
 for_window [class="(?i)virtualbox"]   floating enable border pixel 2
@@ -409,9 +411,9 @@ exec --no-startup-id    google-chrome-stable
 exec --no-startup-id    nitrogen --restore
 exec --no-startup-id    nm-applet
 exec --no-startup-id    pasystray
-exec --no-startup-id    todoist
 exec --no-startup-id    xfce4-clipman
 exec --no-startup-id    compton -CG --config /dev/null
+exec --no-startup-id    ~/.config/Todoist/delayed_launch.sh
 
 # First kill it as it doesn't always respect the `--timeout` option otherwise
 exec_always --no-startup-id    "killall unclutter; unclutter --jitter 40 --ignore-scrolling --timeout 5 &"
