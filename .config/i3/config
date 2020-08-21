@@ -411,8 +411,10 @@ exec --no-startup-id    nm-applet
 exec --no-startup-id    pasystray
 exec --no-startup-id    todoist
 exec --no-startup-id    xfce4-clipman
-exec --no-startup-id    unclutter --jitter 40 --ignore-scrolling &
 exec --no-startup-id    compton -CG --config /dev/null
+
+# First kill it as it doesn't always respect the `--timeout` option otherwise
+exec_always --no-startup-id    "killall unclutter; unclutter --jitter 40 --ignore-scrolling --timeout 5 &"
 
 ################################################################################
 # keyboard / mouse
