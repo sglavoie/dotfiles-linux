@@ -370,6 +370,7 @@ assign [class="Gimp"]                   $ws4
 assign [class="Inkscape"]               $ws4
 assign [class="vlc"]                    $ws4
 assign [class="(?i)org.gnome.Nautilus"] $ws5
+assign [class="(?i)atril"]              $ws6
 assign [class="(?i)zathura"]            $ws6
 assign [title="(?i)libreoffice"]        $ws4
 assign [class="Transmission"]           $ws8
