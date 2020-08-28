@@ -5,6 +5,9 @@ zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_datopian
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/dev/git-scripts:$HOME/.local/bin:$HOME/.node/bin:$HOME/.cargo/bin:$HOME/.gem/ruby/2.7.0/bin:$PATH"
 
+# Source `z` to jump around
+. $HOME/.z_git/z.sh
+
 # Set default editor to use
 export EDITOR='nvim'
 export VISUAL='nvim'
