@@ -289,6 +289,7 @@ bindsym $mod+n    border normal
 ################################################################################
 # dmenu
 #######################################
+bindsym $mod+Mod1+b    exec --no-startup-id ~/Dropbox/.custom/dmenu/books.sh
 bindsym $mod+Mod1+c    exec --no-startup-id ~/Dropbox/.custom/dmenu/cheatsheets.sh
 bindsym $mod+Mod1+d    exec --no-startup-id ~/Dropbox/.custom/dmenu/documents.sh
 bindsym $mod+Mod1+e    exec --no-startup-id ~/Dropbox/.custom/dmenu/edit_scripts.sh
