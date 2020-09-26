@@ -85,11 +85,10 @@ alias cdweb='cd ~/Dropbox/university/modules/level4/web_development'
 # GitHub paths
 alias cdbettervim='cd ~/dev/sglavoie/better-vim-experience'
 alias cdgit='cd ~/dev'
-alias cdrepl='cd ~/dev/sglavoie/sgREPL'
+alias cdrepl='cd ~/dev/sglavoie/world-class/REPL'
 alias cdsg='cd ~/dev/sglavoie/sglavoie.github.io-source'
 alias cdsnippets='cd ~/dev/sglavoie/code-snippets'
 alias cdutilities='cd ~/dev/sglavoie/python-utilities'
-alias cdworldrepl='cd ~/dev/sglavoie/REPL'
 
 # Code challenges paths
 alias cdchallenges='cd ~/dev/sglavoie/programming-challenges'
