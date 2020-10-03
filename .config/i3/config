@@ -417,6 +417,7 @@ exec --no-startup-id    pasystray
 exec --no-startup-id    xfce4-clipman
 exec --no-startup-id    compton -CG --config /dev/null
 exec --no-startup-id    ~/.config/Todoist/delayed_launch.sh
+exec --no-startup-id    emote
 
 # First kill it as it doesn't always respect the `--timeout` option otherwise
 exec_always --no-startup-id    "killall unclutter; unclutter --jitter 40 --ignore-scrolling --timeout 5 &"
