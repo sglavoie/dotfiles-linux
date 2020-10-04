@@ -20,22 +20,22 @@ order += "disk /"
 order += "memory"
 # order += "disk /home"
 order += "wireless _first_"
-# order += "battery all"
+order += "battery all"
 # order += "load"
 order += "tztime local"
 # order += "ipv6"
 
 cpu_usage {
-        format = " %usage "
+        format = "💻 %usage "
 }
 
 load {
-        format = " %1min · %5min · %15min "
+        format = "🏋 %1min · %5min · %15min "
         max_threshold = 2.0
 }
 
 memory {
-        format = " %used (F · %available) "
+        format = " 🐏 %used (F · %available) "
         threshold_degraded = "15%"
         threshold_critical = "5%"
         format_degraded = " Memory LOW: %free "
@@ -43,35 +43,35 @@ memory {
 
 disk "/" {
         # format = " hdd %avail "
-        format = " / %avail "
+        format = " 💾 %avail "
 }
 
 wireless _first_ {
 # if you use %speed, i3status requires root privileges
-        format_up = "%essid [%quality] %ip"
+        format_up = "📶 %essid [%quality] %ip"
         format_down = "W: down"
 }
 
-# battery all {
-#         # format = "%status %percentage %remaining %emptytime"
-#         format = " %percentage"
-#         format_down = "No battery"
-#         last_full_capacity = true
-#         integer_battery_capacity = true
-#         # status_chr = ""
-#         status_chr = "⚡"
-#         # status_bat = "bat"
-#         # status_bat = "☉"
-#         status_bat = ""
-#         # status_unk = "?"
-#         status_unk = ""
-#         # status_full = ""
-#         status_full = "☻"
-#         low_threshold = 15
-#         threshold_type = time
-# }
+battery all {
+        # format = "%status %percentage %remaining %emptytime"
+        format = "🔋%percentage"
+        format_down = "No battery"
+        last_full_capacity = true
+        integer_battery_capacity = true
+        status_chr = "🔋"
+        status_chr = "⚡"
+        # status_bat = "bat"
+        # status_bat = "☉"
+        status_bat = "🔋"
+        # status_unk = "?"
+        status_unk = ""
+        # status_full = ""
+        status_full = "☻"
+        low_threshold = 15
+        threshold_type = time
+}
 
 tztime local {
         # format = "%Y-%m-%d %H:%M:%S"
-        format = " %a %d %b %Y %I:%M %p %Z"
+        format = "📅 %a %d %b %Y %I:%M %p %Z"
 }
