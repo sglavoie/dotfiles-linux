@@ -97,7 +97,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: JetBrains Mono
+    family: Iosevka Term SS14
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -108,7 +108,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: JetBrains Mono
+    family: Iosevka Term SS14
 
     # The `style` can be specified to pick a specific face.
     # style: Bold
@@ -119,7 +119,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: JetBrains Mono
+    family: Iosevka Term SS14
 
     # The `style` can be specified to pick a specific face.
     #style: Italic
@@ -130,13 +130,13 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: JetBrains Mono
+    family: Iosevka Term SS14
 
     # The `style` can be specified to pick a specific face.
     #style: Bold Italic
 
   # Point size
-  size: 14
+  size: 16
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -168,61 +168,47 @@ font:
   #use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
-#draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 
-# Colors (Tomorrow Night Bright)
-#colors:
+# Colors
+colors:
   # Default colors
-  #primary:
-  #  background: '#000000'
-  #  foreground: '#eaeaea'
-
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not present.
-    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
-    # is `false`, the normal foreground color will be used.
-    #dim_foreground: '#9a9a9a'
-    #bright_foreground: '#ffffff'
+  primary:
+    background:        '#080808'
+    foreground:        '#b2b2b2'
+    bright_foreground: '#eeeeee'
 
   # Cursor colors
-  #
-  # Colors which should be used to draw the terminal cursor. If these are unset,
-  # the cursor color will be the inverse of the cell color.
-  #cursor:
-  #  text: '#000000'
-  #  cursor: '#ffffff'
+  cursor:
+    text:   '#080808'
+    cursor: '#9e9e9e'
 
   # Selection colors
-  #
-  # Colors which should be used to draw the selection area. If selection
-  # background is unset, selection color will be the inverse of the cell colors.
-  # If only text is unset the cell text color will remain the same.
-  #selection:
-  #  text: '#eaeaea'
-  #  background: '#404040'
+  selection:
+    text:       '#080808'
+    background: '#b2ceee'
 
   # Normal colors
-  #normal:
-  #  black:   '#000000'
-  #  red:     '#d54e53'
-  #  green:   '#b9ca4a'
-  #  yellow:  '#e6c547'
-  #  blue:    '#7aa6da'
-  #  magenta: '#c397d8'
-  #  cyan:    '#70c0ba'
-  #  white:   '#eaeaea'
+  normal:
+    black:   '#373c40'
+    red:     '#ff5454'
+    green:   '#8cc85f'
+    yellow:  '#e3c78a'
+    blue:    '#80a0ff'
+    magenta: '#d183e8'
+    cyan:    '#79dac8'
+    white:   '#a1aab8'
 
   # Bright colors
-  #bright:
-  #  black:   '#666666'
-  #  red:     '#ff3334'
-  #  green:   '#9ec400'
-  #  yellow:  '#e7c547'
-  #  blue:    '#7aa6da'
-  #  magenta: '#b77ee0'
-  #  cyan:    '#54ced6'
-  #  white:   '#ffffff'
+  bright:
+    black:   '#7c8f8f'
+    red:     '#ff5189'
+    green:   '#36c692'
+    yellow:  '#bfbf97'
+    blue:    '#78c2ff'
+    magenta: '#ae81ff'
+    cyan:    '#85dc85'
+    white:   '#e2637f'
 
   # Dim colors
   #

@@ -4,7 +4,7 @@ source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/keybindings.vim
 
 """" APPEARANCE {{{
-colorscheme gruvbox
+colorscheme moonfly
 set background=dark
 """" }}}
 
