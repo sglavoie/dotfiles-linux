@@ -51,13 +51,13 @@ bindkey '^x^x' edit-command-line  # Open default editor
 ##### Functions
 
 # Select a configuration file with fzf and open it with Neovim
-conf() { find ~/.config/* | cut -f1 --complement | fzf | xargs -r nvim ;}
+conf() { find ~/.config/ ~/Dropbox/.custom/ | cut -f1 --complement | fzf | xargs -r nvim ;}
 
-# Select a file from current folder and recursively with fzf and open it with Neovim
-se() { find . | cut -f1 --complement | fzf | xargs -r nvim ;}
+# Select a file from current folder and recursively with fzf and open it with Neovim, ignoring hidden files
+se() { find -not -path '*/\.*' -type f | cut -f1 --complement | fzf | xargs -r nvim ;}
 
-# Select a file recursively from university folder with fzf and open it with default app
-sc() { find ~/Dropbox/university/* | cut -f1 --complement | fzf | xargs -r xdg-open ;}
+# [University specific] Select a file recursively with fzf and open it with default app in the background
+sc() { find ~/Dropbox/university/ ~/dev/sglavoie/world-class/ | cut -f1 --complement | fzf | (xargs -r xdg-open &) ;}
 
 renamemp3() {
 for f in *.mp3; do
