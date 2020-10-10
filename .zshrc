@@ -12,12 +12,20 @@ export PATH="$HOME/dev/git-scripts:$HOME/.local/bin:$HOME/.node/bin:$HOME/.cargo
 export EDITOR='nvim'
 export VISUAL='nvim'
 
+# Hate to admit it, but I have to use it as my daily driver...
 export BROWSER='/usr/bin/google-chrome-stable'
 
 # Get colorized output for `man` pages with `bat`
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+# export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
+# --files: List files that would be searched but do not search
+# --no-ignore: Do not respect .gitignore, etc...
+# --hidden: Search hidden files and folders
+# --follow: Follow symlinks
+# --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!.venv/*" --glob "!node_modules/*"'
 
 # History in cache directory:
 HISTSIZE=10000
@@ -165,5 +173,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-
