@@ -55,12 +55,17 @@ set wildignore+=*.pyc,*.db,*__pycache__*,*.png,*.jpg,*.jpeg,*.pdf
 set wildignore+=*.svg,*.xcf  " Ignores certain files/directories in current path
 set wildmode=full  " Multiple matches in command mode occupy more space, like in Bash
 
-" The Silver Searcher
-if executable('ag')
-    " Use ag over grep
-    set grepprg=ag\ --nogroup\ --nocolor
+if executable("rg")
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+
+" The Silver Searcher
+" if executable('ag')
+"     " Use ag over grep
+"     set grepprg=ag\ --nogroup\ --nocolor
+" endif
+" command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 
 if has("autocmd")
     " If the filetype is Makefile then we need to use tabs

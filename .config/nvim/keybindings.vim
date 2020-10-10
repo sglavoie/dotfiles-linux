@@ -142,8 +142,8 @@ map <leader>f gg=G''
 """" }}}
 
 """" SEARCH {{{
-" Search with The Silver Search
-nnoremap \ :Ag<SPACE>
+" Search with Ripgrep (custom command from after/plugin/config/fzf.vim)
+nnoremap \ :RG<CR>
 """" }}}
 
 """" SPELLING {{{
