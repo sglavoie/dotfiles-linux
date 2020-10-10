@@ -8,7 +8,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release',
 """" Design & appearance {{{
 Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
-Plug 'bluz71/vim-moonfly-colors'
+Plug 'rakr/vim-one'
 """" }}}
 
 """" Formatting {{{
