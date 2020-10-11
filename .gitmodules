@@ -4,3 +4,6 @@
 [submodule ".config/vifm/colors"]
 	path = .config/vifm/colors
 	url = git@github.com:vifm/vifm-colors.git
+[submodule ".config/i3-volume"]
+	path = .config/i3-volume
+	url = git@github.com:hastinbe/i3-volume.git
