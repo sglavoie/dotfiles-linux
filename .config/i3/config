@@ -417,7 +417,6 @@ exec --no-startup-id    pasystray
 exec --no-startup-id    xfce4-clipman
 exec --no-startup-id    compton -CG --config /dev/null
 exec --no-startup-id    ~/.config/Todoist/delayed_launch.sh
-exec --no-startup-id    emote
 
 # First kill it as it doesn't always respect the `--timeout` option otherwise
 exec_always --no-startup-id    "killall unclutter; unclutter --jitter 40 --ignore-scrolling --timeout 5 &"
@@ -446,22 +445,22 @@ bar {
     bindsym button5 nop
 
     colors {
-        background #222222
-        statusline #dddddd
-        separator #666666
-#                         border  backgr. text
-        focused_workspace #0088CC #0088CC #ffffff #cccccc
-        active_workspace #333333 #333333 #ffffff #181715
+        background         #222222
+        statusline         #dddddd
+        separator          #666666
+#                          border  backgr. text
+        focused_workspace  #0088CC #0088CC #ffffff #cccccc
+        active_workspace   #333333 #333333 #ffffff #181715
         inactive_workspace #333333 #333333 #888888 #AAAAAA
-        urgent_workspace #2f343a #900000 #ffffff #FFFFFF
+        urgent_workspace   #2f343a #900000 #ffffff #FFFFFF
     }
 }
 
 # Theme colors
-# class          border  backgr. text    indic.  child_border
-  client.focused #0088CC #00C8FF #ffffff #dddddd
+# class                   border  backgr. text    indic.  child_border
+  client.focused          #0088CC #00C8FF #ffffff #dddddd
   client.focused_inactive #333333 #333333 #888888 #292d2e
-  client.unfocused #333333 #333333 #888888 #292d2e
-  client.urgent #2f343a #900000 #ffffff #900000
-  client.placeholder #F9FAF9 #061229 #FFFFFF #061229
-  client.background #061229
+  client.unfocused        #333333 #333333 #888888 #292d2e
+  client.urgent           #2f343a #900000 #ffffff #900000
+  client.placeholder      #F9FAF9 #061229 #FFFFFF #061229
+  client.background       #061229
