@@ -1,0 +1,6 @@
+[submodule ".config/.config/vifm/colors"]
+	path = .config/.config/vifm/colors
+	url = git@github.com:vifm/vifm-colors.git
+[submodule ".config/vifm/colors"]
+	path = .config/vifm/colors
+	url = git@github.com:vifm/vifm-colors.git
