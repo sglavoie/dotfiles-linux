@@ -369,7 +369,7 @@ tnoremap <C-l> <C-\><C-N><C-w>l
 nnoremap <leader>W :w<CR>:MakeTags<CR>:echo 'ctags have been updated.'<CR>
 """" }}}
 
-""" VIMWIKI {{{
+"""" VIMWIKI {{{
 " 'a' for 'All' (regenerate all HTML pages in wiki)
 nnoremap <Leader>wa :VimwikiAll2HTML<CR>
 
@@ -400,7 +400,12 @@ let wiki_3.path = '~/Dropbox/career/datopian/wiki/'
 let wiki_3.path_html = '~/Dropbox/career/datopian/wiki/html/'
 let wiki_3.index = 'index'
 
-let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
-""" }}}
+let wiki_4 = {}
+let wiki_4.path = '~/Dropbox/university/modules/level5/agile_software_projects/team/'
+let wiki_4.path_html = '~/Dropbox/university/modules/level5/agile_software_projects/team/html/'
+let wiki_4.index = 'index'
+
+let g:vimwiki_list = [wiki_1, wiki_2, wiki_3, wiki_4]
+"""" }}}
 """ }}}
 " vim:fdm=marker
