@@ -4,9 +4,7 @@
     "languageserver": {
         "efm": {
           "command": "efm-langserver",
-          "args": [],
-          // custom config path
-          // "args": ["-c", "~/.config/efm-langserver/config.yaml"],
+          "args": ["-c", "~/.config/efm-langserver/config.yaml"],
           "filetypes": ["vim", "markdown"]
         }
   },
