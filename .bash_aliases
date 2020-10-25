@@ -112,6 +112,7 @@ alias cpsglavoie='cp -rf \
 alias da='deactivate'
 alias jl='jupyter-lab &'
 alias pipupgrade="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
+alias pipupdateall="pip install -U \$(pip freeze | awk '{split(\$0, a, \"==\"); print a[1]}')"
 alias pylint='/usr/bin/env python =pylint'
 alias pythonlines='find . -name \*.py | xargs wc -l'
 alias pyclean='find . -regex ".*\(__pycache__\|\.py[co]\)" -delete'
