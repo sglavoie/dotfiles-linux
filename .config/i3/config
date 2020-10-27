@@ -270,9 +270,9 @@ bindsym $mod+minus    floating toggle; resize set 1900 1000, move position cente
 # If there are multiple scratchpad windows, this command cycles through them.
 # There is an additional keybinding to allow a floating window to be toggled
 # (recovered as a normal window).
-bindsym $mod+plus mode "Scratchpad"; scratchpad show, resize set 1900 1000, move position center
+bindsym $mod+Escape mode "Scratchpad"; scratchpad show, resize set 1900 1000, move position center
 mode "Scratchpad"{
-  bindsym $mod+plus         scratchpad show, resize set 1900 1000, move position center; \
+  bindsym $mod+Escape       scratchpad show, resize set 1900 1000, move position center; \
                             scratchpad show, resize set 1900 1000, move position center
   bindsym $mod+Shift+space  floating toggle; mode "default"
   bindsym Return            scratchpad show; mode "default"
