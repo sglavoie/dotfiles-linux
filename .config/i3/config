@@ -263,7 +263,9 @@ bindsym $mod+c    focus child
 ################################################################################
 # Scratchpad
 #######################################
-# Move the currently focused window to the scratchpad
+# Move the currently focused window to the scratchpad.
+# First, we toggle floating mode and we resize and position the window to make sure
+# it will appear correctly when showing it for the first time.
 bindsym $mod+minus    floating toggle; resize set 1900 1000, move position center; move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
