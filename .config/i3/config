@@ -309,7 +309,6 @@ bindsym $mod+Mod1+f    exec --no-startup-id ~/Dropbox/.custom/dmenu/filepaths.sh
 bindsym $mod+Mod1+q    exec --no-startup-id ~/Dropbox/.custom/dmenu/quotes.sh
 bindsym $mod+Mod1+r    exec --no-startup-id ~/Dropbox/.custom/dmenu/reading.sh
 bindsym $mod+Mod1+s    exec --no-startup-id ~/Dropbox/.custom/dmenu/scripts.sh
-bindsym $mod+Mod1+u    exec --no-startup-id ~/Dropbox/.custom/dmenu/university.sh
 bindsym $mod+Mod1+w    exec --no-startup-id ~/Dropbox/.custom/dmenu/work.sh
 bindsym $mod+Shift+f   exec --no-startup-id ~/Dropbox/.custom/dmenu/thunar_launcher.sh
 bindsym $mod+Shift+u   exec --no-startup-id ~/Dropbox/.custom/dmenu/university_launchers.sh
