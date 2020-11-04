@@ -277,6 +277,7 @@ mode "Scratchpad"{
   bindsym $mod+Escape       scratchpad show, resize set 1900 1000, move position center; \
                             scratchpad show, resize set 1900 1000, move position center
   bindsym $mod+Shift+space  floating toggle; mode "default"
+  bindsym $mod+x            kill; mode "default"
   bindsym Return            scratchpad show; mode "default"
   bindsym Escape            scratchpad show; mode "default"
 }
