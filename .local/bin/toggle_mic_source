@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# toggle the state (on/off) of the mic source
+pactl set-source-mute alsa_input.pci-0000_03_00.6.analog-stereo toggle
+
+# get line where "Mute" is found for the last source listed
+# show a notification that expires after 2 seconds
+notify-send -t 2000 `pactl list sources | grep Mute | tail -n 1`

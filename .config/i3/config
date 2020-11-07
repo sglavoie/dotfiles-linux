@@ -309,6 +309,7 @@ bindsym $mod+Mod1+f    exec --no-startup-id ~/Dropbox/.custom/dmenu/filepaths.sh
 bindsym $mod+Mod1+q    exec --no-startup-id ~/Dropbox/.custom/dmenu/quotes.sh
 bindsym $mod+Mod1+r    exec --no-startup-id ~/Dropbox/.custom/dmenu/reading.sh
 bindsym $mod+Mod1+s    exec --no-startup-id ~/Dropbox/.custom/dmenu/scripts.sh
+bindsym $mod+Mod1+u    exec --no-startup-id ~/Dropbox/.custom/dmenu/university.sh
 bindsym $mod+Mod1+w    exec --no-startup-id ~/Dropbox/.custom/dmenu/work.sh
 bindsym $mod+Shift+f   exec --no-startup-id ~/Dropbox/.custom/dmenu/thunar_launcher.sh
 bindsym $mod+Shift+u   exec --no-startup-id ~/Dropbox/.custom/dmenu/university_launchers.sh
@@ -344,7 +345,7 @@ set $volumestep 5
 bindsym XF86AudioRaiseVolume    exec $volumepath -np -i $volumestep -t $statuscmd -u $statussig
 bindsym XF86AudioLowerVolume    exec $volumepath -np -d $volumestep -t $statuscmd -u $statussig
 bindsym XF86AudioMute           exec $volumepath -mn -t $statuscmd -u $statussig
-bindsym XF86AudioMicMute        exec pactl set-source-mute alsa_input.pci-0000_03_00.6.analog-stereo toggle
+bindsym XF86AudioMicMute        exec --no-startup-id ~/.local/bin/toggle_mic_source
 
 ################################################################################
 # brightness
