@@ -1,0 +1,36 @@
+import os
+import subprocess
+import sys
+from os import path
+
+bright = "/tmp/external_monitor_brightness.txt"
+default_bright = "0.5"
+arg1 = None
+
+if len(sys.argv) > 1:
+    arg1 = sys.argv[1]
+
+if arg1 is None:
+    sys.exit()
+
+# set default value if file doesn't exist yet
+if not path.isfile(bright) or os.stat(bright).st_size == 0:
+    with open(bright, "w") as f:
+        subprocess.run(["xrandr", "--output", "HDMI-A-0", "--brightness", default_bright])
+        f.write(default_bright)
+        current_bright = float(default_bright)
+else:
+    with open(bright) as f:
+        current_bright = float(f.read())
+
+if arg1 in ["up", "down", "default"]:
+    with open(bright, "w") as f:
+        if arg1 == "up":
+            new_bright = str(round(min(1, current_bright + 0.05), 2))
+        elif arg1 == "down":
+            new_bright = str(round(max(0.1, current_bright - 0.05), 2))
+        elif arg1 == "default":
+            new_bright = default_bright
+
+        subprocess.run(["xrandr", "--output", "HDMI-A-0", "--brightness", new_bright])
+        f.write(new_bright)

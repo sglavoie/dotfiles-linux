@@ -354,6 +354,10 @@ bindsym XF86AudioMicMute        exec --no-startup-id ~/.local/bin/toggle_mic_sou
 bindsym XF86MonBrightnessDown    exec "light -U 5"
 bindsym XF86MonBrightnessUp      exec "light -A 5"
 
+# Adjust external monitor brightness
+bindsym $mod+Shift+Up          exec --no-startup-id "python3 ~/.local/bin/monitor_brightness up"
+bindsym $mod+Shift+Down        exec --no-startup-id "python3 ~/.local/bin/monitor_brightness down"
+
 # Toggle laptop screen
 bindsym $mod+Control+b    exec --no-startup-id ~/.local/bin/toggle_laptop_brightness
 
@@ -421,14 +425,15 @@ for_window [title="alsamixer"]        floating enable border pixel 2
 for_window [class="(?i)zoom"]         floating enable border pixel 2
 
 # Autostart applications
-exec --no-startup-id    brightnessctl s 40%
-exec --no-startup-id    google-chrome-stable
-exec --no-startup-id    nitrogen --restore
-exec --no-startup-id    nm-applet
-exec --no-startup-id    pasystray
-exec --no-startup-id    xfce4-clipman
-exec --no-startup-id    compton -CG --config /dev/null
-exec --no-startup-id    ~/.config/Todoist/delayed_launch.sh
+exec --no-startup-id  "python3 ~/.local/bin/monitor_brightness default"
+exec --no-startup-id  brightnessctl s 40%
+exec --no-startup-id  google-chrome-stable
+exec --no-startup-id  nitrogen --restore
+exec --no-startup-id  nm-applet
+exec --no-startup-id  pasystray
+exec --no-startup-id  xfce4-clipman
+exec --no-startup-id  compton -CG --config /dev/null
+exec --no-startup-id  ~/.config/Todoist/delayed_launch.sh
 
 # First kill it as it doesn't always respect the `--timeout` option otherwise
 exec_always --no-startup-id    "killall unclutter; unclutter --jitter 40 --ignore-scrolling --timeout 5 &"
