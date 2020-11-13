@@ -43,6 +43,10 @@ lfcd () {
 }
 bindkey -s '^o' 'lfcd\n'
 
+aptsources-cleanup () {
+    sudo ~/.local/bin/aptsources-cleanup
+}
+
 # Read external environment variables
 source ~/Dropbox/.custom/zsh/environ.variables
 
