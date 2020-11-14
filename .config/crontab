@@ -1,0 +1,18 @@
+# allow to use notify-send to send notifications
+DISPLAY=:0.0
+XAUTHORITY=/home/sglavoie/.Xauthority
+
+# useful reminder: Thanks Corey Schafer!
+# ┌───────────── minute (0 - 59)
+# │ ┌───────────── hour (0 - 23)
+# │ │ ┌───────────── day of month (1 - 31)
+# │ │ │ ┌───────────── month (1 - 12)
+# │ │ │ │ ┌───────────── day of week (0 - 6) 
+# │ │ │ │ │              (Sunday to Saturday; 7 is also Sunday on some systems)
+# │ │ │ │ │
+# │ │ │ │ │
+# * * * * *  command_to_execute
+
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
