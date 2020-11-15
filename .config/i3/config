@@ -342,9 +342,9 @@ set $statussig SIGUSR1
 # Amount to increase/decrease volume as a percentage
 set $volumestep 5
 
-bindsym XF86AudioRaiseVolume    exec $volumepath -np -i $volumestep -t $statuscmd -u $statussig
-bindsym XF86AudioLowerVolume    exec $volumepath -np -d $volumestep -t $statuscmd -u $statussig
-bindsym XF86AudioMute           exec $volumepath -mn -t $statuscmd -u $statussig
+bindsym XF86AudioRaiseVolume    exec $volumepath -np up $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioLowerVolume    exec $volumepath -np down $volumestep -t $statuscmd -u $statussig
+bindsym XF86AudioMute           exec $volumepath mute -n -t $statuscmd -u $statussig
 bindsym XF86AudioMicMute        exec --no-startup-id ~/.local/bin/toggle_mic_source
 
 ################################################################################
