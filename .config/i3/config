@@ -9,14 +9,14 @@ set $mod Mod4
 
 # font for window titles
 # ⇒ this is what you see in your i3bar
-font xft:JetBrainsMono-Regular 12
+font xft:JetBrainsMono-Regular 11
 
 # launch a terminal
 bindsym $mod+Return     exec alacritty
 
 # kill focused window
 # ⇒ usual way to close applications
-bindsym $mod+x          kill
+bindsym $mod+comma      kill
 
 # reload the configuration file
 # ⇒ apply changes from this file on the fly
@@ -96,7 +96,7 @@ exec_always xrandr --output eDP --primary --mode 1920x1080 --pos 0x1080 \
     --output DisplayPort-0 --off --output DisplayPort-1 --off
 
 # container focuses where the mouse is (yes/no)
-focus_follows_mouse    no
+focus_follows_mouse    yes
 
 # go to last urgent workspace
 # ⇒ this is the worspace that turns "red" by default when something happens
@@ -121,7 +121,7 @@ bindsym $mod+Shift+l    move right
 # for example, switching from workspace 1 to workspace 2 (e.g. mod+2) then
 # typing again mod+2 would bring you back to workspace 1 without having to
 # remember that you came from workspace 1 in the first place.
-workspace_auto_back_and_forth    no
+workspace_auto_back_and_forth    yes
 
 # alternate between the last two workspaces that have been used
 bindsym $mod+Tab    workspace back_and_forth
@@ -129,8 +129,8 @@ bindsym $mod+Tab    workspace back_and_forth
 # move a container (window or group of windows if you grouped them) to the
 # "alternate" workspace you visited last
 # (the one brought with $mod+Tab in this case)
-bindsym $mod+Shift+Tab           move container to workspace back_and_forth; \
-                                 workspace back_and_forth
+bindsym $mod+Shift+Tab    move container to workspace back_and_forth; \
+                          workspace back_and_forth
 
 # switch to any window with Rofi
 # ⇒ this simulates the familiar behavior of Alt+Tab on Windows and allows you
@@ -253,7 +253,7 @@ bindsym $mod+space    focus mode_toggle
 # Use Mouse+$mod to drag floating windows
 floating_modifier    $mod
 
-# toggle sticky
+# toggle sticky for floating windows
 bindsym $mod+Shift+s    sticky toggle
 
 # focus the surrounding containers
@@ -277,7 +277,7 @@ mode "Scratchpad"{
   bindsym $mod+Escape       scratchpad show, resize set 1900 1000, move position center; \
                             scratchpad show, resize set 1900 1000, move position center
   bindsym $mod+Shift+space  floating toggle; mode "default"
-  bindsym $mod+x            kill; mode "default"
+  bindsym $mod+comma        kill; mode "default"
   bindsym Return            scratchpad show; mode "default"
   bindsym Escape            scratchpad show; mode "default"
 }
@@ -365,17 +365,17 @@ bindsym $mod+Control+b    exec --no-startup-id ~/.local/bin/toggle_laptop_bright
 # applications
 #######################################
 # Start
-bindsym $mod+BackSpace              exec alacritty -e bashtop
-bindsym $mod+Print --release        exec --no-startup-id flameshot screen --path ~/Pictures/screenshots/
-bindsym $mod+Shift+a                exec audacious
-bindsym $mod+Shift+d --release      exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym $mod+Shift+g                exec gimp
-bindsym $mod+Shift+i                exec inkscape
-bindsym $mod+Shift+t                exec thunar
-bindsym $mod+Shift+v                exec alacritty -e vifm
-bindsym $mod+Shift+w                exec --no-startup-id google-chrome-stable
-bindsym $mod+Shift+x --release      exec --no-startup-id xkill
-bindsym Print --release             exec --no-startup-id flameshot gui --path ~/Pictures/screenshots/
+bindsym $mod+BackSpace               exec alacritty -e bashtop
+bindsym $mod+Print --release         exec --no-startup-id flameshot screen --path ~/Pictures/screenshots/
+bindsym $mod+Shift+a                 exec audacious
+bindsym $mod+Shift+d --release       exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+Shift+g                 exec gimp
+bindsym $mod+Shift+i                 exec inkscape
+bindsym $mod+Shift+t                 exec thunar
+bindsym $mod+Shift+v                 exec alacritty -e vifm
+bindsym $mod+Shift+w                 exec --no-startup-id google-chrome-stable
+bindsym $mod+Shift+comma --release   exec --no-startup-id xkill
+bindsym Print --release              exec --no-startup-id flameshot gui --path ~/Pictures/screenshots/
 
 # Open applications on specific workspaces
 assign [class="(?i)code"]               $ws1
