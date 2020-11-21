@@ -170,69 +170,40 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors
+# From the famous Cobalt2 sublime theme
+# Source : https://github.com/wesbos/cobalt2/tree/master/Cobalt2
 colors:
   # Default colors
   primary:
-    background:        '#080808'
-    foreground:        '#b2b2b2'
-    bright_foreground: '#eeeeee'
+    background: '0x122637'
+    foreground: '0xffffff'
 
-  # Cursor colors
+  # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text:   '#080808'
-    cursor: '#9e9e9e'
-
-  # Selection colors
-  selection:
-    text:       '#080808'
-    background: '#b2ceee'
+    text: '0x122637'
+    cursor: '0xf0cb09'
 
   # Normal colors
   normal:
-    black:   '#373c40'
-    red:     '#ff5454'
-    green:   '#8cc85f'
-    yellow:  '#e3c78a'
-    blue:    '#80a0ff'
-    magenta: '#d183e8'
-    cyan:    '#79dac8'
-    white:   '#a1aab8'
+    black:   '0x000000'
+    red:     '0xff0000'
+    green:   '0x37dd21'
+    yellow:  '0xfee409'
+    blue:    '0x1460d2'
+    magenta: '0xff005d'
+    cyan:    '0x00bbbb'
+    white:   '0xbbbbbb'
 
   # Bright colors
   bright:
-    black:   '#7c8f8f'
-    red:     '#ff5189'
-    green:   '#36c692'
-    yellow:  '#bfbf97'
-    blue:    '#78c2ff'
-    magenta: '#ae81ff'
-    cyan:    '#85dc85'
-    white:   '#e2637f'
-
-  # Dim colors
-  #
-  # If the dim colors are not set, they will be calculated automatically based
-  # on the `normal` colors.
-  #dim:
-  #  black:   '#000000'
-  #  red:     '#8c3336'
-  #  green:   '#7a8530'
-  #  yellow:  '#97822e'
-  #  blue:    '#506d8f'
-  #  magenta: '#80638e'
-  #  cyan:    '#497e7a'
-  #  white:   '#9a9a9a'
-
-  # Indexed Colors
-  #
-  # The indexed colors include all colors from 16 to 256.
-  # When these are not set, they're filled with sensible defaults.
-  #
-  # Example:
-  #   `- { index: 16, color: '#ff00ff' }`
-  #
-  #indexed_colors: []
+    black:   '0x545454'
+    red:     '0xf40d17'
+    green:   '0x3bcf1d'
+    yellow:  '0xecc809'
+    blue:    '0x5555ff'
+    magenta: '0xff55ff'
+    cyan:    '0x6ae3f9'
+    white:   '0xffffff'
 
 # Visual Bell
 #
