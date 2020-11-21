@@ -455,22 +455,22 @@ bar {
     bindsym button5 nop
 
     colors {
-        background         #222222
-        statusline         #dddddd
-        separator          #666666
+        background #2d2d2d
+        statusline #cccccc
+        separator  #515151
 #                          border  backgr. text
-        focused_workspace  #0088CC #0088CC #ffffff #cccccc
-        active_workspace   #333333 #333333 #ffffff #181715
-        inactive_workspace #333333 #333333 #888888 #AAAAAA
-        urgent_workspace   #2f343a #900000 #ffffff #FFFFFF
+        focused_workspace  #99cc99 #99cc99 #000000 #222222
+        active_workspace   #333333 #333333 #ffffff #bbbbbb
+        inactive_workspace #2d2d2d #2d2d2d #999999 #bbbbbb
+        urgent_workspace   #f2777a #f2777a #ffffff #ffffff
     }
 }
 
 # Theme colors
 # class                   border  backgr. text    indic.  child_border
-  client.focused          #0088CC #00C8FF #ffffff #dddddd
-  client.focused_inactive #333333 #333333 #888888 #292d2e
-  client.unfocused        #333333 #333333 #888888 #292d2e
+  client.focused          #99cc99 #99cc99 #000000 #2d2d2d
+  client.focused_inactive #393939 #393939 #888888 #292d2e
+  client.unfocused        #2d2d2d #2d2d2d #999999 #292d2e
   client.urgent           #2f343a #900000 #ffffff #900000
   client.placeholder      #F9FAF9 #061229 #FFFFFF #061229
   client.background       #061229
