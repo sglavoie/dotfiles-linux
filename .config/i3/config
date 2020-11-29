@@ -349,6 +349,7 @@ bindsym XF86MonBrightnessUp      exec "light -A 5"
 # Adjust external monitor brightness
 bindsym $mod+F2   exec --no-startup-id "python3 ~/.local/bin/monitor_brightness up"
 bindsym $mod+F1   exec --no-startup-id "python3 ~/.local/bin/monitor_brightness down"
+bindsym $mod+F3   exec --no-startup-id "python3 ~/.local/bin/monitor_brightness default"
 
 # Toggle laptop screen
 bindsym $mod+Control+b    exec --no-startup-id ~/.local/bin/toggle_laptop_brightness
