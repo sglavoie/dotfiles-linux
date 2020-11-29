@@ -362,10 +362,7 @@ bindsym $mod+BackSpace               exec alacritty -e bashtop
 bindsym $mod+Print --release         exec --no-startup-id flameshot screen --path ~/Pictures/screenshots/
 bindsym $mod+Shift+a                 exec audacious
 bindsym $mod+Shift+d --release       exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym $mod+Shift+g                 exec gimp
-bindsym $mod+Shift+i                 exec inkscape
 bindsym $mod+Shift+t                 exec thunar
-bindsym $mod+Shift+v                 exec alacritty -e vifm
 bindsym $mod+Shift+w                 exec --no-startup-id google-chrome-stable
 bindsym $mod+Shift+comma --release   exec --no-startup-id xkill
 bindsym Print --release              exec --no-startup-id flameshot gui --path ~/Pictures/screenshots/
