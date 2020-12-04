@@ -1,0 +1,83 @@
+[include]
+	path = ~/Dropbox/.custom/.gitconfig-sglavoie
+[color]
+	branch = auto
+	diff = auto
+	grep = auto
+	interactive = auto
+	status = auto
+	ui = true
+[alias]
+	a = add
+	br = branch
+	c = commit
+	ca = commit --amend
+	can = commit --amend --no-edit
+	ch = checkout
+	d = diff
+	difflast = diff --cached HEAD^
+	ds = diff --staged
+	l = log
+	last = l -1 HEAD
+	lg = l --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ln = l --name-only
+	logda = l --oneline --decorate --graph --all
+	ls = l --stat
+	p = pull
+	po = push origin
+	pof = push origin --force
+	pos = push --set-upstream origin master
+	rc = rebase --continue
+	ri = rebase -i
+	rl = reflog
+	s = status --short
+	sh = show
+	sl = shortlog
+	st = status
+	t = tag
+	undo = "!f() { git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}}; }; f"
+	unstage = reset HEAD --
+	vdiff = difftool --tool=
+[core]
+	; editor = code --wait
+	editor = nvim
+	excludesfile = ~/.gitignore
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[commit]
+	gpgsign = true
+	template = ~/.gitmessage
+[mergetool "nvim"]
+	cmd = nvim $MERGED
+[difftool "nvim"]
+	cmd = nvim --diff $LOCAL $REMOTE
+; [mergetool "vscode"]
+; 	cmd = code --wait $MERGED
+; [difftool "vscode"]
+; 	cmd = code --wait --diff $LOCAL $REMOTE
+[mergetool]
+  prompt = false
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	commit = yellow bold
+	frag = magenta bold
+	meta = 11
+	new = green bold
+	old = red bold
+	whitespace = red reverse
+[push]
+	recurseSubmodules = on-demand
+[gpg]
+	program = gpg
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pull]
+	rebase = false
+[credential]
+	helper = store
