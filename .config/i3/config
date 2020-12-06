@@ -118,7 +118,7 @@ bindsym $mod+Shift+l    move right
 workspace_auto_back_and_forth    no
 
 # alternate between the last two workspaces that have been used
-bindsym $mod+Tab    workspace back_and_forth
+bindsym $mod+Control+Tab    workspace back_and_forth
 
 # move a container (window or group of windows if you grouped them) to the
 # "alternate" workspace you visited last
@@ -150,7 +150,7 @@ bindsym $mod+Shift+Left     workspace prev
 # the difference with the above is that it limits movements to the
 # the current monitor only
 bindsym $mod+Right          workspace next_on_output
-bindsym $mod+Mod1+Tab       workspace next_on_output
+bindsym $mod+Tab            workspace next_on_output
 bindsym $mod+Left           workspace prev_on_output
 
 # Bindings to "mark" and "goto" mark specified with 1 character
