@@ -123,7 +123,7 @@ bindsym $mod+Control+Tab    workspace back_and_forth
 # move a container (window or group of windows if you grouped them) to the
 # "alternate" workspace you visited last
 # (the one brought with $mod+Tab in this case)
-bindsym $mod+Shift+Tab    move container to workspace back_and_forth; \
+bindsym $mod+mod1+Tab    move container to workspace back_and_forth; \
                           workspace back_and_forth
 
 # switch to any window with Rofi
@@ -151,6 +151,7 @@ bindsym $mod+Shift+Left     workspace prev
 # the current monitor only
 bindsym $mod+Right          workspace next_on_output
 bindsym $mod+Tab            workspace next_on_output
+bindsym $mod+Shift+Tab      workspace prev_on_output
 bindsym $mod+Left           workspace prev_on_output
 
 # Bindings to "mark" and "goto" mark specified with 1 character
