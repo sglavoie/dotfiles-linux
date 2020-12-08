@@ -4,8 +4,7 @@
 call plug#begin($HOME . '/.local/share/nvim/plugged')
 
 """" Code completion {{{
-Plug 'neoclide/coc.nvim', {'branch': 'release',
-            \ 'for': ['python', 'javascript', 'cpp', 'c', 'json', 'h']}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 """" }}}
 
 """" Design & appearance {{{
