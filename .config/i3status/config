@@ -22,6 +22,7 @@ order += "memory"
 order += "wireless _first_"
 order += "battery all"
 # order += "load"
+order += "volume master"
 order += "tztime local"
 # order += "ipv6"
 
@@ -69,6 +70,15 @@ battery all {
         status_full = "☻"
         low_threshold = 15
         threshold_type = time
+}
+
+volume master {
+    format = "🔊 %volume"
+    format_muted = "🔇"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+    color_degraded = "#FFFFFF"
 }
 
 tztime local {
