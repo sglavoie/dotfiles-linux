@@ -98,7 +98,7 @@ alias alearning='source ~/Programming/virtualenvs/learning/bin/activate'
 alias ap='source .venv/bin/activate'
 alias avenv='source venv/bin/activate'
 alias arepl='source ~/Programming/virtualenvs/repl/bin/activate'
-alias b='python3 ~/Programming/scripts/rsync_backup.py'
+alias b='python3 ~/dev/sglavoie/python-utilities/rsync_backup/rsync_backup.py'
 alias cleanhistory='python \
     ~/dev/sglavoie/python-utilities/zsh_history_cleaner/zsh_history_cleaner.py'
 alias cpsglavoie='cp -rf \
