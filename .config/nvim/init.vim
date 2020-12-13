@@ -48,7 +48,7 @@ call plug#end()
 """ }}}
 
 """" APPEARANCE {{{
-colorscheme one
+colorscheme gruvbox
 set background=dark
 """" }}}
 
@@ -405,6 +405,11 @@ let wiki_4.path_html = '~/Dropbox/university/modules/level5/agile_software_proje
 let wiki_4.index = 'index'
 
 let g:vimwiki_list = [wiki_1, wiki_2, wiki_3, wiki_4]
+"""" }}}
+
+"""" DIFF WINDOWS {{{
+vnoremap <Leader>dg :diffget<CR>
+vnoremap <Leader>dp :diffput<CR>
 """" }}}
 """ }}}
 " vim:fdm=marker
