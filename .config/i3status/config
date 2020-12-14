@@ -14,7 +14,6 @@ general {
         color_degraded = "#CD2553"
 }
 
-order += "cpu_usage"
 order += "load"
 order += "disk /"
 order += "memory"
@@ -31,12 +30,12 @@ cpu_usage {
 }
 
 load {
-        format = "🏋 %1min · %5min · %15min "
+        format = "💻 %1min · %5min · %15min "
         max_threshold = 2.0
 }
 
 memory {
-        format = " 🐏 %used (F · %available) "
+        format = "🐏 %used (F · %available) "
         threshold_degraded = "15%"
         threshold_critical = "5%"
         format_degraded = " Memory LOW: %free "
@@ -44,7 +43,7 @@ memory {
 
 disk "/" {
         # format = " hdd %avail "
-        format = " 💾 %avail "
+        format = "💾 %avail "
 }
 
 wireless _first_ {
