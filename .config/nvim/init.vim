@@ -122,6 +122,9 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " }}}
 
 """ AUTO EVENTS {{{
+" Automatically rebalance windows when resizing Vim (useful inside tmux)
+autocmd VimResized * :wincmd =
+
 " Source: https://github.com/thoughtbot/dotfiles/blob/master/vimrc
 " When editing a file, always jump to the last known cursor position.
 " Don't do it for commit messages, when the position is invalid, or when
