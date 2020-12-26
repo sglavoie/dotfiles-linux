@@ -9,6 +9,7 @@ alias cat="bat"
 alias cl='clear'
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias diff='diff-so-fancy'
+alias dockerclean='sudo systemctl start docker.service; docker rmi -f $(docker images -a -q); docker volume rm -f $(docker volume ls -q); docker rm -f $(docker ps -a -q); docker network prune'
 alias f='fg'
 alias findinfiles="ag --nobreak --noheading . | fzf | \
     perl -pe 's|(.*?):(.*):.*|+\2 \1|' | xargs -r nvim"
