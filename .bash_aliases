@@ -43,6 +43,8 @@ alias rm='rm -I --preserve-root'
 
 # confirmation
 alias ln='ln -i'
+alias cp='cp -iv'
+alias mv='mv -iv'
 
 # ls aliases
 alias ea='exa -la' # Show hidden files
