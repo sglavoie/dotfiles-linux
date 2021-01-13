@@ -458,6 +458,7 @@ exec_always --no-startup-id    xset r rate 250 60
 bar {
     id bar-1
     output HDMI-A-0
+    mode invisible
     tray_output none
     status_command i3status
     position top
