@@ -345,6 +345,7 @@ bindsym XF86AudioRaiseVolume    exec $volumepath -np up $volumestep -t $statuscm
 bindsym XF86AudioLowerVolume    exec $volumepath -np down $volumestep -t $statuscmd -u $statussig
 bindsym XF86AudioMute           exec $volumepath mute -n -t $statuscmd -u $statussig
 bindsym XF86AudioMicMute        exec --no-startup-id ~/.local/bin/toggle_mic_source
+bindsym $mod+exclamdown         exec --no-startup-id ~/.local/bin/toggle_mic_source
 bindsym $mod+F7                 exec "alacritty -t 'alsamixer' -e alsamixer --view=capture --card=1"
 
 # Automatically set the volume to a given value when (re)launching i3
