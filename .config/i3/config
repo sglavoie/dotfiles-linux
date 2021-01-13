@@ -82,6 +82,8 @@ bindsym $mod+Delete    exec --no-startup-id i3lock -c 000000
 
 # hide/unhide i3status bar (applies to all monitors)
 bindsym $mod+m    bar mode toggle
+bindsym $mod+b    bar mode invisible bar-1
+bindsym $mod+Shift+b    bar mode dock bar-1
 
 # set up displays
 exec ~/.config/i3/run_xrandr.sh
@@ -294,9 +296,9 @@ default_floating_border pixel 3
 hide_edge_borders smart
 
 # change borders
-bindsym $mod+b    border none
-bindsym $mod+y    border pixel 3
-bindsym $mod+n    border normal
+bindsym $mod+Shift+n   border none
+bindsym $mod+y         border pixel 3
+bindsym $mod+n         border normal
 
 ################################################################################
 # dmenu
@@ -454,12 +456,31 @@ exec_always --no-startup-id    xset r rate 250 60
 #######################################
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-    i3bar_command i3bar
+    id bar-1
+    output HDMI-A-0
+    tray_output none
     status_command i3status
     position top
 
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+    colors {
+        background #2d2d2d
+        statusline #cccccc
+        separator  #515151
+#                          border  backgr. text
+        focused_workspace  #99cc99 #99cc99 #000000 #222222
+        active_workspace   #333333 #333333 #ffffff #bbbbbb
+        inactive_workspace #2d2d2d #2d2d2d #999999 #bbbbbb
+        urgent_workspace   #f2777a #f2777a #ffffff #ffffff
+    }
+}
+
+bar {
+    id bar-0
+    output eDP
     tray_output primary
+    i3bar_command i3bar
+    status_command i3status
+    position top
     bindsym button4 nop
     bindsym button5 nop
 
