@@ -79,7 +79,7 @@ set nrformats=  " <C-a>/<C-x> with leading zeros → decimal instead of octal
 set number  " Displays absolute number of current line
 set path=$PWD/**  " Allows to search recursively for files with pattern matching (e.g. :find)
 set relativenumber  " Displays relative number of the lines around current one
-set scrolloff=3  " Always leaves 3 lines above or below the current line
+set scrolloff=6  " Always leaves 6 lines above or below the current line
 set shiftwidth=4  " Number of spaces for indents
 set shortmess+=c  " Don't pass messages to ins-completion-menu
 set shortmess+=I  " Disable default startup message
