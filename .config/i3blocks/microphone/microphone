@@ -1,0 +1,10 @@
+#!/bin/bash
+
+statusLine=$(pactl list sources | grep Mute | tail -n 1)
+status=$(echo "${statusLine}" | grep -wo "no")
+
+if [[ "${status}" == "no" ]]; then
+  echo "🎤"
+else
+  echo "📴"
+fi
