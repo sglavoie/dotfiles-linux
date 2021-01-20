@@ -137,8 +137,8 @@ bindsym $mod+mod1+Tab    move container to workspace back_and_forth; \
 # switch to any window with Rofi
 # ⇒ this simulates the familiar behavior of Alt+Tab on Windows and allows you
 #   to find windows by typing, but uses a better operating system to do it ;).
-bindsym Mod1+Tab    exec "rofi -theme Arc-Dark -font 'JetBrainsMono 14' \
-                    -show-icons -width 90 -show window"
+bindsym Mod1+Tab    exec "rofi -theme lb -font 'JetBrainsMono 16' \
+                    -show-icons -width 95 -show window"
 
 # toggle fullscreen mode for the focused container
 # ⇒ this hides the i3bar for the current monitor
