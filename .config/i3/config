@@ -357,8 +357,8 @@ exec_always --no-startup-id "amixer -D pulse set Master 50%"
 # brightness
 #######################################
 # Control brightness more precisely through software `brightnessctl`
-bindsym XF86MonBrightnessDown    exec "light -U 5"
-bindsym XF86MonBrightnessUp      exec "light -A 5"
+bindsym XF86MonBrightnessDown    exec "light -U 1"
+bindsym XF86MonBrightnessUp      exec "light -A 1"
 
 # Adjust external monitor brightness
 bindsym $mod+F2   exec --no-startup-id "python3 ~/.local/bin/monitor_brightness up"
