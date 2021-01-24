@@ -14,6 +14,9 @@ font xft:JetBrainsMono-Regular 11
 # launch a terminal
 bindsym $mod+Return     exec alacritty
 
+# launch a terminal in the same directory currently used
+bindsym $mod+Shift+Return exec cd "$(xcwd)" && exec alacritty
+
 # kill focused window
 # ⇒ usual way to close applications
 bindsym $mod+comma      kill
