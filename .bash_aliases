@@ -4,10 +4,9 @@ alias articlesbycategories="pushd > /dev/null; \
     cd ~/dev/sglavoie/sglavoie.github.io-source/content; \
     find . -type f -name '*.md' ! -wholename '*/pages*' | cut -d/ -f2 \
     | sort | uniq -c | sort -n; popd > /dev/null"
-alias c='code -n'
+alias c='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias cat="bat"
 alias cl='clear'
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias diff='diff-so-fancy'
 alias dockerclean='sudo systemctl start docker.service; docker rmi -f $(docker images -a -q); docker volume rm -f $(docker volume ls -q); docker rm -f $(docker ps -a -q); docker network prune'
 alias f='fg'
