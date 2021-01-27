@@ -84,9 +84,10 @@ bindsym $mod+Control+h resize grow width 10 px or 10 ppt
 bindsym $mod+Delete    exec --no-startup-id i3lock -c 000000
 
 # hide/unhide i3status bar (applies to all monitors)
-bindsym $mod+m    bar mode toggle
-bindsym $mod+b    bar mode invisible bar-1
-bindsym $mod+Shift+b    bar mode dock bar-1
+bindsym $mod+m         bar mode invisible bar-0
+bindsym $mod+Shift+m   bar mode dock bar-0
+bindsym $mod+b         bar mode invisible bar-1
+bindsym $mod+Shift+b   bar mode dock bar-1
 
 # set up displays
 exec ~/.config/i3/run_xrandr.sh
