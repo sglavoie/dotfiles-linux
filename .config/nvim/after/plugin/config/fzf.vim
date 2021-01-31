@@ -1,3 +1,9 @@
+" Preview window on the upper side of the window with 50% height
+let g:fzf_preview_window = ['up:50%', 'ctrl-/']
+
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags -R'
+
 " Allows FZF to ignore patterns in .gitignore
 let $FZF_DEFAULT_OPTS = "--bind ctrl-b:preview-up --bind ctrl-f:preview-down"
 
@@ -5,7 +11,7 @@ function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --no-ignore --hidden --glob "!.git/*" --glob "!node_modules/*" --glob "!.venv/*" --color=always --smart-case -- %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
   let reload_command = printf(command_fmt, '{q}')
-  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  let spec = {'options': ['--phony', '--query', a:query, '--info=inline', '--preview-window=up:60%::wrap', '--bind', 'change:reload:'.reload_command]}
   call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
 endfunction
 
