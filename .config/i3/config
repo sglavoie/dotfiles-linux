@@ -12,10 +12,10 @@ set $mod Mod4
 font xft:JetBrainsMono-Regular 11
 
 # launch a terminal
-bindsym $mod+Return     exec alacritty
+bindsym $mod+Return     exec kitty
 
 # launch a terminal in the same directory currently used
-bindsym $mod+Shift+Return exec cd "$(xcwd)" && exec alacritty
+bindsym $mod+Shift+Return exec cd "$(xcwd)" && exec kitty
 
 # kill focused window
 # ⇒ usual way to close applications
@@ -327,7 +327,7 @@ bindsym $mod+d         exec --no-startup-id ~/Dropbox/.custom/dmenu/software.sh
 bindsym $mod+control+r    exec --no-startup-id thunar ~/Desktop
 
 # Simple calculator in terminal
-bindsym $mod+masculine    exec alacritty -e bc
+bindsym $mod+masculine    exec kitty -e bc
 
 # Focus applications
 bindsym $mod+q [class="Todoist"] focus
@@ -379,7 +379,7 @@ bindsym $mod+Control+b    exec --no-startup-id ~/.local/bin/toggle_laptop_bright
 # applications
 #######################################
 # Start
-bindsym $mod+BackSpace               exec alacritty -e bashtop
+bindsym $mod+BackSpace               exec kitty -e bashtop
 bindsym $mod+Print --release         exec --no-startup-id flameshot screen --path ~/Pictures/screenshots/
 bindsym $mod+Shift+a                 exec audacious
 bindsym $mod+Shift+d --release       exec "killall dunst; exec notify-send 'restart dunst'"
