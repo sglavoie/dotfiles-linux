@@ -227,7 +227,7 @@ bindsym $mod+Shift+0    move container to workspace $ws10; workspace $ws10
 # Layout
 #######################################
 # set default desktop layout (default is tiling), <stacking|tabbed>
-workspace_layout    tabbed
+workspace_layout    default
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s    layout stacking
@@ -238,7 +238,7 @@ bindsym $mod+e    layout toggle split
 default_orientation    vertical
 
 #toggles split at each new window (Fibonnaci layout)
-# for_window [class=".*"]    split toggle
+for_window [class=".*"]    split toggle
 
 # toggle the way a split happens in the focused window
 bindsym $mod+t    split toggle
