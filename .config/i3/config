@@ -326,8 +326,8 @@ bindsym $mod+d         exec --no-startup-id ~/Dropbox/.custom/dmenu/software.sh
 #######################################
 bindsym $mod+control+r    exec --no-startup-id thunar ~/Desktop
 
-# Simple calculator in terminal
-bindsym $mod+masculine    exec kitty -e bc
+# Simple calculator
+bindsym $mod+masculine    exec --no-startup-id mate-calculator
 
 # Focus applications
 bindsym $mod+q [class="Todoist"] focus
