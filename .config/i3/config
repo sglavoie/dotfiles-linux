@@ -298,6 +298,9 @@ for_window [class="Todoist"] resize set 1900 1000
 for_window [instance="pythoncalc"] floating enable
 for_window [instance="pythoncalc"] move scratchpad
 for_window [instance="pythoncalc"] resize set 1900 1000
+for_window [instance="notes"] floating enable
+for_window [instance="notes"] move scratchpad
+for_window [instance="notes"] resize set 1900 1000
 
 ################################################################################
 # Borders
@@ -390,6 +393,7 @@ bindsym $mod+Shift+d --release       exec "killall dunst; exec notify-send 'rest
 bindsym $mod+Shift+t                 exec thunar
 bindsym $mod+Shift+w                 exec --no-startup-id google-chrome-stable
 bindsym $mod+masculine               [instance="pythoncalc"] scratchpad show; move position center
+bindsym $mod+plus                    [instance="notes"] scratchpad show; move position center
 bindsym $mod+p                       [class="Audacious"] scratchpad show; move position center
 bindsym $mod+q                       [class="Todoist"] scratchpad show; move position center
 bindsym Print --release              exec --no-startup-id flameshot gui --path ~/Pictures/screenshots/
@@ -451,6 +455,7 @@ exec --no-startup-id  nm-applet
 exec --no-startup-id  pasystray
 exec --no-startup-id  xfce4-clipman
 exec --no-startup-id  ~/.config/Todoist/delayed_launch.sh
+exec --no-startup-id  kitty --name notes -e nvim /tmp/temp_notes.md
 exec --no-startup-id  kitty --name pythoncalc -o font_size=24 -e python3 -q
 
 # First kill it as it doesn't always respect the `--timeout` option otherwise
