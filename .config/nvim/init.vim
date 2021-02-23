@@ -3,22 +3,14 @@
 """ PLUGINS {{{
 call plug#begin($HOME . '/.local/share/nvim/plugged')
 
-"""" Code completion {{{
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"""" }}}
-
 """" Design & appearance {{{
 Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
-Plug 'rakr/vim-one'
 """" }}}
 
 """" Language specific {{{
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
-Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript', 'markdown'] }
-Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
-Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
 """" }}}
 
 """" Moving/editing around {{{
@@ -31,7 +23,6 @@ Plug 'vimwiki/vimwiki'
 """" }}}
 
 """" Useful features {{{
-Plug 'SirVer/ultisnips', { 'for': ['javascript', 'python'] }
 Plug 'junegunn/fzf', { 'dir': $HOME . '/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'machakann/vim-highlightedyank'
