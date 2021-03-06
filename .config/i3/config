@@ -2,7 +2,7 @@
 # i3 config file
 ################################################################################
 # General settings
-
+######################################
 # set mod key (Mod1=Alt, Mod4=Super)
 # ⇒ the main modifier used to trigger shortcuts
 set $mod Mod4
@@ -80,23 +80,34 @@ bindsym $mod+Control+k resize grow height 10 px or 10 ppt
 bindsym $mod+Control+j resize shrink height 10 px or 10 ppt
 bindsym $mod+Control+h resize grow width 10 px or 10 ppt
 
-# lock the screen with a black color background
+################################################################################
+# screens / monitors
+######################################
+# lock the screens with a black color background
 bindsym $mod+Delete    exec --no-startup-id i3lock -c 000000
 
-# hide/unhide i3status bar (applies to all monitors)
+# hide/unhide i3status bar (laptop)
 bindsym $mod+m         bar mode invisible bar-0
 bindsym $mod+Shift+m   bar mode dock bar-0
+
+# hide/unhide i3status bar (monitor)
 bindsym $mod+b         bar mode invisible bar-1
 bindsym $mod+Shift+b   bar mode dock bar-1
 
 # set up displays
 exec ~/.config/i3/run_xrandr.sh
 
-# Use laptop display only (turn off monitor)
+# use laptop display only (turn off monitor)
 bindsym $mod+o exec ~/.config/i3/run_xrandr_laptop.sh
 
-# Use laptop + monitor displays
+# use laptop + monitor displays
 bindsym $mod+shift+o exec ~/.config/i3/run_xrandr.sh
+
+# disable screen saver
+exec --no-startup-id    xset s off
+
+# disable power saving
+exec --no-startup-id    xset -dpms
 
 ################################################################################
 # navigation
