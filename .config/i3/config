@@ -407,6 +407,7 @@ bindsym $mod+masculine               [instance="pythoncalc"] scratchpad show; mo
 bindsym $mod+plus                    [instance="notes"] scratchpad show; move position center
 bindsym $mod+p                       [class="Audacious"] scratchpad show; move position center
 bindsym $mod+q                       [title=".*: Todoist"] scratchpad show; move position center
+bindsym $mod+Shift+q                 exec --no-startup-id ~/.config/todoist_launch.sh
 bindsym Print --release              exec --no-startup-id flameshot gui --path ~/Pictures/screenshots/
 bindsym $mod+Print --release         exec --no-startup-id flameshot screen --path ~/Pictures/screenshots/
 
