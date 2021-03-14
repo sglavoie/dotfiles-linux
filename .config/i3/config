@@ -495,14 +495,14 @@ bar {
     position top
 
     colors {
-        background #2d2d2d
-        statusline #cccccc
-        separator  #515151
+        background #000000
+        statusline #ffffff
+        separator  #666666
 #                          border  backgr. text
-        focused_workspace  #99cc99 #99cc99 #000000 #222222
-        active_workspace   #333333 #333333 #ffffff #bbbbbb
-        inactive_workspace #2d2d2d #2d2d2d #999999 #bbbbbb
-        urgent_workspace   #f2777a #f2777a #ffffff #ffffff
+        focused_workspace  #4c7899 #285577 #ffffff #ffffff
+        active_workspace   #333333 #5f676a #ffffff #3c3b37
+        inactive_workspace #333333 #222222 #888888 #aea79f
+        urgent_workspace   #2f343a #900000 #ffffff #ffffff
     }
 }
 
@@ -516,22 +516,22 @@ bar {
     bindsym button5 nop
 
     colors {
-        background #2d2d2d
-        statusline #cccccc
-        separator  #515151
+        background #000000
+        statusline #ffffff
+        separator  #666666
 #                          border  backgr. text
-        focused_workspace  #99cc99 #99cc99 #000000 #222222
-        active_workspace   #333333 #333333 #ffffff #bbbbbb
-        inactive_workspace #2d2d2d #2d2d2d #999999 #bbbbbb
-        urgent_workspace   #f2777a #f2777a #ffffff #ffffff
+        focused_workspace  #4c7899 #285577 #ffffff #ffffff
+        active_workspace   #333333 #5f676a #ffffff #3c3b37
+        inactive_workspace #333333 #222222 #888888 #aea79f
+        urgent_workspace   #2f343a #900000 #ffffff #ffffff
     }
 }
 
 # Theme colors
 # class                   border  backgr. text    indic.  child_border
-  client.focused          #99cc99 #99cc99 #000000 #2d2d2d
-  client.focused_inactive #393939 #393939 #888888 #292d2e
-  client.unfocused        #2d2d2d #2d2d2d #999999 #292d2e
+  client.focused          #4c7899 #285577 #ffffff #2e9ef4
+  client.focused_inactive #333333 #5f676a #ffffff #484e50
+  client.unfocused        #333333 #222222 #888888 #292d2e
   client.urgent           #2f343a #900000 #ffffff #900000
   client.placeholder      #F9FAF9 #061229 #FFFFFF #061229
   client.background       #061229
