@@ -9,7 +9,7 @@ set $mod Mod4
 
 # font for window titles
 # ⇒ this is what you see in your i3bar
-font xft:JetBrainsMono-Regular 11
+font xft:Lato 12
 
 # launch a terminal
 bindsym $mod+Return     exec kitty
