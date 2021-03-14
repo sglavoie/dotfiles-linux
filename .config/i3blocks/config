@@ -5,25 +5,35 @@ markup=pango
 
 [WIFI]
 command=~/.config/i3blocks/wifi/wifi
+min_width=275
+align=center
 interval=30
 
 [DISK]
 command=df -h / | awk '/\//{ printf(" 💾 %4s/%s \n", $4, $2) }'
+min_width=125
+align=center
 interval=2
 color=#C9E3DB
 
 [BATTERY]
 command=~/.config/i3blocks/battery/battery_info.sh
+min_width=60
+align=center
 interval=3
 
 [CPU]
 full_text= CPU:  0.00% @ +00.0°C 
 command=~/.config/i3blocks/cpu/cpu_info.sh
 interval=repeat
+min_width=195
+align=center
 color=#00B4EB
 
 [MEM]
 command=free -h | awk '/Mem:/ { printf(" 🐏 %5s/%s \n", $3, $2) }'
+min_width=125
+align=center
 interval=1
 color=#FEC925
 
@@ -33,6 +43,8 @@ interval=once
 
 [SOUND]
 full_text= 🔇:  0%
+min_width=75
+align=center
 command=~/.config/i3blocks/sound/sound_info.sh
 interval=0
 signal=1
