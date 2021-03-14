@@ -1,7 +1,6 @@
 [BANDWIDTH]
-command=~/.config/i3blocks/bandwidth2/bandwidth2
-interval=persist
-markup=pango
+command=~/.config/i3blocks/bandwidth/bandwidth.sh
+interval=2
 
 [WIFI]
 command=~/.config/i3blocks/wifi/wifi
