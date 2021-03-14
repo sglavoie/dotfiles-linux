@@ -1,9 +1,11 @@
 #!/bin/bash
 [[ $(LC_ALL=C nmcli -f wifi -t g s) == 'disabled' ]] && exit 0
 
+# Pipe into `head` because running Docker produces more output
+# and we should keep only the first line in that case
 network_name=$(
     LC_ALL=C nmcli -t -f name,device c s -a \
-        | cut -d':' -f1
+        | cut -d':' -f1 | head -n 1
 )
 
 if [[ -z $network_name ]]; then
