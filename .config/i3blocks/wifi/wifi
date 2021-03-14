@@ -9,7 +9,7 @@ network_name=$(
 )
 
 if [[ -z $network_name ]]; then
-    printf 'disconnected\n\n#E41C28'
+    printf '  📶 disconnected\n\n#E41C28  '
 else
     freq=$(iwconfig | grep -q 'Frequency:2' && printf '2.4' || printf '5')
 
@@ -21,5 +21,5 @@ else
 
     color="#3C913B"
 
-    printf '%s (%s\u2009GHz), %s\n\n%s' "$network_name" "$freq" "$addr" "$color"
+    printf '  📶 %s (%s\u2009GHz), %s  \n\n%s' "$network_name" "$freq" "$addr" "$color"
 fi

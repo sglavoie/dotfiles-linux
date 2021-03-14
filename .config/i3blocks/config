@@ -4,8 +4,6 @@ interval=2
 
 [WIFI]
 command=~/.config/i3blocks/wifi/wifi
-min_width=275
-align=center
 interval=30
 
 [DISK]
