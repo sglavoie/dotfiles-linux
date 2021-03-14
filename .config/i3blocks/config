@@ -12,19 +12,19 @@ interval=30
 command=df -h / | awk '/\//{ printf(" 💾 %4s/%s \n", $4, $2) }'
 min_width=125
 align=center
-interval=2
+interval=60
 color=#C9E3DB
 
 [BATTERY]
 command=~/.config/i3blocks/battery/battery_info.sh
 min_width=60
 align=center
-interval=3
+interval=60
 
 [CPU]
 full_text= CPU:  0.00% @ +00.0°C 
 command=~/.config/i3blocks/cpu/cpu_info.sh
-interval=repeat
+interval=10
 min_width=195
 align=center
 color=#00B4EB
@@ -33,7 +33,7 @@ color=#00B4EB
 command=free -h | awk '/Mem:/ { printf(" 🐏 %5s/%s \n", $3, $2) }'
 min_width=125
 align=center
-interval=1
+interval=3
 color=#FEC925
 
 [SOUND_BURST]
@@ -55,4 +55,4 @@ signal=10
 
 [TIME_DATE]
 command=date +"  %a, %d %b - %H:%M  "
-interval=1
+interval=5
