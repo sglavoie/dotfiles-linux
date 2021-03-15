@@ -405,8 +405,11 @@ bindsym $mod+Shift+d --release       exec "killall dunst; exec notify-send 'rest
 bindsym $mod+Shift+t                 exec thunar
 bindsym $mod+Shift+w                 exec --no-startup-id brave-browser-stable
 bindsym $mod+masculine               [instance="pythoncalc"] scratchpad show; move position center
+bindsym $mod+Shift+masculine         exec --no-startup-id  kitty --name pythoncalc -o font_size=24 -e python3 -q
 bindsym $mod+plus                    [instance="notes"] scratchpad show; move position center
+bindsym $mod+Shift+plus              exec --no-startup-id  kitty --name notes -e nvim /tmp/temp_notes.md
 bindsym $mod+p                       [class="Audacious"] scratchpad show; move position center
+bindsym $mod+Shift+p                 exec --no-startup-id  audacious
 bindsym $mod+q                       [title=".*: Todoist"] scratchpad show; move position center
 bindsym $mod+Shift+q                 exec --no-startup-id ~/.config/todoist_launch.sh
 bindsym Print --release              exec --no-startup-id flameshot gui --path ~/Pictures/screenshots/
