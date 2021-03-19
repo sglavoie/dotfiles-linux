@@ -38,6 +38,7 @@
 	undo = "!f() { git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}}; }; f"
 	unstage = reset HEAD --
 	vdiff = difftool --tool=
+	hs = log --pretty='%C(yellow)%h %C(cyan)%ad %Cblue%aN%C(auto)%d %Creset%s' --date=relative --date-order --graph
 [core]
 	; editor = code --wait
 	editor = nvim
