@@ -17,6 +17,6 @@ if [ $monitor_bright = "on" ]; then
 else
         monitor_bright="on"
         xrandr --output eDP --brightness 1
-        brightnessctl s 20%
+        brightnessctl s 10%
 fi
 echo "${monitor_bright}" > /tmp/monitor_brightness.dat
