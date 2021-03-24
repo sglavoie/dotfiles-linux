@@ -6,7 +6,7 @@ import sys
 from os import path
 
 bright = "/tmp/external_monitor_brightness.txt"
-default_bright = "0.5"
+default_bright = "0.4"
 arg1 = None
 
 if len(sys.argv) > 1:
