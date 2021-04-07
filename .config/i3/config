@@ -343,14 +343,14 @@ bindsym $mod+Mod1+r    exec --no-startup-id ~/Dropbox/.custom/dmenu/reading.sh
 bindsym $mod+Mod1+s    exec --no-startup-id ~/Dropbox/.custom/dmenu/scripts.sh
 bindsym $mod+Mod1+u    exec --no-startup-id ~/Dropbox/.custom/dmenu/university.sh
 bindsym $mod+Mod1+w    exec --no-startup-id ~/Dropbox/.custom/dmenu/work.sh
-bindsym $mod+Shift+f   exec --no-startup-id ~/Dropbox/.custom/dmenu/thunar_launcher.sh
+bindsym $mod+Shift+f   exec --no-startup-id ~/Dropbox/.custom/dmenu/pcmanfm_launcher.sh
 bindsym $mod+Shift+u   exec --no-startup-id ~/Dropbox/.custom/dmenu/university_launchers.sh
 bindsym $mod+d         exec --no-startup-id ~/Dropbox/.custom/dmenu/software.sh
 
 ################################################################################
 # shortcuts
 #######################################
-bindsym $mod+control+r    exec --no-startup-id thunar ~/Desktop
+bindsym $mod+control+r    exec --no-startup-id pcmanfm ~/Desktop
 
 # Display multiple time zones around the world
 bindsym $mod+Mod1+t    exec --no-startup-id ~/Dropbox/.custom/dmenu/times.sh
@@ -402,7 +402,7 @@ bindsym $mod+Control+b    exec --no-startup-id ~/.local/bin/toggle_laptop_bright
 bindsym $mod+BackSpace               exec kitty -e bashtop
 bindsym $mod+Shift+comma --release   exec --no-startup-id xkill
 bindsym $mod+Shift+d --release       exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym $mod+Shift+t                 exec thunar
+bindsym $mod+Shift+t                 exec pcmanfm
 bindsym $mod+Shift+w                 exec --no-startup-id brave-browser-stable
 bindsym $mod+masculine               [instance="pythoncalc"] scratchpad show; move position center
 bindsym $mod+Shift+masculine         exec --no-startup-id  kitty --name pythoncalc -o font_size=24 -e python3 -q
@@ -425,7 +425,6 @@ assign [class="Audacity"]               $ws4
 assign [class="Gimp"]                   $ws4
 assign [class="Inkscape"]               $ws4
 assign [class="vlc"]                    $ws4
-assign [class="(?i)org.gnome.Nautilus"] $ws5
 assign [class="(?i)atril"]              $ws6
 assign [class="(?i)zathura"]            $ws6
 assign [title="(?i)libreoffice"]        $ws4
@@ -443,7 +442,6 @@ for_window [class="Gimp"]                   workspace $ws4
 for_window [class="Inkscape"]               workspace $ws4
 for_window [class="audacity"]               workspace $ws4
 for_window [class="vlc"]                    workspace $ws4
-for_window [class="(?i)org.gnome.Nautilus"] workspace $ws5
 for_window [class="(?i)zathura"]            workspace $ws6
 for_window [title="(?i)libreoffice"]        workspace $ws4
 for_window [class="Transmission"]           workspace $ws8
