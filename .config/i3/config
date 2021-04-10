@@ -310,9 +310,9 @@ for_window [instance="notes"] resize set 1900 1000
 for_window [instance="pythoncalc"] floating enable
 for_window [instance="pythoncalc"] move scratchpad
 for_window [instance="pythoncalc"] resize set 1900 1000
-for_window [title=".*: Todoist"] floating enable
-for_window [title=".*: Todoist"] move scratchpad
-for_window [title=".*: Todoist"] resize set 1920 1060
+for_window [title=".*Todoist.*"] floating enable
+for_window [title=".*Todoist.*"] move scratchpad
+for_window [title=".*Todoist.*"] resize set 1920 1060
 
 ################################################################################
 # Borders
@@ -410,7 +410,7 @@ bindsym $mod+plus                    [instance="notes"] scratchpad show; move po
 bindsym $mod+Shift+plus              exec --no-startup-id  kitty --name notes -e nvim /tmp/temp_notes.md
 bindsym $mod+p                       [class="Audacious"] scratchpad show; move position center
 bindsym $mod+Shift+p                 exec --no-startup-id  audacious
-bindsym $mod+q                       [title=".*: Todoist"] scratchpad show; move position center
+bindsym $mod+q                       [title=".*Todoist.*"] scratchpad show; move position center
 bindsym $mod+Shift+q                 exec --no-startup-id ~/.config/todoist_launch.sh
 bindsym Print --release              exec --no-startup-id flameshot gui --path ~/Pictures/screenshots/
 bindsym $mod+Print --release         exec --no-startup-id flameshot screen --path ~/Pictures/screenshots/
