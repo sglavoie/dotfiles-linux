@@ -37,6 +37,9 @@ alias t='tmux'
 alias treeold='tree -hDF | less'
 alias www='python -m http.server'
 
+# Know when a long-running command is done by appending "; alert" at the end
+alias alert='notify-send "Command done..." && aplay ~/Music/bell.wav 1&> /dev/null'
+
 # Do not delete / or prompt if deleting more than 3 files at a time
 alias rm='rm -I --preserve-root'
 
