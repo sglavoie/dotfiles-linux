@@ -166,6 +166,9 @@ command! SortVimwikiLinks norm :sort /^.*\|/<CR>
 let mapleader = " "  " Set map leader as a space
 let maplocalleader = " "
 
+" Conventional way to save
+nnoremap <C-s> :w<CR>
+
 " Toggle display of line numbers
 nnoremap <F4> :set number!<CR>:set relativenumber!<CR>
 
