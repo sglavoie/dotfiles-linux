@@ -10,7 +10,6 @@ Plug 'morhetz/gruvbox'
 
 """" Language specific {{{
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
 """" }}}
 
 """" Moving/editing around {{{
