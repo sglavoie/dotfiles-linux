@@ -151,6 +151,13 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Activate correct virtual environment from inside Neovim when
+# the VIRTUAL_ENV var is set
+# From https://vi.stackexchange.com/a/7654
+if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
+  source "${VIRTUAL_ENV}/bin/activate"
+fi
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/sglavoie/Programming/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
