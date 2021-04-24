@@ -2,18 +2,19 @@ if ! exists(':Gstatus')
     finish
 endif
 
-" Git status when appropriate
-nnoremap <leader>s :Gstatus<CR>
-
-" Git diff when appropriate
-nnoremap <leader>dd :Gdiff<CR>
-
-" Git diff split current buffer
-nnoremap <leader>D :Gdiffsplit<CR>
+nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gd :Gdiffsplit<CR>
+nnoremap <leader>gl :Glog<CR>
+nnoremap <leader>gs :G<CR>
 
 " Add git capability to the status line with vim-fugitive
 set statusline+=%{fugitive#statusline()}
 
+" Stage / unstage in visual mode
+vnoremap <leader>g :diffget<CR>
+vnoremap <leader>p :diffput<CR>
+
 " Merge conflicts from left or right (//2 appear on the left)
-nmap <leader>gh :diffget //2<CR>
-nmap <leader>gl :diffget //3<CR>
+nmap <leader>gH :diffget //2<CR>
+nmap <leader>gL :diffget //3<CR>
