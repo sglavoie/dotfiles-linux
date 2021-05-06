@@ -415,12 +415,7 @@ let wiki_3.path = '~/Dropbox/career/datopian/wiki/'
 let wiki_3.path_html = '~/Dropbox/career/datopian/wiki/html/'
 let wiki_3.index = 'index'
 
-let wiki_4 = {}
-let wiki_4.path = '~/Dropbox/university/modules/level5/agile_software_projects/team/'
-let wiki_4.path_html = '~/Dropbox/university/modules/level5/agile_software_projects/team/html/'
-let wiki_4.index = 'index'
-
-let g:vimwiki_list = [wiki_1, wiki_2, wiki_3, wiki_4]
+let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
 """" }}}
 
 """" DIFF WINDOWS {{{
