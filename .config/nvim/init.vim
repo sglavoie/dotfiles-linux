@@ -82,7 +82,6 @@ set splitright  " Put new window to the right of the current one when splitting
 set tabstop=4  " Ideally, same value as 'shiftwidth'
 set termguicolors  " Make colors look better in terminal
 set textwidth=0  " Number of characters in a line (0 = no limit)
-set undodir=~/.vim/undo  " Where to save file with undo tree
 set undofile  " Enable persistent undo tree
 set wildignore+=*.pyc,*.db,*__pycache__*,*.png,*.jpg,*.jpeg,*.pdf
 set wildignore+=*.svg,*.xcf  " Ignores certain files/directories in current path
