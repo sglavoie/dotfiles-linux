@@ -304,12 +304,12 @@ mode "Scratchpad"{
 for_window [class="Audacious"] floating enable
 for_window [class="Audacious"] move scratchpad
 for_window [class="Audacious"] resize set 1900 1000
-for_window [instance="notes"] floating enable
-for_window [instance="notes"] move scratchpad
-for_window [instance="notes"] resize set 1900 1000
-for_window [instance="pythoncalc"] floating enable
-for_window [instance="pythoncalc"] move scratchpad
-for_window [instance="pythoncalc"] resize set 1900 1000
+for_window [instance="tmpnotes"] floating enable
+for_window [instance="tmpnotes"] move scratchpad
+for_window [instance="tmpnotes"] resize set 1900 1000
+for_window [instance="ipythonterm"] floating enable
+for_window [instance="ipythonterm"] move scratchpad
+for_window [instance="ipythonterm"] resize set 1900 1000
 for_window [title=".*Todoist.*"] floating enable
 for_window [title=".*Todoist.*"] move scratchpad
 for_window [title=".*Todoist.*"] resize set 1920 1060
@@ -404,12 +404,13 @@ bindsym $mod+Shift+comma --release   exec --no-startup-id xkill
 bindsym $mod+Shift+d --release       exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Shift+t                 exec thunar
 bindsym $mod+Shift+w                 exec --no-startup-id brave-browser-stable
-bindsym $mod+masculine               [instance="pythoncalc"] scratchpad show; move position center
-bindsym $mod+Shift+masculine         exec --no-startup-id  kitty --name pythoncalc -o font_size=24 -e python3 -q
-bindsym $mod+plus                    [instance="notes"] scratchpad show; move position center
-bindsym $mod+Shift+plus              exec --no-startup-id  kitty --name notes -e nvim /tmp/temp_notes.md
+bindsym $mod+masculine               [instance="ipythonterm"] scratchpad show; move position center
+bindsym $mod+Shift+masculine         exec --no-startup-id kitty --name ipythonterm -o font_size=22 -e \
+                                     ~/.config/ipython_launch.sh -q
+bindsym $mod+plus                    [instance="tmpnotes"] scratchpad show; move position center
+bindsym $mod+Shift+plus              exec --no-startup-id kitty --name tmpnotes -e ~/.config/tmpnotes_launch.sh
 bindsym $mod+p                       [class="Audacious"] scratchpad show; move position center
-bindsym $mod+Shift+p                 exec --no-startup-id  audacious
+bindsym $mod+Shift+p                 exec --no-startup-id audacious
 bindsym $mod+q                       [title=".*Todoist.*"] scratchpad show; move position center
 bindsym $mod+Shift+q                 exec --no-startup-id ~/.config/todoist_launch.sh
 bindsym Print --release              exec --no-startup-id flameshot gui --path ~/Pictures/screenshots/
@@ -460,7 +461,6 @@ for_window [class="(?i)zoom"]         floating enable border pixel 3
 
 # Autostart applications
 exec --no-startup-id  "python3 ~/.local/bin/monitor_brightness default"
-exec --no-startup-id  audacious
 exec --no-startup-id  brightnessctl s 20%
 exec --no-startup-id  compton -CG --config /dev/null
 exec --no-startup-id  brave-browser-stable
@@ -468,8 +468,7 @@ exec --no-startup-id  nitrogen --restore
 exec --no-startup-id  nm-applet
 exec --no-startup-id  pasystray
 exec --no-startup-id  xfce4-clipman
-exec --no-startup-id  kitty --name notes -e nvim /tmp/temp_notes.md
-exec --no-startup-id  kitty --name pythoncalc -o font_size=24 -e python3 -q
+exec --no-startup-id  kitty --name ipythonterm -o font_size=22 -e ~/.config/ipython_launch.sh -q
 exec --no-startup-id ~/.config/todoist_launch.sh
 
 # First kill it as it doesn't always respect the `--timeout` option otherwise
