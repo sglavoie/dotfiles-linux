@@ -468,7 +468,6 @@ exec --no-startup-id  nitrogen --restore
 exec --no-startup-id  nm-applet
 exec --no-startup-id  pasystray
 exec --no-startup-id  xfce4-clipman
-exec --no-startup-id  kitty --name ipythonterm -o font_size=22 -e ~/.config/ipython_launch.sh -q
 exec --no-startup-id ~/.config/todoist_launch.sh
 
 # First kill it as it doesn't always respect the `--timeout` option otherwise
