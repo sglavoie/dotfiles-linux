@@ -89,7 +89,7 @@ alias cdgrades='cd ~/dev/sglavoie/grades_calculator'
 alias cdrepl='cd ~/dev/sglavoie/world-class/REPL'
 alias cdsg='cd ~/dev/sglavoie/sglavoie.github.io-source'
 alias cdsnippets='cd ~/dev/sglavoie/code-snippets'
-alias cdutilities='cd ~/dev/sglavoie/python-utilities'
+alias cdhelpers='cd ~/dev/sglavoie/dev-helpers'
 
 # Code challenges paths
 alias cdchallenges='cd ~/dev/sglavoie/programming-challenges'
@@ -103,9 +103,9 @@ alias alearning='source ~/Programming/virtualenvs/learning/bin/activate'
 alias ap='source .venv/bin/activate'
 alias avenv='source venv/bin/activate'
 alias arepl='source ~/Programming/virtualenvs/repl/bin/activate'
-alias b='python3 ~/dev/sglavoie/python-utilities/rsync_backup/rsync_backup.py'
+alias b='python3 ~/dev/sglavoie/dev-helpers/rsync_backup/rsync_backup.py'
 alias cleanhistory='python \
-    ~/dev/sglavoie/python-utilities/zsh_history_cleaner/zsh_history_cleaner.py'
+    ~/dev/sglavoie/dev-helpers/zsh_history_cleaner/zsh_history_cleaner.py'
 alias cpsglavoie='cp -rf \
     ~/dev/sglavoie/sglavoie.github.io-source/output/* \
     ~/dev/sglavoie/sglavoie.github.io/ && \
