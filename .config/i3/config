@@ -1,4 +1,3 @@
-################################################################################
 # i3 config file
 ################################################################################
 # General settings
@@ -12,35 +11,35 @@ set $mod Mod4
 font xft:Lato 12
 
 # launch a terminal
-bindsym $mod+Return     exec kitty
+bindsym $mod+Return  exec kitty
 
 # launch a terminal in the same directory currently used
 bindsym $mod+Shift+Return exec cd "$(xcwd)" && exec kitty
 
 # kill focused window
 # ⇒ usual way to close applications
-bindsym $mod+comma      kill
+bindsym $mod+comma   kill
 
 # reload the configuration file
 # ⇒ apply changes from this file on the fly
-bindsym $mod+Shift+c    reload
+bindsym $mod+Shift+c  reload
 
 # restart i3 inplace
 # ⇒ preserves your layout/session, can be used when upgrading i3
-bindsym $mod+Shift+r    restart
+bindsym $mod+Shift+r  restart
 
 # exit i3
 # ⇒ logs you out of your X session
-bindsym $mod+Shift+e    exec --no-startup-id i3-msg exit
+bindsym $mod+Shift+e  exec --no-startup-id i3-msg exit
 
 # set shut down, restart and locking features
 # ⇒ type `$mod+Shift+Delete` then either `e`, `r` or `s`
 bindsym $mod+Shift+Delete   mode "$mode_system"
 set $mode_system (e)xit, (r)eboot, (s)hutdown
 mode "$mode_system" {
-    bindsym e    exec --no-startup-id i3-msg exit
-    bindsym r    exec --no-startup-id systemctl reboot
-    bindsym s    exec --no-startup-id systemctl poweroff
+    bindsym e  exec --no-startup-id i3-msg exit
+    bindsym r  exec --no-startup-id systemctl reboot
+    bindsym s  exec --no-startup-id systemctl poweroff
 
     # exit system mode with "Enter" or "Escape"
     bindsym Return mode "default"
@@ -104,13 +103,13 @@ bindsym $mod+o         exec ~/.config/i3/run_xrandr_laptop.sh
 bindsym $mod+mod1+o    exec ~/.config/i3/run_xrandr_monitor.sh
 
 # use laptop + monitor displays
-bindsym $mod+shift+o exec ~/.config/i3/run_xrandr.sh
+bindsym $mod+shift+o   exec ~/.config/i3/run_xrandr.sh
 
 # disable screen saver
-exec --no-startup-id    xset s off
+exec --no-startup-id   xset s off
 
 # disable power saving
-exec --no-startup-id    xset -dpms
+exec --no-startup-id   xset -dpms
 
 ################################################################################
 # navigation
@@ -133,10 +132,10 @@ bindsym $mod+Up   focus up
 bindsym $mod+l    focus right
 
 # move focused window (works in all modes)
-bindsym $mod+Shift+h    move left
-bindsym $mod+Shift+j    move down
-bindsym $mod+Shift+k    move up
-bindsym $mod+Shift+l    move right
+bindsym $mod+Shift+h   move left
+bindsym $mod+Shift+j   move down
+bindsym $mod+Shift+k   move up
+bindsym $mod+Shift+l   move right
 
 # for example, switching from workspace 1 to workspace 2 (e.g. mod+2) then
 # typing again mod+2 would bring you back to workspace 1 without having to
@@ -150,13 +149,13 @@ bindsym $mod+Control+Tab    workspace back_and_forth
 # "alternate" workspace you visited last
 # (the one brought with $mod+Tab in this case)
 bindsym $mod+mod1+Tab    move container to workspace back_and_forth; \
-                          workspace back_and_forth
+                           workspace back_and_forth
 
 # switch to any window with Rofi
 # ⇒ this simulates the familiar behavior of Alt+Tab on Windows and allows you
 #   to find windows by typing, but uses a better operating system to do it ;).
 bindsym Mod1+Tab    exec "rofi -theme lb -font 'JetBrainsMono 16' \
-                    -show-icons -width 95 -show window"
+                      -show-icons -width 95 -show window"
 
 # toggle fullscreen mode for the focused container
 # ⇒ this hides the i3bar for the current monitor
@@ -304,18 +303,18 @@ mode "Scratchpad"{
 }
 
 # Set up scratchpad applications
-for_window [class="Audacious"] floating enable
-for_window [class="Audacious"] move scratchpad
-for_window [class="Audacious"] resize set 1920 1060
-for_window [instance="tmpnotes"] floating enable
-for_window [instance="tmpnotes"] move scratchpad
-for_window [instance="tmpnotes"] resize set 1920 1060
+for_window [class="Audacious"]      floating enable
+for_window [class="Audacious"]      move scratchpad
+for_window [class="Audacious"]      resize set 1920 1060
+for_window [instance="tmpnotes"]    floating enable
+for_window [instance="tmpnotes"]    move scratchpad
+for_window [instance="tmpnotes"]    resize set 1920 1060
 for_window [instance="ipythonterm"] floating enable
 for_window [instance="ipythonterm"] move scratchpad
 for_window [instance="ipythonterm"] resize set 1920 1060
-for_window [title=".*Todoist.*"] floating enable
-for_window [title=".*Todoist.*"] move scratchpad
-for_window [title=".*Todoist.*"] resize set 1920 1060
+for_window [title=".*Todoist.*"]    floating enable
+for_window [title=".*Todoist.*"]    move scratchpad
+for_window [title=".*Todoist.*"]    resize set 1920 1060
 
 ################################################################################
 # Borders
@@ -353,10 +352,10 @@ bindsym $mod+d         exec --no-startup-id ~/Dropbox/.custom/dmenu/software.sh
 ################################################################################
 # shortcuts
 #######################################
-bindsym $mod+control+r    exec --no-startup-id thunar ~/Desktop
+bindsym $mod+control+r   exec --no-startup-id thunar ~/Desktop
 
 # Display multiple time zones around the world
-bindsym $mod+Mod1+t    exec --no-startup-id ~/Dropbox/.custom/dmenu/times.sh
+bindsym $mod+Mod1+t      exec --no-startup-id ~/Dropbox/.custom/dmenu/times.sh
 
 ################################################################################
 # sound
@@ -402,55 +401,55 @@ bindsym $mod+Control+b    exec --no-startup-id ~/.local/bin/toggle_laptop_bright
 # applications
 #######################################
 # Start
-bindsym $mod+BackSpace               exec kitty -e bashtop
-bindsym $mod+Shift+comma --release   exec --no-startup-id xkill
-bindsym $mod+Shift+d --release       exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym $mod+Shift+t                 exec thunar
-bindsym $mod+Shift+w                 exec --no-startup-id brave-browser-stable
-bindsym $mod+masculine               [instance="ipythonterm"] scratchpad show; move position center
-bindsym $mod+Shift+masculine         exec --no-startup-id kitty --name ipythonterm -o font_size=22 -e \
-                                     ~/.config/ipython_launch.sh -q
-bindsym $mod+plus                    [instance="tmpnotes"] scratchpad show; move position center
-bindsym $mod+Shift+plus              exec --no-startup-id kitty --name tmpnotes -e ~/.config/tmpnotes_launch.sh
-bindsym $mod+p                       [class="Audacious"] scratchpad show; move position center
-bindsym $mod+Shift+p                 exec --no-startup-id audacious
-bindsym $mod+q                       [title=".*Todoist.*"] scratchpad show; move position center
-bindsym $mod+Shift+q                 exec --no-startup-id ~/.config/todoist_launch.sh
-bindsym Print --release              exec --no-startup-id flameshot gui --path ~/Pictures/screenshots/
-bindsym $mod+Print --release         exec --no-startup-id flameshot screen --path ~/Pictures/screenshots/
+bindsym $mod+BackSpace              exec kitty -e bashtop
+bindsym $mod+Shift+comma --release  exec --no-startup-id xkill
+bindsym $mod+Shift+d --release      exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+Shift+t                exec thunar
+bindsym $mod+Shift+w                exec --no-startup-id brave-browser-stable
+bindsym $mod+masculine              [instance="ipythonterm"] scratchpad show; move position center
+bindsym $mod+Shift+masculine        exec --no-startup-id kitty --name ipythonterm -o font_size=22 -e \
+                                        ~/.config/ipython_launch.sh -q
+bindsym $mod+plus                   [instance="tmpnotes"] scratchpad show; move position center
+bindsym $mod+Shift+plus             exec --no-startup-id kitty --name tmpnotes -e ~/.config/tmpnotes_launch.sh
+bindsym $mod+p                      [class="Audacious"] scratchpad show; move position center
+bindsym $mod+Shift+p                exec --no-startup-id audacious
+bindsym $mod+q                      [title=".*Todoist.*"] scratchpad show; move position center
+bindsym $mod+Shift+q                exec --no-startup-id ~/.config/todoist_launch.sh
+bindsym Print --release             exec --no-startup-id flameshot gui --path ~/Pictures/screenshots/
+bindsym $mod+Print --release        exec --no-startup-id flameshot screen --path ~/Pictures/screenshots/
 
 # Open applications on specific workspaces
-assign [class="(?i)code"]               $ws1
-assign [class="(?i)brave-browser"]      $ws3
-assign [class="(?i)firefox"]            $ws3
-assign [class="(?i)brave-browser"]      $ws3
-assign [class="(?i)scribus"]            $ws4
-assign [class="Audacity"]               $ws4
-assign [class="Gimp"]                   $ws4
-assign [class="Inkscape"]               $ws4
-assign [class="vlc"]                    $ws4
-assign [class="(?i)atril"]              $ws6
-assign [class="(?i)zathura"]            $ws6
-assign [title="(?i)libreoffice"]        $ws4
-assign [class="Transmission"]           $ws8
-assign [class="keepassxc"]              $ws8
-assign [class="obs"]                    $ws8
+assign [class="(?i)code"]           $ws1
+assign [class="(?i)brave-browser"]  $ws3
+assign [class="(?i)firefox"]        $ws3
+assign [class="(?i)brave-browser"]  $ws3
+assign [class="(?i)scribus"]        $ws4
+assign [class="Audacity"]           $ws4
+assign [class="Gimp"]               $ws4
+assign [class="Inkscape"]           $ws4
+assign [class="vlc"]                $ws4
+assign [class="(?i)atril"]          $ws6
+assign [class="(?i)zathura"]        $ws6
+assign [title="(?i)libreoffice"]    $ws4
+assign [class="Transmission"]       $ws8
+assign [class="keepassxc"]          $ws8
+assign [class="obs"]                $ws8
 
 # Automatically switch to workspace when opening those
-for_window [class="(?i)code"]               workspace $ws1
-for_window [class="(?i)brave-browser"]      workspace $ws3
-for_window [class="(?i)firefox"]            workspace $ws3
-for_window [class="(?i)brave-browser"]      workspace $ws3
-for_window [class="(?i)scribus"]            workspace $ws4
-for_window [class="Gimp"]                   workspace $ws4
-for_window [class="Inkscape"]               workspace $ws4
-for_window [class="audacity"]               workspace $ws4
-for_window [class="vlc"]                    workspace $ws4
-for_window [class="(?i)zathura"]            workspace $ws6
-for_window [title="(?i)libreoffice"]        workspace $ws4
-for_window [class="Transmission"]           workspace $ws8
-for_window [class="keepassxc"]              workspace $ws8
-for_window [class="obs"]                    workspace $ws8
+for_window [class="(?i)code"]              workspace $ws1
+for_window [class="(?i)brave-browser"]     workspace $ws3
+for_window [class="(?i)firefox"]           workspace $ws3
+for_window [class="(?i)brave-browser"]     workspace $ws3
+for_window [class="(?i)scribus"]           workspace $ws4
+for_window [class="Gimp"]                  workspace $ws4
+for_window [class="Inkscape"]              workspace $ws4
+for_window [class="audacity"]              workspace $ws4
+for_window [class="vlc"]                   workspace $ws4
+for_window [class="(?i)zathura"]           workspace $ws6
+for_window [title="(?i)libreoffice"]       workspace $ws4
+for_window [class="Transmission"]          workspace $ws8
+for_window [class="keepassxc"]             workspace $ws8
+for_window [class="obs"]                   workspace $ws8
 
 # Open specific applications in floating mode
 for_window [class="(?i)virtualbox"]   floating enable border pixel 3
