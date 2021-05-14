@@ -98,7 +98,10 @@ bindsym $mod+Shift+b   bar mode dock bar-1
 exec ~/.config/i3/run_xrandr.sh
 
 # use laptop display only (turn off monitor)
-bindsym $mod+o exec ~/.config/i3/run_xrandr_laptop.sh
+bindsym $mod+o         exec ~/.config/i3/run_xrandr_laptop.sh
+
+# use monitor display only (turn off laptop screen)
+bindsym $mod+mod1+o    exec ~/.config/i3/run_xrandr_monitor.sh
 
 # use laptop + monitor displays
 bindsym $mod+shift+o exec ~/.config/i3/run_xrandr.sh
