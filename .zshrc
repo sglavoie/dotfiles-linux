@@ -67,6 +67,11 @@ for f in *.mp3; do
 done
 }
 
+# Source: https://www.stefaanlippens.net/pretty-csv.html
+function pretty_csv {
+    column -t -s, -n "$@" | less -F -S -X -K
+}
+
 # Load aliases if existent.
 [ -f "$HOME/.bash_aliases" ] && source "$HOME/.bash_aliases"
 
