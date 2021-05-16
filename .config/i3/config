@@ -320,16 +320,16 @@ for_window [title=".*Todoist.*"]    resize set 1920 1060
 # Borders
 #######################################
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 3
+new_window pixel 5
 new_float normal
-default_floating_border pixel 3
+default_floating_border pixel 5
 
 # Hide borders
 hide_edge_borders smart
 
 # change borders
 bindsym $mod+Shift+n   border none
-bindsym $mod+y         border pixel 3
+bindsym $mod+y         border pixel 5
 bindsym $mod+n         border normal
 
 ################################################################################
@@ -452,14 +452,14 @@ for_window [class="keepassxc"]             workspace $ws8
 for_window [class="obs"]                   workspace $ws8
 
 # Open specific applications in floating mode
-for_window [class="(?i)virtualbox"]   floating enable border pixel 3
-for_window [class="GParted"]          floating enable border pixel 3
-for_window [class="Lightdm-settings"] floating enable pixel 3
-for_window [class="Lxappearance"]     floating enable sticky enable border pixel 3
-for_window [class="Nitrogen"]         floating enable sticky enable border pixel 3
-for_window [title="File Transfer*"]   floating enable border pixel 3
-for_window [title="alsamixer"]        floating enable border pixel 3, move container to workspace $ws9, resize set 400 600, move position 0 1560
-for_window [class="(?i)zoom"]         floating enable border pixel 3
+for_window [class="(?i)virtualbox"]   floating enable border pixel 5
+for_window [class="GParted"]          floating enable border pixel 5
+for_window [class="Lightdm-settings"] floating enable pixel 5
+for_window [class="Lxappearance"]     floating enable sticky enable border pixel 5
+for_window [class="Nitrogen"]         floating enable sticky enable border pixel 5
+for_window [title="File Transfer*"]   floating enable border pixel 5
+for_window [title="alsamixer"]        floating enable border pixel 5, move container to workspace $ws9, resize set 400 600, move position 0 1560
+for_window [class="(?i)zoom"]         floating enable border pixel 5
 
 # Autostart applications
 exec --no-startup-id  "python3 ~/.local/bin/monitor_brightness default"
@@ -533,9 +533,9 @@ bar {
 
 # Theme colors
 # class                   border  backgr. text    indic.  child_border
-  client.focused          #4c7899 #285577 #ffffff #2e9ef4
-  client.focused_inactive #333333 #5f676a #ffffff #484e50
-  client.unfocused        #333333 #222222 #888888 #292d2e
+  client.focused          #ffffff #ff0054 #ffffff #2e9ef4
+  client.focused_inactive #333333 #8338ec #ffffff #484e50
+  client.unfocused        #333333 #000000 #bbbbbb #292d2e
   client.urgent           #2f343a #900000 #ffffff #900000
   client.placeholder      #F9FAF9 #061229 #FFFFFF #061229
-  client.background       #061229
+  client.background       #000000
