@@ -120,22 +120,22 @@ focus_follows_mouse    no
 # go to last urgent workspace
 # ⇒ this is the worspace that turns "red" by default when something happens
 #   in an unfocused workspace, like an application pop-up
-bindsym $mod+u    [urgent=latest] focus
+bindsym $mod+u    [urgent=latest] focus; exec ~/.config/i3/center-mouse
 
 # change focus
 # ⇒ works in all modes: tabbed, stacked, etc.
-bindsym $mod+h    focus left
-bindsym $mod+j    focus down
-bindsym $mod+k    focus up
-bindsym $mod+Down focus down
-bindsym $mod+Up   focus up
-bindsym $mod+l    focus right
+bindsym $mod+h    focus left; exec ~/.config/i3/center-mouse
+bindsym $mod+j    focus down; exec ~/.config/i3/center-mouse
+bindsym $mod+k    focus up; exec ~/.config/i3/center-mouse
+bindsym $mod+Down focus down; exec ~/.config/i3/center-mouse
+bindsym $mod+Up   focus up; exec ~/.config/i3/center-mouse
+bindsym $mod+l    focus right; exec ~/.config/i3/center-mouse
 
 # move focused window (works in all modes)
-bindsym $mod+Shift+h   move left
-bindsym $mod+Shift+j   move down
-bindsym $mod+Shift+k   move up
-bindsym $mod+Shift+l   move right
+bindsym $mod+Shift+h   move left; exec ~/.config/i3/center-mouse
+bindsym $mod+Shift+j   move down; exec ~/.config/i3/center-mouse
+bindsym $mod+Shift+k   move up; exec ~/.config/i3/center-mouse
+bindsym $mod+Shift+l   move right; exec ~/.config/i3/center-mouse
 
 # for example, switching from workspace 1 to workspace 2 (e.g. mod+2) then
 # typing again mod+2 would bring you back to workspace 1 without having to
@@ -278,8 +278,8 @@ floating_modifier    $mod
 bindsym $mod+Shift+s    sticky toggle
 
 # focus the surrounding containers
-bindsym $mod+a    focus parent
-bindsym $mod+c    focus child
+bindsym $mod+a    focus parent; exec ~/.config/i3/center-mouse
+bindsym $mod+c    focus child; exec ~/.config/i3/center-mouse
 
 ################################################################################
 # Scratchpad
