@@ -417,6 +417,7 @@ bindsym $mod+q                      [title=".*Todoist.*"] scratchpad show; move 
 bindsym $mod+Shift+q                exec --no-startup-id ~/.config/todoist_launch.sh
 bindsym Print --release             exec --no-startup-id flameshot gui --path ~/Pictures/screenshots/
 bindsym $mod+Print --release        exec --no-startup-id flameshot screen --path ~/Pictures/screenshots/
+bindsym mod1+F3                     exec --no-startup-id kitty -e htop
 
 # Open applications on specific workspaces
 assign [class="(?i)code"]           $ws1
