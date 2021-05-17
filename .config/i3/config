@@ -330,8 +330,8 @@ hide_edge_borders smart
 
 # change borders
 bindsym $mod+Shift+n   border none
-bindsym $mod+y         border pixel 5
-bindsym $mod+n         border normal
+bindsym $mod+n         border pixel 5
+bindsym $mod+y         border normal 5
 
 ################################################################################
 # dmenu
