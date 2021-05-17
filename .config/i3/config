@@ -143,7 +143,7 @@ bindsym $mod+Shift+l   move right; exec ~/.config/i3/center-mouse
 workspace_auto_back_and_forth    no
 
 # alternate between the last two workspaces that have been used
-bindsym $mod+Control+Tab    workspace back_and_forth
+bindsym $mod+BackSpace    workspace back_and_forth
 
 # move a container (window or group of windows if you grouped them) to the
 # "alternate" workspace you visited last
@@ -401,7 +401,6 @@ bindsym $mod+Control+b    exec --no-startup-id ~/.local/bin/toggle_laptop_bright
 # applications
 #######################################
 # Start
-bindsym $mod+BackSpace              exec kitty -e bashtop
 bindsym $mod+Shift+comma --release  exec --no-startup-id xkill
 bindsym $mod+Shift+d --release      exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Shift+t                exec thunar
