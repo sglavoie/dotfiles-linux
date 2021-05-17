@@ -18,7 +18,7 @@ bindsym $mod+Shift+Return exec cd "$(xcwd)" && exec kitty
 
 # kill focused window
 # ⇒ usual way to close applications
-bindsym $mod+comma   kill
+bindsym $mod+Escape   kill
 
 # reload the configuration file
 # ⇒ apply changes from this file on the fly
@@ -293,12 +293,13 @@ bindsym $mod+minus    floating toggle; resize set 1920 1060, move position cente
 # If there are multiple scratchpad windows, this command cycles through them.
 # There is an additional keybinding to allow a floating window to be toggled
 # (recovered as a normal window).
-bindsym $mod+Escape mode "Scratchpad"; scratchpad show, resize set 1920 1060, move position center
+# keycode 179 = F10 button
+bindcode 179 mode "Scratchpad"; scratchpad show, resize set 1920 1060, move position center
 mode "Scratchpad"{
-  bindsym $mod+Escape       scratchpad show, resize set 1920 1060, move position center; \
+  bindcode 179              scratchpad show, resize set 1920 1060, move position center; \
                             scratchpad show, resize set 1920 1060, move position center
   bindsym $mod+Shift+space  floating toggle; mode "default"
-  bindsym $mod+comma        kill; mode "default"
+  bindsym $mod+Escape       kill; mode "default"
   bindsym Escape            scratchpad show; mode "default"
 }
 
@@ -401,7 +402,7 @@ bindsym $mod+Control+b    exec --no-startup-id ~/.local/bin/toggle_laptop_bright
 # applications
 #######################################
 # Start
-bindsym $mod+Shift+comma --release  exec --no-startup-id xkill
+bindsym $mod+Shift+Escape --release exec --no-startup-id xkill
 bindsym $mod+Shift+d --release      exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Shift+t                exec thunar
 bindsym $mod+Shift+w                exec --no-startup-id brave-browser-stable
