@@ -445,6 +445,7 @@ for_window [class="Inkscape"]              workspace $ws4
 for_window [class="audacity"]              workspace $ws4
 for_window [class="vlc"]                   workspace $ws4
 for_window [class="(?i)zathura"]           workspace $ws6
+for_window [class="(?i)atril"]             workspace $ws6
 for_window [title="(?i)libreoffice"]       workspace $ws4
 for_window [class="Transmission"]          workspace $ws8
 for_window [class="keepassxc"]             workspace $ws8
