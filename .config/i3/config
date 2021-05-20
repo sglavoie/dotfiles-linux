@@ -19,6 +19,7 @@ bindsym $mod+Shift+Return exec cd "$(xcwd)" && exec kitty
 # kill focused window
 # ⇒ usual way to close applications
 bindsym $mod+Escape   kill
+bindsym $mod+mod1+Escape --release  exec --no-startup-id xkill
 
 # reload the configuration file
 # ⇒ apply changes from this file on the fly
@@ -45,10 +46,6 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
-# shut down the system without confirmation
-# ⇒ this shortcut is hard to trigger with one hand on purpose!
-bindsym $mod+Shift+Escape exec --no-startup-id systemctl poweroff
 
 # resize windows
 # you can also use the mouse for that:
@@ -402,7 +399,6 @@ bindsym $mod+Control+b    exec --no-startup-id ~/.local/bin/toggle_laptop_bright
 # applications
 #######################################
 # Start
-bindsym $mod+Shift+Escape --release exec --no-startup-id xkill
 bindsym $mod+Shift+d --release      exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Shift+t                exec thunar
 bindsym $mod+Shift+w                exec --no-startup-id brave-browser-stable
