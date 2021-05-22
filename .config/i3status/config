@@ -35,14 +35,13 @@ load {
 }
 
 memory {
-        format = "🐏 U: %used / F: %available "
+        format = "🐏 U: %used"
         threshold_degraded = "15%"
         threshold_critical = "5%"
         format_degraded = " Memory LOW: %free "
 }
 
 disk "/" {
-        # format = " hdd %avail "
         format = "💾 %avail "
 }
 
@@ -81,6 +80,5 @@ volume master {
 }
 
 tztime local {
-        # format = "%Y-%m-%d %H:%M:%S"
         format = "📅 %a %d %b %Y %I:%M %p "
 }
