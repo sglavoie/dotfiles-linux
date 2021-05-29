@@ -1,15 +1,121 @@
 # i3 config file
 ################################################################################
-# General settings
+# i3 config shortcuts
 ######################################
+# Program paths
+set $brightness-laptop-down      "light -U 1"
+set $brightness-laptop-up        "light -A 1"
+set $brightness-monitor-default  "python3 ~/.local/bin/monitor_brightness default"
+set $brightness-monitor-down     "python3 ~/.local/bin/monitor_brightness down"
+set $brightness-monitor-up       "python3 ~/.local/bin/monitor_brightness up"
+set $brightness-toggle-laptop    ~/.local/bin/toggle_laptop_brightness
+set $center-mouse exec           ~/.config/i3/center-mouse
+set $default-web-browser         brave-browser-stable
+set $path-xrandr-both            ~/.config/i3/run_xrandr.sh
+set $path-xrandr-laptop          ~/.config/i3/run_xrandr_laptop.sh
+set $path-xrandr-monitor         ~/.config/i3/run_xrandr_monitor.sh
+set $todoist-app                 "crx_elldfnmogicegdcphgljaoaklkpcnbnn"
+
+# i3 specific
+set $default-web-browser-class   "(?i)brave-browser"
+set $exec                        exec --no-startup-id
+set $output-primary              output eDP
+set $output-secondary            output HDMI-A-0
+set $python-term                 "ipythonterm"
+set $temp-notes                  "tmpnotes"
+
 # set mod key (Mod1=Alt, Mod4=Super)
 # ⇒ the main modifier used to trigger shortcuts
 set $mod Mod4
 
+# Workspaces
+#######################################
+# Workspace names — can be customized with emojis and names
+# ⇒ I find I like minimalism best and just mentally associate
+#   one workspace number with a specific type of task
+# ⇒ those are set across all monitors
+set $ws1  "1"
+set $ws2  "2"
+set $ws3  "3"
+set $ws4  "4"
+set $ws5  "5"
+set $ws6  "6"
+set $ws7  "7"
+set $ws8  "8"
+set $ws9  "9"
+set $ws10 "10"
+
+# Modes
+#######################################
+# set shut down, restart and locking features
+# ⇒ type `$mod+Shift+Delete` then either `e`, `r` or `s`
+mode "$mode_system" {
+    bindsym e  $exec i3-msg exit
+    bindsym r  $exec systemctl reboot
+    bindsym s  $exec systemctl poweroff
+
+    # exit system mode with "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+set $mode_system (e)xit, (r)eboot, (s)hutdown
+
+# resize with smaller steps to get more control
+mode "resize" {
+        bindsym h resize shrink width 2 px or 2 ppt
+        bindsym j resize grow height 2 px or 2 ppt
+        bindsym k resize shrink height 2 px or 2 ppt
+        bindsym l resize grow width 2 px or 2 ppt
+
+        # exit resize mode: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+# There is an additional keybinding to allow a floating window to be toggled
+# (recovered as a normal window).
+# keycode 179 = F10 button
+# (not the actual F10 key, but same button on my laptop with default function!)
+mode "Scratchpad"{
+  bindcode 179              scratchpad show, resize set 1920 1060, move position center; \
+                            scratchpad show, resize set 1920 1060, move position center
+  bindsym $mod+Shift+space  floating toggle; mode "default"
+  bindsym $mod+Escape       kill; mode "default"
+  bindsym Escape            scratchpad show; mode "default"
+}
+bindcode 179 mode "Scratchpad"; scratchpad show, resize set 1920 1060, move position center
+
+# Sound
+#######################################
+set $volumepath ~/.config/i3-volume/volume
+set $statuscmd i3status
+
+# Signal used to update the status line
+set $statussig SIGUSR1
+
+# Amount to increase/decrease volume as a percentage
+set $volumestep 5
+
+# Font
+#######################################
 # font for window titles
 # ⇒ this is what you see in your i3bar
-font xft:Lato 12
+set $font-small font xft:Lato 12
+set $font-medium font xft:Lato 14
+$font-small
 
+set $rofi-font 'JetBrainsMono 16'
+
+
+# Keyboard
+set $compose-key "compose:rctrl"
+
+################################################################################
+# General settings
+######################################
 # launch a terminal
 bindsym $mod+Return  exec kitty
 
@@ -19,7 +125,7 @@ bindsym $mod+Shift+Return exec cd "$(xcwd)" && exec kitty
 # kill focused window
 # ⇒ usual way to close applications
 bindsym $mod+Escape   kill
-bindsym $mod+mod1+Escape --release  exec --no-startup-id xkill
+bindsym $mod+mod1+Escape --release  $exec xkill
 
 # reload the configuration file
 # ⇒ apply changes from this file on the fly
@@ -31,21 +137,7 @@ bindsym $mod+Shift+r  restart
 
 # exit i3
 # ⇒ logs you out of your X session
-bindsym $mod+Shift+e  exec --no-startup-id i3-msg exit
-
-# set shut down, restart and locking features
-# ⇒ type `$mod+Shift+Delete` then either `e`, `r` or `s`
-bindsym $mod+Shift+Delete   mode "$mode_system"
-set $mode_system (e)xit, (r)eboot, (s)hutdown
-mode "$mode_system" {
-    bindsym e  exec --no-startup-id i3-msg exit
-    bindsym r  exec --no-startup-id systemctl reboot
-    bindsym s  exec --no-startup-id systemctl poweroff
-
-    # exit system mode with "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+bindsym $mod+Shift+e  $exec i3-msg exit
 
 # resize windows
 # you can also use the mouse for that:
@@ -53,19 +145,6 @@ mode "$mode_system" {
   # drag the border with LeftClick or RightClick
 # for floating windows ⇒
   # `mod + RightClick`, then drag
-
-# resize with smaller steps to get more control
-bindsym $mod+r mode "resize"
-mode "resize" {
-        bindsym h resize shrink width 2 px or 2 ppt
-        bindsym j resize grow height 2 px or 2 ppt
-        bindsym k resize shrink height 2 px or 2 ppt
-        bindsym l resize grow width 2 px or 2 ppt
-
-        # exit resize mode: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
 
 # resize without entering "resize mode"
 # ⇒ I find this more convenient. I usually don't care about
@@ -80,7 +159,7 @@ bindsym $mod+Control+h resize grow width 10 px or 10 ppt
 # screens / monitors
 ######################################
 # lock the screens with a black color background
-bindsym $mod+Delete    exec --no-startup-id i3lock -c 000000
+bindsym $mod+Delete    $exec i3lock -c 000000
 
 # hide/unhide i3status bar (laptop)
 bindsym $mod+m         bar mode invisible bar-0
@@ -91,22 +170,22 @@ bindsym $mod+b         bar mode invisible bar-1
 bindsym $mod+Shift+b   bar mode dock bar-1
 
 # set up displays
-exec ~/.config/i3/run_xrandr.sh
+exec $path-xrandr-both
 
 # use laptop display only (turn off monitor)
-bindsym $mod+o         exec ~/.config/i3/run_xrandr_laptop.sh
+bindsym $mod+o         exec $path-xrandr-laptop
 
 # use monitor display only (turn off laptop screen)
-bindsym $mod+mod1+o    exec ~/.config/i3/run_xrandr_monitor.sh
+bindsym $mod+mod1+o    exec $path-xrandr-monitor
 
 # use laptop + monitor displays
-bindsym $mod+shift+o   exec ~/.config/i3/run_xrandr.sh
+bindsym $mod+shift+o   exec $path-xrandr-both
 
 # disable screen saver
-exec --no-startup-id   xset s off
+$exec   xset s off
 
 # disable power saving
-exec --no-startup-id   xset -dpms
+$exec   xset -dpms
 
 ################################################################################
 # navigation
@@ -117,22 +196,22 @@ focus_follows_mouse    no
 # go to last urgent workspace
 # ⇒ this is the worspace that turns "red" by default when something happens
 #   in an unfocused workspace, like an application pop-up
-bindsym $mod+u    [urgent=latest] focus; exec ~/.config/i3/center-mouse
+bindsym $mod+u    [urgent=latest] focus; $center-mouse
 
 # change focus
 # ⇒ works in all modes: tabbed, stacked, etc.
-bindsym $mod+h    focus left; exec ~/.config/i3/center-mouse
-bindsym $mod+j    focus down; exec ~/.config/i3/center-mouse
-bindsym $mod+k    focus up; exec ~/.config/i3/center-mouse
-bindsym $mod+Down focus down; exec ~/.config/i3/center-mouse
-bindsym $mod+Up   focus up; exec ~/.config/i3/center-mouse
-bindsym $mod+l    focus right; exec ~/.config/i3/center-mouse
+bindsym $mod+h    focus left; $center-mouse
+bindsym $mod+j    focus down; $center-mouse
+bindsym $mod+k    focus up; $center-mouse
+bindsym $mod+Down focus down; $center-mouse
+bindsym $mod+Up   focus up; $center-mouse
+bindsym $mod+l    focus right; $center-mouse
 
 # move focused window (works in all modes)
-bindsym $mod+Shift+h   move left; exec ~/.config/i3/center-mouse
-bindsym $mod+Shift+j   move down; exec ~/.config/i3/center-mouse
-bindsym $mod+Shift+k   move up; exec ~/.config/i3/center-mouse
-bindsym $mod+Shift+l   move right; exec ~/.config/i3/center-mouse
+bindsym $mod+Shift+h   move left; $center-mouse
+bindsym $mod+Shift+j   move down; $center-mouse
+bindsym $mod+Shift+k   move up; $center-mouse
+bindsym $mod+Shift+l   move right; $center-mouse
 
 # for example, switching from workspace 1 to workspace 2 (e.g. mod+2) then
 # typing again mod+2 would bring you back to workspace 1 without having to
@@ -151,7 +230,7 @@ bindsym $mod+mod1+Tab    move container to workspace back_and_forth; \
 # switch to any window with Rofi
 # ⇒ this simulates the familiar behavior of Alt+Tab on Windows and allows you
 #   to find windows by typing, but uses a better operating system to do it ;).
-bindsym Mod1+Tab    exec "rofi -theme lb -font 'JetBrainsMono 16' \
+bindsym Mod1+Tab    exec "rofi -theme lb -font $rofi-font \
                       -show-icons -width 95 -show window"
 
 # toggle fullscreen mode for the focused container
@@ -181,21 +260,6 @@ bindsym $mod+Left             workspace prev_on_output
 bindsym $mod+z    exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
 bindsym $mod+g    exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
-# Workspace names — can be customized with emojis and names
-# ⇒ I find I like minimalism best and just mentally associate
-#   one workspace number with a specific type of task
-# ⇒ those are set across all monitors
-set $ws1  "1"
-set $ws2  "2"
-set $ws3  "3"
-set $ws4  "4"
-set $ws5  "5"
-set $ws6  "6"
-set $ws7  "7"
-set $ws8  "8"
-set $ws9  "9"
-set $ws10 "10"
-
 # switch to workspace (no matter which monitor it is set to)
 bindsym $mod+1    workspace $ws1
 bindsym $mod+2    workspace $ws2
@@ -210,16 +274,16 @@ bindsym $mod+0    workspace $ws10
 
 # determine which workspace appears on which screen
 # ⇒ with a single output screen, this is not necessary
-workspace 1  output HDMI-A-0
-workspace 2  output HDMI-A-0
-workspace 3  output HDMI-A-0
-workspace 4  output HDMI-A-0
-workspace 5  output HDMI-A-0
-workspace 6  output HDMI-A-0
-workspace 7  output eDP
-workspace 8  output eDP
-workspace 9  output eDP
-workspace 10 output eDP
+workspace 1  $output-secondary
+workspace 2  $output-secondary
+workspace 3  $output-secondary
+workspace 4  $output-secondary
+workspace 5  $output-secondary
+workspace 6  $output-secondary
+workspace 7  $output-primary
+workspace 8  $output-primary
+workspace 9  $output-primary
+workspace 10 $output-primary
 
 # move focused container to workspace and switch to workspace
 bindsym $mod+Shift+1    move container to workspace $ws1;  workspace $ws1
@@ -275,8 +339,8 @@ floating_modifier    $mod
 bindsym $mod+Shift+s    sticky toggle
 
 # focus the surrounding containers
-bindsym $mod+a    focus parent; exec ~/.config/i3/center-mouse
-bindsym $mod+c    focus child; exec ~/.config/i3/center-mouse
+bindsym $mod+a    focus parent; $center-mouse
+bindsym $mod+c    focus child; $center-mouse
 
 ################################################################################
 # Scratchpad
@@ -286,33 +350,19 @@ bindsym $mod+c    focus child; exec ~/.config/i3/center-mouse
 # it will appear correctly when showing it for the first time.
 bindsym $mod+minus    floating toggle; resize set 1920 1060, move position center; move scratchpad
 
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
-# There is an additional keybinding to allow a floating window to be toggled
-# (recovered as a normal window).
-# keycode 179 = F10 button
-bindcode 179 mode "Scratchpad"; scratchpad show, resize set 1920 1060, move position center
-mode "Scratchpad"{
-  bindcode 179              scratchpad show, resize set 1920 1060, move position center; \
-                            scratchpad show, resize set 1920 1060, move position center
-  bindsym $mod+Shift+space  floating toggle; mode "default"
-  bindsym $mod+Escape       kill; mode "default"
-  bindsym Escape            scratchpad show; mode "default"
-}
-
 # Set up scratchpad applications
 for_window [class="Audacious"]      floating enable
 for_window [class="Audacious"]      move scratchpad
 for_window [class="Audacious"]      resize set 1920 1060
-for_window [instance="tmpnotes"]    floating enable
-for_window [instance="tmpnotes"]    move scratchpad
-for_window [instance="tmpnotes"]    resize set 1920 1060
-for_window [instance="ipythonterm"] floating enable
-for_window [instance="ipythonterm"] move scratchpad
-for_window [instance="ipythonterm"] resize set 1920 1060
-for_window [instance="crx_elldfnmogicegdcphgljaoaklkpcnbnn"]  floating enable
-for_window [instance="crx_elldfnmogicegdcphgljaoaklkpcnbnn"]  move scratchpad
-for_window [instance="crx_elldfnmogicegdcphgljaoaklkpcnbnn"]  resize set 1920 1060
+for_window [instance=$temp-notes]    floating enable
+for_window [instance=$temp-notes]    move scratchpad
+for_window [instance=$temp-notes]    resize set 1920 1060
+for_window [instance=$python-term] floating enable
+for_window [instance=$python-term] move scratchpad
+for_window [instance=$python-term] resize set 1920 1060
+for_window [instance=$todoist-app]  floating enable
+for_window [instance=$todoist-app]  move scratchpad
+for_window [instance=$todoist-app]  resize set 1920 1060
 
 ################################################################################
 # Borders
@@ -333,67 +383,60 @@ bindsym $mod+y         border normal 5
 ################################################################################
 # dmenu
 #######################################
-bindsym $mod+Mod1+b    exec --no-startup-id ~/Dropbox/.custom/dmenu/books.sh
-bindsym $mod+Mod1+c    exec --no-startup-id ~/Dropbox/.custom/dmenu/cheatsheets.sh
-bindsym $mod+Mod1+d    exec --no-startup-id ~/Dropbox/.custom/dmenu/documents.sh
-bindsym $mod+Mod1+e    exec --no-startup-id ~/Dropbox/.custom/dmenu/edit_scripts.sh
-bindsym $mod+Mod1+f    exec --no-startup-id ~/Dropbox/.custom/dmenu/filepaths.sh
-bindsym $mod+Mod1+q    exec --no-startup-id ~/Dropbox/.custom/dmenu/quotes.sh
-bindsym $mod+Mod1+r    exec --no-startup-id ~/Dropbox/.custom/dmenu/reading.sh
-bindsym $mod+Mod1+s    exec --no-startup-id ~/Dropbox/.custom/dmenu/scripts.sh
-bindsym $mod+Mod1+u    exec --no-startup-id ~/Dropbox/.custom/dmenu/university.sh
-bindsym $mod+Mod1+w    exec --no-startup-id ~/Dropbox/.custom/dmenu/work.sh
-bindsym $mod+Shift+f   exec --no-startup-id ~/Dropbox/.custom/dmenu/thunar_launcher.sh
-bindsym $mod+Shift+u   exec --no-startup-id ~/Dropbox/.custom/dmenu/university_launchers.sh
-bindsym $mod+d         exec --no-startup-id ~/Dropbox/.custom/dmenu/software.sh
+bindsym $mod+Mod1+b    $exec ~/Dropbox/.custom/dmenu/books.sh
+bindsym $mod+Mod1+c    $exec ~/Dropbox/.custom/dmenu/cheatsheets.sh
+bindsym $mod+Mod1+d    $exec ~/Dropbox/.custom/dmenu/documents.sh
+bindsym $mod+Mod1+e    $exec ~/Dropbox/.custom/dmenu/edit_scripts.sh
+bindsym $mod+Mod1+f    $exec ~/Dropbox/.custom/dmenu/filepaths.sh
+bindsym $mod+Mod1+q    $exec ~/Dropbox/.custom/dmenu/quotes.sh
+bindsym $mod+Mod1+r    $exec ~/Dropbox/.custom/dmenu/reading.sh
+bindsym $mod+Mod1+s    $exec ~/Dropbox/.custom/dmenu/scripts.sh
+bindsym $mod+Mod1+u    $exec ~/Dropbox/.custom/dmenu/university.sh
+bindsym $mod+Mod1+w    $exec ~/Dropbox/.custom/dmenu/work.sh
+bindsym $mod+Shift+f   $exec ~/Dropbox/.custom/dmenu/thunar_launcher.sh
+bindsym $mod+Shift+u   $exec ~/Dropbox/.custom/dmenu/university_launchers.sh
+bindsym $mod+d         $exec ~/Dropbox/.custom/dmenu/software.sh
 
 ################################################################################
 # shortcuts
 #######################################
-bindsym $mod+control+r   exec --no-startup-id thunar ~/Desktop
+bindsym $mod+control+r   $exec thunar ~/Desktop
 
 # Display multiple time zones around the world
-bindsym $mod+Mod1+t      exec --no-startup-id ~/Dropbox/.custom/dmenu/times.sh
+bindsym $mod+Mod1+t      $exec ~/Dropbox/.custom/dmenu/times.sh
 
 ################################################################################
 # sound
 #######################################
-set $volumepath ~/.config/i3-volume/volume
-set $statuscmd i3status
-
-# Signal used to update the status line
-set $statussig SIGUSR1
-
-# Amount to increase/decrease volume as a percentage
-set $volumestep 5
-
 # `pkill` is useful to quickly update the block in i3blocks
 bindsym XF86AudioRaiseVolume    exec $volumepath -np up $volumestep -t $statuscmd -u $statussig && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioLowerVolume    exec $volumepath -np down $volumestep -t $statuscmd -u $statussig && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioMute           exec $volumepath mute -n -t $statuscmd -u $statussig && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioMicMute        exec --no-startup-id ~/.local/bin/toggle_mic_source
-bindsym $mod+exclamdown         exec --no-startup-id ~/.local/bin/toggle_mic_source
+bindsym XF86AudioMicMute        $exec ~/.local/bin/toggle_mic_source
+bindsym $mod+exclamdown         $exec ~/.local/bin/toggle_mic_source
 
 # Automatically set the volume to a given value when (re)launching i3
 exec_always --no-startup-id "amixer -D pulse set Master 50%"
 
 # Always mute the microphone source when (re)launching i3
-exec_always --no-startup-id pactl set-source-mute "alsa_input.pci-0000_03_00.6.analog-stereo" true && pkill -RTMIN+10 i3blocks
+exec_always --no-startup-id pactl set-source-mute \
+            "alsa_input.pci-0000_03_00.6.analog-stereo" true && \
+            pkill -RTMIN+10 i3blocks
 
 ################################################################################
 # brightness
 #######################################
-# Control brightness more precisely through software `brightnessctl`
-bindsym XF86MonBrightnessDown    exec "light -U 1"
-bindsym XF86MonBrightnessUp      exec "light -A 1"
+# Control brightness more precisely through software `light`
+bindsym XF86MonBrightnessDown    exec $brightness-laptop-down
+bindsym XF86MonBrightnessUp      exec $brightness-laptop-up
 
 # Adjust external monitor brightness
-bindsym $mod+F2   exec --no-startup-id "python3 ~/.local/bin/monitor_brightness up"
-bindsym $mod+F1   exec --no-startup-id "python3 ~/.local/bin/monitor_brightness down"
-bindsym $mod+F3   exec --no-startup-id "python3 ~/.local/bin/monitor_brightness default"
+bindsym $mod+F2   $exec $brightness-monitor-down
+bindsym $mod+F1   $exec $brightness-monitor-up
+bindsym $mod+F3   $exec $brightness-monitor-default
 
 # Toggle laptop screen
-bindsym $mod+Control+b    exec --no-startup-id ~/.local/bin/toggle_laptop_brightness
+bindsym $mod+Control+b    $exec $brightness-toggle-laptop
 
 ################################################################################
 # applications
@@ -401,51 +444,51 @@ bindsym $mod+Control+b    exec --no-startup-id ~/.local/bin/toggle_laptop_bright
 # Start
 bindsym $mod+Shift+d --release      exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Shift+t                exec thunar
-bindsym $mod+Shift+w                exec --no-startup-id brave-browser-stable
-bindsym $mod+masculine              [instance="ipythonterm"] scratchpad show; move position center
-bindsym $mod+Shift+masculine        exec --no-startup-id kitty --name ipythonterm -o font_size=22 -e \
+bindsym $mod+Shift+w                $exec $default-web-browser
+bindsym $mod+masculine              [instance=$python-term] scratchpad show; move position center
+bindsym $mod+Shift+masculine        $exec kitty --name ipythonterm -o font_size=22 -e \
                                         ~/.config/ipython_launch.sh -q
-bindsym $mod+plus                   [instance="tmpnotes"] scratchpad show; move position center
-bindsym $mod+Shift+plus             exec --no-startup-id kitty --name tmpnotes -e ~/.config/tmpnotes_launch.sh
+bindsym $mod+plus                   [instance=$temp-notes] scratchpad show; move position center
+bindsym $mod+Shift+plus             $exec kitty --name tmpnotes -e ~/.config/tmpnotes_launch.sh
 bindsym $mod+p                      [class="Audacious"] scratchpad show; move position center
-bindsym $mod+Shift+p                exec --no-startup-id audacious
-bindsym $mod+q                      [instance="crx_elldfnmogicegdcphgljaoaklkpcnbnn"] scratchpad show; move position center
-bindsym $mod+Shift+q                exec --no-startup-id ~/.config/todoist_launch.sh
-bindsym Print --release             exec --no-startup-id flameshot gui --path ~/Pictures/screenshots/
-bindsym $mod+Print --release        exec --no-startup-id flameshot screen --path ~/Pictures/screenshots/
-bindsym mod1+F3                     exec --no-startup-id kitty -e htop
+bindsym $mod+Shift+p                $exec audacious
+bindsym $mod+q                      [instance=$todoist-app] scratchpad show; move position center
+bindsym $mod+Shift+q                $exec ~/.config/todoist_launch.sh
+bindsym Print --release             $exec flameshot gui --path ~/Pictures/screenshots/
+bindsym $mod+Print --release        $exec flameshot screen --path ~/Pictures/screenshots/
+bindsym mod1+F3                     $exec kitty -e htop
 
 # Open applications on specific workspaces
-assign [class="(?i)code"]           $ws1
-assign [class="(?i)brave-browser"]  $ws3
-assign [class="(?i)firefox"]        $ws3
-assign [class="(?i)brave-browser"]  $ws3
-assign [class="Audacity"]           $ws4
-assign [class="Gimp"]               $ws4
-assign [class="Inkscape"]           $ws4
-assign [class="vlc"]                $ws4
-assign [class="(?i)atril"]          $ws6
-assign [class="(?i)zathura"]        $ws6
-assign [title="(?i)libreoffice"]    $ws4
-assign [class="Transmission"]       $ws8
-assign [class="keepassxc"]          $ws8
-assign [class="obs"]                $ws8
+assign [class="(?i)code"]                  $ws1
+assign [class=$default-web-browser]        $ws3
+assign [class="(?i)firefox"]               $ws3
+assign [class=$default-web-browser-class]  $ws3
+assign [class="Audacity"]                  $ws4
+assign [class="Gimp"]                      $ws4
+assign [class="Inkscape"]                  $ws4
+assign [class="vlc"]                       $ws4
+assign [class="(?i)atril"]                 $ws6
+assign [class="(?i)zathura"]               $ws6
+assign [title="(?i)libreoffice"]           $ws4
+assign [class="Transmission"]              $ws8
+assign [class="keepassxc"]                 $ws8
+assign [class="obs"]                       $ws8
 
 # Automatically switch to workspace when opening those
-for_window [class="(?i)code"]              workspace $ws1
-for_window [class="(?i)brave-browser"]     workspace $ws3
-for_window [class="(?i)firefox"]           workspace $ws3
-for_window [class="(?i)brave-browser"]     workspace $ws3
-for_window [class="Gimp"]                  workspace $ws4
-for_window [class="Inkscape"]              workspace $ws4
-for_window [class="audacity"]              workspace $ws4
-for_window [class="vlc"]                   workspace $ws4
-for_window [class="(?i)zathura"]           workspace $ws6
-for_window [class="(?i)atril"]             workspace $ws6
-for_window [title="(?i)libreoffice"]       workspace $ws4
-for_window [class="Transmission"]          workspace $ws8
-for_window [class="keepassxc"]             workspace $ws8
-for_window [class="obs"]                   workspace $ws8
+for_window [class="(?i)code"]                   workspace $ws1
+for_window [class=$default-web-browser]         workspace $ws3
+for_window [class=$default-web-browser-class]   workspace $ws3
+for_window [class="(?i)firefox"]                workspace $ws3
+for_window [class="Gimp"]                       workspace $ws4
+for_window [class="Inkscape"]                   workspace $ws4
+for_window [class="audacity"]                   workspace $ws4
+for_window [class="vlc"]                        workspace $ws4
+for_window [class="(?i)zathura"]                workspace $ws6
+for_window [class="(?i)atril"]                  workspace $ws6
+for_window [title="(?i)libreoffice"]            workspace $ws4
+for_window [class="Transmission"]               workspace $ws8
+for_window [class="keepassxc"]                  workspace $ws8
+for_window [class="obs"]                        workspace $ws8
 
 # Open specific applications in floating mode
 for_window [class="(?i)virtualbox"]   floating enable border pixel 5
@@ -458,15 +501,15 @@ for_window [title="alsamixer"]        floating enable border pixel 5
 for_window [class="(?i)zoom"]         floating enable border pixel 5
 
 # Autostart applications
-exec --no-startup-id  "python3 ~/.local/bin/monitor_brightness default"
-exec --no-startup-id  brightnessctl s 20%
-exec --no-startup-id  compton -CG --config /dev/null
-exec --no-startup-id  brave-browser-stable
-exec --no-startup-id  nitrogen --restore
-exec --no-startup-id  nm-applet
-exec --no-startup-id  pasystray
-exec --no-startup-id  xfce4-clipman
-exec --no-startup-id ~/.config/todoist_launch.sh
+$exec  $brightness-monitor-default
+$exec  brightnessctl s 20%
+$exec  compton -CG --config /dev/null
+$exec  $default-web-browser
+$exec  nitrogen --restore
+$exec  nm-applet
+$exec  pasystray
+$exec  xfce4-clipman
+$exec ~/.config/todoist_launch.sh
 
 # First kill it as it doesn't always respect the `--timeout` option otherwise
 exec_always --no-startup-id    "killall unclutter; unclutter --jitter 40 --ignore-scrolling --timeout 5 &"
@@ -475,7 +518,7 @@ exec_always --no-startup-id    "killall unclutter; unclutter --jitter 40 --ignor
 # keyboard / mouse
 #######################################
 # Set compose key to Right Ctrl
-exec_always --no-startup-id    setxkbmap -option "compose:rctrl"
+exec_always --no-startup-id    setxkbmap -option $compose-key
 
 # Delay, interval
 exec_always --no-startup-id    xset r rate 250 60
@@ -486,8 +529,8 @@ exec_always --no-startup-id    xset r rate 250 60
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
     id bar-1
-    font xft:Lato 12
-    output HDMI-A-0
+    $font-small
+    $output-secondary
     # mode invisible
     tray_output none
     status_command i3blocks
@@ -507,8 +550,8 @@ bar {
 
 bar {
     id bar-0
-    font xft:Lato 14
-    output eDP
+    $font-medium
+    $output-primary
     tray_output primary
     status_command i3blocks
     position top
