@@ -24,12 +24,13 @@ set $toggle-mic-on-off           ~/.local/bin/toggle_mic_source
 set $center-mouse exec           ~/.config/i3/center-mouse
 set $default-web-browser-class   "(?i)brave-browser"
 set $exec                        exec --no-startup-id
-set $i3-volume                   ~/.config/i3-volume/volume
 set $output-primary              output eDP
 set $output-secondary            output HDMI-A-0
 set $python-term                 "ipythonterm"
 set $scratchpad-size             1920 1060
 set $temp-notes                  "tmpnotes"
+set $volumepath                  ~/.config/i3-volume/volume
+
 
 # set mod key (Mod1=Alt, Mod4=Super)
 # ⇒ the main modifier used to trigger shortcuts
@@ -104,7 +105,6 @@ bindsym Caps_Lock mode "-------------------- CAPSLOCK --------------------"
 
 # Sound
 #######################################
-set $volumepath $i3-volume
 set $statuscmd i3status
 
 # Signal used to update the status line
