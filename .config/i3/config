@@ -31,7 +31,6 @@ set $scratchpad-size             1920 1060
 set $temp-notes                  "tmpnotes"
 set $volumepath                  ~/.config/i3-volume/volume
 
-
 # set mod key (Mod1=Alt, Mod4=Super)
 # ⇒ the main modifier used to trigger shortcuts
 set $mod Mod4
@@ -67,6 +66,7 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 set $mode_system (e)xit, (r)eboot, (s)hutdown
+bindsym $mod+Shift+Delete   mode "$mode_system"
 
 # resize with smaller steps to get more control
 mode "resize" {
