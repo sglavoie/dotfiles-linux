@@ -355,7 +355,8 @@ bindsym $mod+c    focus child; $center-mouse
 # Move the currently focused window to the scratchpad.
 # First, we toggle floating mode and we resize and position the window to make sure
 # it will appear correctly when showing it for the first time.
-bindsym $mod+minus    floating toggle; resize set 1920 1060, move position center; move scratchpad
+bindsym $mod+minus    floating toggle; resize set 1920 1060, \
+                        move position center; move scratchpad
 
 # Set up scratchpad applications
 for_window [class="Audacious"]      floating enable
@@ -416,9 +417,12 @@ bindsym $mod+Mod1+t      $exec ~/Dropbox/.custom/dmenu/times.sh
 # sound
 #######################################
 # `pkill` is useful to quickly update the block in i3blocks
-bindsym XF86AudioRaiseVolume    exec $volumepath -np up $volumestep -t $statuscmd -u $statussig && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume    exec $volumepath -np down $volumestep -t $statuscmd -u $statussig && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioMute           exec $volumepath mute -n -t $statuscmd -u $statussig && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume    exec $volumepath -np up $volumestep -t $statuscmd \
+                                    -u $statussig && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume    exec $volumepath -np down $volumestep -t $statuscmd \
+                                    -u $statussig && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMute           exec $volumepath mute -n -t $statuscmd \
+                                    -u $statussig && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioMicMute        $exec ~/.local/bin/toggle_mic_source
 bindsym $mod+exclamdown         $exec ~/.local/bin/toggle_mic_source
 
@@ -519,7 +523,7 @@ $exec  xfce4-clipman
 $exec ~/.config/todoist_launch.sh
 
 # First kill it as it doesn't always respect the `--timeout` option otherwise
-exec_always --no-startup-id    "killall unclutter; unclutter --jitter 40 --ignore-scrolling --timeout 5 &"
+exec_always --no-startup-id  "killall unclutter; unclutter --jitter 40 --ignore-scrolling --timeout 5 &"
 
 ################################################################################
 # keyboard / mouse
