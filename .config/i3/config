@@ -2,23 +2,29 @@
 ################################################################################
 # i3 config shortcuts
 ######################################
-# Program paths
+# Paths and names
 set $brightness-laptop-down      "light -U 1"
 set $brightness-laptop-up        "light -A 1"
 set $brightness-monitor-default  "python3 ~/.local/bin/monitor_brightness default"
 set $brightness-monitor-down     "python3 ~/.local/bin/monitor_brightness down"
 set $brightness-monitor-up       "python3 ~/.local/bin/monitor_brightness up"
 set $brightness-toggle-laptop    ~/.local/bin/toggle_laptop_brightness
-set $center-mouse exec           ~/.config/i3/center-mouse
 set $default-web-browser         brave-browser-stable
+set $launcher-python-term        ~/.config/ipython_launch.sh
+set $launcher-temp-notes         ~/.config/tmpnotes_launch.sh
+set $launcher-todoist            ~/.config/todoist_launch.sh
 set $path-xrandr-both            ~/.config/i3/run_xrandr.sh
 set $path-xrandr-laptop          ~/.config/i3/run_xrandr_laptop.sh
 set $path-xrandr-monitor         ~/.config/i3/run_xrandr_monitor.sh
-set $todoist-app                 "crx_elldfnmogicegdcphgljaoaklkpcnbnn"
+set $screenshots-folder          ~/Pictures/screenshots/
+set $todoist-app-name            "crx_elldfnmogicegdcphgljaoaklkpcnbnn"
+set $toggle-mic-on-off           ~/.local/bin/toggle_mic_source
 
 # i3 specific
+set $center-mouse exec           ~/.config/i3/center-mouse
 set $default-web-browser-class   "(?i)brave-browser"
 set $exec                        exec --no-startup-id
+set $i3-volume                   ~/.config/i3-volume/volume
 set $output-primary              output eDP
 set $output-secondary            output HDMI-A-0
 set $python-term                 "ipythonterm"
@@ -97,7 +103,7 @@ bindsym Caps_Lock mode "-------------------- CAPSLOCK --------------------"
 
 # Sound
 #######################################
-set $volumepath ~/.config/i3-volume/volume
+set $volumepath $i3-volume
 set $statuscmd i3status
 
 # Signal used to update the status line
@@ -359,18 +365,18 @@ bindsym $mod+minus    floating toggle; resize set 1920 1060, \
                         move position center; move scratchpad
 
 # Set up scratchpad applications
-for_window [class="Audacious"]      floating enable
-for_window [class="Audacious"]      move scratchpad
-for_window [class="Audacious"]      resize set 1920 1060
-for_window [instance=$temp-notes]    floating enable
-for_window [instance=$temp-notes]    move scratchpad
-for_window [instance=$temp-notes]    resize set 1920 1060
-for_window [instance=$python-term] floating enable
-for_window [instance=$python-term] move scratchpad
-for_window [instance=$python-term] resize set 1920 1060
-for_window [instance=$todoist-app]  floating enable
-for_window [instance=$todoist-app]  move scratchpad
-for_window [instance=$todoist-app]  resize set 1920 1060
+for_window [class="Audacious"]           floating enable
+for_window [class="Audacious"]           move scratchpad
+for_window [class="Audacious"]           resize set 1920 1060
+for_window [instance=$temp-notes]        floating enable
+for_window [instance=$temp-notes]        move scratchpad
+for_window [instance=$temp-notes]        resize set 1920 1060
+for_window [instance=$python-term]       floating enable
+for_window [instance=$python-term]       move scratchpad
+for_window [instance=$python-term]       resize set 1920 1060
+for_window [instance=$todoist-app-name]  floating enable
+for_window [instance=$todoist-app-name]  move scratchpad
+for_window [instance=$todoist-app-name]  resize set 1920 1060
 
 ################################################################################
 # Borders
@@ -423,8 +429,8 @@ bindsym XF86AudioLowerVolume    exec $volumepath -np down $volumestep -t $status
                                     -u $statussig && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioMute           exec $volumepath mute -n -t $statuscmd \
                                     -u $statussig && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioMicMute        $exec ~/.local/bin/toggle_mic_source
-bindsym $mod+exclamdown         $exec ~/.local/bin/toggle_mic_source
+bindsym XF86AudioMicMute        $exec $toggle-mic-on-off
+bindsym $mod+exclamdown         $exec $toggle-mic-on-off
 
 # Automatically set the volume to a given value when (re)launching i3
 exec_always --no-startup-id "amixer -D pulse set Master 50%"
@@ -452,21 +458,35 @@ bindsym $mod+Control+b    $exec $brightness-toggle-laptop
 ################################################################################
 # applications
 #######################################
+# Autostart applications
+$exec  $brightness-monitor-default
+$exec  $default-web-browser
+$exec  $launcher-todoist
+$exec  brightnessctl s 20%
+$exec  compton -CG --config /dev/null
+$exec  nitrogen --restore
+$exec  nm-applet
+$exec  pasystray
+$exec  xfce4-clipman
+
+# First kill it as it doesn't always respect the `--timeout` option otherwise
+exec_always --no-startup-id  "killall unclutter; unclutter --jitter 40 --ignore-scrolling --timeout 5 &"
+
 # Start
 bindsym $mod+Shift+d --release      exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Shift+t                exec thunar
 bindsym $mod+Shift+w                $exec $default-web-browser
 bindsym $mod+masculine              [instance=$python-term] scratchpad show; move position center
 bindsym $mod+Shift+masculine        $exec kitty --name ipythonterm -o font_size=22 -e \
-                                        ~/.config/ipython_launch.sh -q
+                                        $launcher-python-term -q
 bindsym $mod+plus                   [instance=$temp-notes] scratchpad show; move position center
-bindsym $mod+Shift+plus             $exec kitty --name tmpnotes -e ~/.config/tmpnotes_launch.sh
+bindsym $mod+Shift+plus             $exec kitty --name tmpnotes -e $launcher-temp-notes
 bindsym $mod+p                      [class="Audacious"] scratchpad show; move position center
 bindsym $mod+Shift+p                $exec audacious
-bindsym $mod+q                      [instance=$todoist-app] scratchpad show; move position center
-bindsym $mod+Shift+q                $exec ~/.config/todoist_launch.sh
-bindsym Print --release             $exec flameshot gui --path ~/Pictures/screenshots/
-bindsym $mod+Print --release        $exec flameshot screen --path ~/Pictures/screenshots/
+bindsym $mod+q                      [instance=$todoist-app-name] scratchpad show; move position center
+bindsym $mod+Shift+q                $exec $launcher-todoist
+bindsym Print --release             $exec flameshot gui --path $screenshots-folder
+bindsym $mod+Print --release        $exec flameshot screen --path $screenshots-folder
 bindsym mod1+F3                     $exec kitty -e htop
 
 # Open applications on specific workspaces
@@ -510,20 +530,6 @@ for_window [class="Nitrogen"]         floating enable sticky enable border pixel
 for_window [title="File Transfer*"]   floating enable border pixel 5
 for_window [title="alsamixer"]        floating enable border pixel 5
 for_window [class="(?i)zoom"]         floating enable border pixel 5
-
-# Autostart applications
-$exec  $brightness-monitor-default
-$exec  brightnessctl s 20%
-$exec  compton -CG --config /dev/null
-$exec  $default-web-browser
-$exec  nitrogen --restore
-$exec  nm-applet
-$exec  pasystray
-$exec  xfce4-clipman
-$exec ~/.config/todoist_launch.sh
-
-# First kill it as it doesn't always respect the `--timeout` option otherwise
-exec_always --no-startup-id  "killall unclutter; unclutter --jitter 40 --ignore-scrolling --timeout 5 &"
 
 ################################################################################
 # keyboard / mouse
