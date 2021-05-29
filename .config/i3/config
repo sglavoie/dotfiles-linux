@@ -28,6 +28,7 @@ set $i3-volume                   ~/.config/i3-volume/volume
 set $output-primary              output eDP
 set $output-secondary            output HDMI-A-0
 set $python-term                 "ipythonterm"
+set $scratchpad-size             1920 1060
 set $temp-notes                  "tmpnotes"
 
 # set mod key (Mod1=Alt, Mod4=Super)
@@ -86,13 +87,13 @@ bindsym $mod+r mode "resize"
 # keycode 179 = F10 button
 # (not the actual F10 key, but same button on my laptop with default function!)
 mode "Scratchpad"{
-  bindcode 179              scratchpad show, resize set 1920 1060, move position center; \
-                            scratchpad show, resize set 1920 1060, move position center
+  bindcode 179              scratchpad show, resize set $scratchpad-size, move position center; \
+                            scratchpad show, resize set $scratchpad-size, move position center
   bindsym $mod+Shift+space  floating toggle; mode "default"
   bindsym $mod+Escape       kill; mode "default"
   bindsym Escape            scratchpad show; mode "default"
 }
-bindcode 179 mode "Scratchpad"; scratchpad show, resize set 1920 1060, move position center
+bindcode 179 mode "Scratchpad"; scratchpad show, resize set $scratchpad-size, move position center
 
 # Caps Lock indicator, seen at
 # https://www.reddit.com/r/i3wm/comments/k8m4k4/share_your_i3_tips_and_tricks_that_you_have/gf2lppd
@@ -361,22 +362,22 @@ bindsym $mod+c    focus child; $center-mouse
 # Move the currently focused window to the scratchpad.
 # First, we toggle floating mode and we resize and position the window to make sure
 # it will appear correctly when showing it for the first time.
-bindsym $mod+minus    floating toggle; resize set 1920 1060, \
+bindsym $mod+minus    floating toggle; resize set $scratchpad-size, \
                         move position center; move scratchpad
 
 # Set up scratchpad applications
 for_window [class="Audacious"]           floating enable
 for_window [class="Audacious"]           move scratchpad
-for_window [class="Audacious"]           resize set 1920 1060
+for_window [class="Audacious"]           resize set $scratchpad-size
 for_window [instance=$temp-notes]        floating enable
 for_window [instance=$temp-notes]        move scratchpad
-for_window [instance=$temp-notes]        resize set 1920 1060
+for_window [instance=$temp-notes]        resize set $scratchpad-size
 for_window [instance=$python-term]       floating enable
 for_window [instance=$python-term]       move scratchpad
-for_window [instance=$python-term]       resize set 1920 1060
+for_window [instance=$python-term]       resize set $scratchpad-size
 for_window [instance=$todoist-app-name]  floating enable
 for_window [instance=$todoist-app-name]  move scratchpad
-for_window [instance=$todoist-app-name]  resize set 1920 1060
+for_window [instance=$todoist-app-name]  resize set $scratchpad-size
 
 ################################################################################
 # Borders
