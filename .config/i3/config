@@ -453,8 +453,8 @@ bindsym XF86MonBrightnessDown    exec $brightness-laptop-down
 bindsym XF86MonBrightnessUp      exec $brightness-laptop-up
 
 # Adjust external monitor brightness
-bindsym $mod+F2   $exec $brightness-monitor-down
-bindsym $mod+F1   $exec $brightness-monitor-up
+bindsym $mod+F1   $exec $brightness-monitor-down
+bindsym $mod+F2   $exec $brightness-monitor-up
 bindsym $mod+F3   $exec $brightness-monitor-default
 
 # Toggle laptop screen
