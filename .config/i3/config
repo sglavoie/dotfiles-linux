@@ -119,12 +119,16 @@ set $volumestep 5
 # ⇒ this is what you see in your i3bar
 set $font-small font xft:Lato 12
 set $font-medium font xft:Lato 14
+
+# Set default font
 $font-small
 
+# Font used with Rofi (dmenu alternative)
 set $rofi-font 'JetBrainsMono 16'
 
-
 # Keyboard
+#######################################
+# Set the compose key to right Control
 set $compose-key "compose:rctrl"
 
 ################################################################################
