@@ -10,7 +10,7 @@ Hopefully, a little inspiration. Besides that, I store configuration files for t
 * Git;
 * [i3 tiling window manager](https://github.com/i3/i3) with [i3blocks](https://github.com/vivien/i3blocks/);
 * Kitty terminal;
-* [Scripts](.local/bin) to manage microphone output, monitor brightness, system packages and so on;
+* [Scripts](../.local/bin) to manage microphone output, monitor brightness, system packages and so on;
 * Zsh with [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh).
 
 ### Demo
