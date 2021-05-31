@@ -1,0 +1,16 @@
+#!/bin/bash
+# Act as custom command `git addlearning` and perform all that follows
+# Assumes that `pelican` command is available
+cd ~/dev/sglavoie/sglavoie.github.io-source
+git add .
+git commit -m "Add learning progress"
+git push origin main
+pelican
+
+cp -r \
+    ~/dev/sglavoie/sglavoie.github.io-source/output/* \
+    ~/dev/sglavoie/sglavoie.github.io/ && \
+    cd ~/dev/sglavoie/sglavoie.github.io && git add .
+git commit -m "Add learning progress"
+git push origin main
+cd ~/dev/sglavoie/sglavoie.github.io-source
