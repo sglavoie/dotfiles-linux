@@ -27,7 +27,7 @@ align=center
 color=#00B4EB
 
 [MEM]
-command=free -h | awk '/Mem:/ { printf(" 🐏 %5s \n", $6) }'
+command=free -h | awk '/Mem:/ { printf(" 🐏 %5s \n", $7) }'
 align=center
 interval=3
 color=#FEC925
