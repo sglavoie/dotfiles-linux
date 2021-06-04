@@ -129,10 +129,10 @@ set $compose-key "compose:rctrl"
 # General settings
 ######################################
 # launch a terminal
-bindsym $mod+Return  exec kitty
+bindsym $mod+Return  $exec kitty
 
 # launch a terminal in the same directory currently used
-bindsym $mod+Shift+Return exec cd "$(xcwd)" && exec kitty
+bindsym $mod+Shift+Return $exec cd "$(xcwd)" && $exec kitty
 
 # kill focused window
 # ⇒ usual way to close applications
@@ -182,16 +182,16 @@ bindsym $mod+b         bar mode invisible bar-1
 bindsym $mod+Shift+b   bar mode dock bar-1
 
 # set up displays
-exec $path-xrandr-both
+$exec $path-xrandr-both
 
 # use laptop display only (turn off monitor)
-bindsym $mod+o         exec $path-xrandr-laptop
+bindsym $mod+o         $exec $path-xrandr-laptop
 
 # use monitor display only (turn off laptop screen)
-bindsym $mod+mod1+o    exec $path-xrandr-monitor
+bindsym $mod+mod1+o    $exec $path-xrandr-monitor
 
 # use laptop + monitor displays
-bindsym $mod+shift+o   exec $path-xrandr-both
+bindsym $mod+shift+o   $exec $path-xrandr-both
 
 # disable screen saver
 $exec   xset s off
@@ -242,7 +242,7 @@ bindsym $mod+mod1+Tab    move container to workspace back_and_forth; \
 # switch to any window with Rofi
 # ⇒ this simulates the familiar behavior of Alt+Tab on Windows and allows you
 #   to find windows by typing, but uses a better operating system to do it ;).
-bindsym Mod1+Tab    exec "rofi -theme lb -font $rofi-font \
+bindsym Mod1+Tab    $exec "rofi -theme lb -font $rofi-font \
                       -show-icons -width 95 -show window"
 
 # toggle fullscreen mode for the focused container
@@ -269,8 +269,8 @@ bindsym $mod+Left             workspace prev_on_output
 
 # Bindings to "mark" and "goto" mark specified with 1 character
 # ⇒ rarely used, but can still be useful if you have many containers open
-bindsym $mod+z    exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
-bindsym $mod+g    exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
+bindsym $mod+z    $exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+bindsym $mod+g    $exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
 # switch to workspace (no matter which monitor it is set to)
 bindsym $mod+1    workspace $ws1
@@ -443,8 +443,8 @@ exec_always --no-startup-id pactl set-source-mute \
 # brightness
 #######################################
 # Control brightness more precisely through software `light`
-bindsym XF86MonBrightnessDown    exec $brightness-laptop-down
-bindsym XF86MonBrightnessUp      exec $brightness-laptop-up
+bindsym XF86MonBrightnessDown    $exec $brightness-laptop-down
+bindsym XF86MonBrightnessUp      $exec $brightness-laptop-up
 
 # Adjust external monitor brightness
 bindsym $mod+F1   $exec $brightness-monitor-down
@@ -473,7 +473,7 @@ exec_always --no-startup-id  "killall unclutter; unclutter --jitter 40 --ignore-
 
 # Start
 bindsym $mod+Shift+d --release      exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym $mod+Shift+t                exec $default-file-manager
+bindsym $mod+Shift+t                $exec $default-file-manager
 bindsym $mod+Shift+w                $exec $default-web-browser
 bindsym $mod+masculine              [instance=$python-term] scratchpad show; move position center
 bindsym $mod+Shift+masculine        $exec kitty --name ipythonterm -o font_size=22 -e \
