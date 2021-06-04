@@ -10,6 +10,7 @@ set $brightness-monitor-down     "python3 ~/.local/bin/monitor_brightness down"
 set $brightness-monitor-up       "python3 ~/.local/bin/monitor_brightness up"
 set $brightness-toggle-laptop    ~/.local/bin/toggle_laptop_brightness
 set $default-web-browser         brave-browser-stable
+set $default-file-manager        nemo
 set $launcher-python-term        ~/.config/ipython_launch.sh
 set $launcher-temp-notes         ~/.config/tmpnotes_launch.sh
 set $launcher-todoist            ~/.config/todoist_launch.sh
@@ -412,14 +413,14 @@ bindsym $mod+Mod1+r    $exec ~/Dropbox/.custom/dmenu/reading.sh
 bindsym $mod+Mod1+s    $exec ~/Dropbox/.custom/dmenu/scripts.sh
 bindsym $mod+Mod1+u    $exec ~/Dropbox/.custom/dmenu/university.sh
 bindsym $mod+Mod1+w    $exec ~/Dropbox/.custom/dmenu/work.sh
-bindsym $mod+Shift+f   $exec ~/Dropbox/.custom/dmenu/thunar_launcher.sh
+bindsym $mod+Shift+f   $exec ~/Dropbox/.custom/dmenu/file_manager_launcher.sh
 bindsym $mod+Shift+u   $exec ~/Dropbox/.custom/dmenu/university_launchers.sh
 bindsym $mod+d         $exec ~/Dropbox/.custom/dmenu/software.sh
 
 ################################################################################
 # shortcuts
 #######################################
-bindsym $mod+control+r   $exec thunar ~/Desktop
+bindsym $mod+control+r   $exec $default-file-manager ~/Desktop
 
 # Display multiple time zones around the world
 bindsym $mod+Mod1+t      $exec ~/Dropbox/.custom/dmenu/times.sh
@@ -479,7 +480,7 @@ exec_always --no-startup-id  "killall unclutter; unclutter --jitter 40 --ignore-
 
 # Start
 bindsym $mod+Shift+d --release      exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym $mod+Shift+t                exec thunar
+bindsym $mod+Shift+t                exec $default-file-manager
 bindsym $mod+Shift+w                $exec $default-web-browser
 bindsym $mod+masculine              [instance=$python-term] scratchpad show; move position center
 bindsym $mod+Shift+masculine        $exec kitty --name ipythonterm -o font_size=22 -e \
