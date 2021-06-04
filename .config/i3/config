@@ -97,13 +97,6 @@ mode "Scratchpad"{
 }
 bindcode 179 mode "Scratchpad"; scratchpad show, resize set $scratchpad-size, move position center
 
-# Caps Lock indicator, seen at
-# https://www.reddit.com/r/i3wm/comments/k8m4k4/share_your_i3_tips_and_tricks_that_you_have/gf2lppd
-mode "-------------------- CAPSLOCK --------------------" {
-    bindsym Caps_Lock mode "default"
-}
-bindsym Caps_Lock mode "-------------------- CAPSLOCK --------------------"
-
 # Sound
 #######################################
 set $statuscmd i3status
