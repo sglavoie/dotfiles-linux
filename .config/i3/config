@@ -185,7 +185,7 @@ bindsym $mod+Shift+b   bar mode dock bar-1
 $exec $path-xrandr-both
 
 # use laptop display only (turn off monitor)
-bindsym $mod+o         $exec $path-xrandr-laptop
+bindsym $mod+Control+o $exec $path-xrandr-laptop
 
 # use monitor display only (turn off laptop screen)
 bindsym $mod+mod1+o    $exec $path-xrandr-monitor
