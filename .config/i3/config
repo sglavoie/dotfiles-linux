@@ -28,7 +28,7 @@ set $exec                        exec --no-startup-id
 set $output-primary              output eDP
 set $output-secondary            output HDMI-A-0
 set $python-term                 "ipythonterm"
-set $scratchpad-size             1920 1060
+set $scratchpad-size             1920 1052
 set $temp-notes                  "tmpnotes"
 set $volumepath                  ~/.config/i3-volume/volume
 
