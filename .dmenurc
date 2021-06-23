@@ -3,22 +3,21 @@
 #
 
 ## define the font for dmenu to be used
-DMENU_FN="NotoSans-10.5"
+DMENU_FN="JetBrainsMono-13"
 
 ## background colour for unselected menu-items
-DMENU_NB="#161925"
+DMENU_NB="#000000"
 
-## textcolour for unselected menu-items
-DMENU_NF="#fdfffc"
+## text colour for unselected menu-items
+DMENU_NF="#C0C0C0"
 
 ## background colour for selected menu-items
 DMENU_SB="#235789"
 
-## textcolour for selected menu-items
-DMENU_SF="#fdfffc"
+## text colour for selected menu-items
+DMENU_SF="#ffffff"
 
-## command for the terminal application to be used:
-TERMINAL_CMD="st -e"
+DMENU_LINES="40"
 
 ## export our variables
-DMENU_OPTIONS="-fn $DMENU_FN -nb $DMENU_NB -nf $DMENU_NF -sf $DMENU_SF -sb $DMENU_SB"
+DMENU_OPTIONS="-l $DMENU_LINES -fn $DMENU_FN -nb $DMENU_NB -nf $DMENU_NF -sf $DMENU_SF -sb $DMENU_SB"
