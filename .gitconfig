@@ -49,12 +49,12 @@
 	template = ~/.gitmessage
 [mergetool "nvim"]
 	cmd = nvim $MERGED
-[difftool "nvim"]
-	cmd = nvim --diff $LOCAL $REMOTE
+; [difftool "nvim"]
+; 	cmd = nvim --diff $LOCAL $REMOTE
 ; [mergetool "vscode"]
 ; 	cmd = code --wait $MERGED
-; [difftool "vscode"]
-; 	cmd = code --wait --diff $LOCAL $REMOTE
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
 [mergetool]
   prompt = false
 [color "diff-highlight"]
@@ -85,3 +85,5 @@
 [init]
 	defaultBranch = main
 	templateDir = ~/.git-templates
+[diff]
+	tool = vscode
