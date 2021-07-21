@@ -188,10 +188,10 @@ $exec $path-xrandr-both
 bindsym $mod+Control+o $exec $path-xrandr-laptop
 
 # use monitor display only (turn off laptop screen)
-bindsym $mod+mod1+o    $exec $path-xrandr-monitor
+bindsym $mod+Shift+o   $exec $path-xrandr-monitor
 
 # use laptop + monitor displays
-bindsym $mod+shift+o   $exec $path-xrandr-both
+bindsym $mod+o         $exec $path-xrandr-both
 
 # disable screen saver
 $exec   xset s off
