@@ -27,11 +27,11 @@ set $default-web-browser-class   "(?i)brave-browser"
 set $exec                        exec --no-startup-id
 set $bar-primary-middle-click    exec nemo ~/Pictures/screenshots/
 set $bar-primary-right-click     exec flameshot screen --path ~/Pictures/screenshots/
-set $bar-primary-scroll-down     nop
+set $bar-primary-scroll-down     exec flameshot gui --path ~/Pictures/screenshots/
 set $bar-primary-scroll-up       nop
 set $bar-secondary-middle-click  exec nemo ~/Pictures/screenshots/
 set $bar-secondary-right-click   exec flameshot screen --path ~/Pictures/screenshots/
-set $bar-secondary-scroll-down   nop
+set $bar-secondary-scroll-down   exec flameshot gui --path ~/Pictures/screenshots/
 set $bar-secondary-scroll-up     nop
 set $output-primary              output eDP
 set $output-secondary            output HDMI-A-0
