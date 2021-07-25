@@ -25,6 +25,14 @@ set $toggle-mic-on-off           ~/.local/bin/toggle_mic_source
 set $center-mouse exec           ~/.config/i3/center-mouse
 set $default-web-browser-class   "(?i)brave-browser"
 set $exec                        exec --no-startup-id
+set $bar-primary-middle-click    exec nemo ~/Pictures/screenshots/
+set $bar-primary-right-click     exec flameshot screen --path ~/Pictures/screenshots/
+set $bar-primary-scroll-down     nop
+set $bar-primary-scroll-up       nop
+set $bar-secondary-middle-click  exec nemo ~/Pictures/screenshots/
+set $bar-secondary-right-click   exec flameshot screen --path ~/Pictures/screenshots/
+set $bar-secondary-scroll-down   nop
+set $bar-secondary-scroll-up     nop
 set $output-primary              output eDP
 set $output-secondary            output HDMI-A-0
 set $python-term                 "ipythonterm"
@@ -551,6 +559,10 @@ bar {
     tray_output none
     status_command i3blocks
     position top
+    bindsym button2 $bar-secondary-middle-click
+    bindsym button3 $bar-secondary-right-click
+    bindsym button4 $bar-secondary-scroll-up
+    bindsym button5 $bar-secondary-scroll-down
 
     colors {
         background #000000
@@ -571,8 +583,10 @@ bar {
     tray_output primary
     status_command i3blocks
     position top
-    bindsym button4 nop
-    bindsym button5 nop
+    bindsym button2 $bar-primary-middle-click
+    bindsym button3 $bar-primary-right-click
+    bindsym button4 $bar-primary-scroll-up
+    bindsym button5 $bar-primary-scroll-down
 
     colors {
         background #000000
