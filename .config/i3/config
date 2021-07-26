@@ -9,7 +9,7 @@ set $brightness-monitor-default  "python3 ~/.local/bin/monitor_brightness defaul
 set $brightness-monitor-down     "python3 ~/.local/bin/monitor_brightness down"
 set $brightness-monitor-up       "python3 ~/.local/bin/monitor_brightness up"
 set $brightness-toggle-laptop    ~/.local/bin/toggle_laptop_brightness
-set $default-web-browser         brave-browser-stable
+set $default-web-browser         google-chrome-stable
 set $default-file-manager        nemo
 set $launcher-python-term        ~/.config/ipython_launch.sh
 set $launcher-temp-notes         ~/.config/tmpnotes_launch.sh
@@ -23,7 +23,7 @@ set $toggle-mic-on-off           ~/.local/bin/toggle_mic_source
 
 # i3 specific
 set $center-mouse exec           ~/.config/i3/center-mouse
-set $default-web-browser-class   "(?i)brave-browser"
+set $default-web-browser-class   "(?i)google-chrome"
 set $exec                        exec --no-startup-id
 set $bar-primary-middle-click    exec nemo ~/Pictures/screenshots/
 set $bar-primary-right-click     exec flameshot screen --path ~/Pictures/screenshots/

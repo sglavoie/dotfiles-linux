@@ -11,7 +11,7 @@ export PATH="$HOME/dev/git-scripts:$HOME/.local/bin:$HOME/.node/bin:$HOME/.cargo
 export EDITOR='nvim'
 export VISUAL='nvim'
 
-export BROWSER='/usr/bin/brave-browser-stable'
+export BROWSER='/usr/bin/google-chrome-stable'
 
 # Get colorized output for `man` pages with `bat`
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
