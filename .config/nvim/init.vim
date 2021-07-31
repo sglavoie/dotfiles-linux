@@ -2,37 +2,46 @@
 
 """ PLUGINS {{{
 call plug#begin($HOME . '/.local/share/nvim/plugged')
+if exists('g:vscode')
+    """" Moving/editing around {{{
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-surround'
+    """" }}}
 
-"""" Design & appearance {{{
-Plug 'itchyny/lightline.vim'
-Plug 'morhetz/gruvbox'
-"""" }}}
+    """" Useful features {{{
+    Plug 'machakann/vim-highlightedyank'
+    """" }}}
+else
+    """" Moving/editing around {{{
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-surround'
+    """" }}}
 
-"""" Language specific {{{
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-"""" }}}
+    """" Design & appearance {{{
+    Plug 'itchyny/lightline.vim'
+    Plug 'morhetz/gruvbox'
+    """" }}}
 
-"""" Moving/editing around {{{
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-"""" }}}
+    """" Language specific {{{
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+    """" }}}
 
-"""" Note-taking {{{
-Plug 'vimwiki/vimwiki'
-"""" }}}
+    """" Note-taking {{{
+    Plug 'vimwiki/vimwiki'
+    """" }}}
 
-"""" Useful features {{{
-Plug 'junegunn/fzf', { 'dir': $HOME . '/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'machakann/vim-highlightedyank'
-Plug 'vifm/vifm.vim'
-"""" }}}
+    """" Useful features {{{
+    Plug 'junegunn/fzf', { 'dir': $HOME . '/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
+    Plug 'machakann/vim-highlightedyank'
+    Plug 'vifm/vifm.vim'
+    """" }}}
 
-"""" Git related {{{
-Plug 'junegunn/gv.vim', { 'on': ['GV', 'GV!'] }
-Plug 'tpope/vim-fugitive'
-" }}}
-
+    """" Git related {{{
+    Plug 'junegunn/gv.vim', { 'on': ['GV', 'GV!'] }
+    Plug 'tpope/vim-fugitive'
+    " }}}
+endif
 call plug#end()
 """ }}}
 
@@ -147,13 +156,6 @@ augroup END
 """ CUSTOM COMMANDS {{{
 " 'MakeTags' command to generate ctags in project
 command! MakeTags !ctags -R .
-
-" Clear all opening and closing tags in XML and HTML
-command! RemoveHTMLTags %s/<\_.\{-1,\}>//g
-
-" Format an URL slug appropriately by converting to lowercase, removing spaces
-" and replacing them by hyphens
-command! MakeSlug norm gg:t2cwSlugf:wv$gugv:s/\%V /-/g
 
 " Sort Vimwiki links in visual mode
 command! SortVimwikiLinks norm :sort /^.*\|/<CR>
