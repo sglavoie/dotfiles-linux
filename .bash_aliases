@@ -8,6 +8,7 @@ alias articlesnum="pushd > /dev/null; \
     cd ~/dev/sglavoie/sglavoie.github.io-source/content; \
     find . -name '*.md' | cut -d '/' -f3 | grep -P '^\d.*' \
     | sort | tail -1; popd > /dev/null"
+alias asg='. ~/Programming/virtualenvs/sg/bin/activate && cd ~/dev/sglavoie/sglavoie.github.io-source'
 alias c='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias cat="bat"
 alias cl='clear'
