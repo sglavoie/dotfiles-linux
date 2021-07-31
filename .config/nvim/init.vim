@@ -211,6 +211,9 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " Redraw screen and clear highlighted search as well
 nnoremap <silent> <C-c> :<C-u>nohlsearch<CR><C-l>
+
+" Repeat the binding with leader key to use it in VS Code
+nnoremap <silent> <leader>l :<C-u>nohlsearch<CR><C-l>
 """" }}}
 
 """" DATE AND TIME {{{
