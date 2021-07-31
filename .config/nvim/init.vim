@@ -169,6 +169,20 @@ let maplocalleader = " "
 " Conventional way to save
 nnoremap <C-s> :w<CR>
 
+" Yank to the end of the line (same behavior as 'C' or 'D' but for 'Y')
+nnoremap Y yg_
+
+" Keep the cursor centered in the middle of the buffer
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Undo by break point in insert mode so it doesn't undo the whole change at once
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
 " Toggle display of line numbers
 nnoremap <F4> :set number!<CR>:set relativenumber!<CR>
 
