@@ -2,46 +2,81 @@
 
 """ PLUGINS {{{
 call plug#begin($HOME . '/.local/share/nvim/plugged')
-if exists('g:vscode')
-    """" Moving/editing around {{{
-    Plug 'tpope/vim-commentary'
-    Plug 'tpope/vim-surround'
-    """" }}}
 
-    """" Useful features {{{
-    Plug 'machakann/vim-highlightedyank'
-    """" }}}
-else
-    """" Moving/editing around {{{
-    Plug 'tpope/vim-commentary'
-    Plug 'tpope/vim-surround'
-    """" }}}
+"""" Moving/editing around {{{
+" Comment text
+Plug 'tpope/vim-commentary'
 
-    """" Design & appearance {{{
-    Plug 'itchyny/lightline.vim'
-    Plug 'morhetz/gruvbox'
-    """" }}}
+" Surround text with something
+Plug 'tpope/vim-surround'
 
-    """" Language specific {{{
-    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-    """" }}}
+" Allow repeating of custom commands like surround
+Plug 'tpope/vim-repeat'
+"""" }}}
 
-    """" Note-taking {{{
-    Plug 'vimwiki/vimwiki'
-    """" }}}
+"""" Design & appearance {{{
+Plug 'itchyny/lightline.vim'
+Plug 'morhetz/gruvbox'
 
-    """" Useful features {{{
-    Plug 'junegunn/fzf', { 'dir': $HOME . '/.fzf', 'do': './install --all' }
-    Plug 'junegunn/fzf.vim'
-    Plug 'machakann/vim-highlightedyank'
-    Plug 'vifm/vifm.vim'
-    """" }}}
+" Highlight HTML colors
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+"""" }}}
 
-    """" Git related {{{
-    Plug 'junegunn/gv.vim', { 'on': ['GV', 'GV!'] }
-    Plug 'tpope/vim-fugitive'
-    " }}}
-endif
+"""" Language specific {{{
+" Display web browser preview for Markdown files
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+
+" CSS3 syntax highlight
+Plug 'hail2u/vim-css3-syntax'
+
+" Syntax highlight for .tsx
+Plug 'ianks/vim-tsx', { 'for': 'typescript.tsx' }
+
+" Typescript autocomplete
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-pairs', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+
+" Syntax highlight for .ts
+Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
+
+" Syntax hightlight for .jsx
+Plug 'mxw/vim-jsx'
+
+" Syntax hightlight for .js
+Plug 'pangloss/vim-javascript'
+"""" }}}
+
+"""" Note-taking {{{
+Plug 'vimwiki/vimwiki'
+"""" }}}
+
+"""" Useful features {{{
+" Fuzzy finder
+Plug 'junegunn/fzf', { 'dir': $HOME . '/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" Highlight yanked text for a longer period
+Plug 'machakann/vim-highlightedyank'
+
+" File manager, Vifm
+Plug 'vifm/vifm.vim'
+"""" }}}
+
+"""" Git related {{{
+Plug 'junegunn/gv.vim', { 'on': ['GV', 'GV!'] }
+
+" Git wrapper
+Plug 'tpope/vim-fugitive'
+" }}}
+
+"""" Search {{{
+" Multifile replace
+Plug 'wincent/ferret'
+" }}}
+
 call plug#end()
 """ }}}
 
@@ -166,8 +201,8 @@ command! SortVimwikiLinks norm :sort /^.*\|/<CR>
 let mapleader = " "  " Set map leader as a space
 let maplocalleader = " "
 
-" Conventional way to save
-nnoremap <C-s> :w<CR>
+" Shortcut to save
+nnoremap <leader>w :w<CR>
 
 " Yank to the end of the line (same behavior as 'C' or 'D' but for 'Y')
 nnoremap Y yg_
@@ -213,7 +248,7 @@ nnoremap <leader>Q :qall!<CR>
 " Reset edits made in current buffer if file hasn't been saved
 nnoremap <leader>e :e!<CR>
 
-" In order: previous, next, alternate, first, last, list
+" In order: previous, next, alternate, first, last
 nnoremap <M-1> :bp<CR>
 nnoremap <M-2> :bn<CR>
 nnoremap <M-3> :b#<CR>
@@ -225,9 +260,6 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " Redraw screen and clear highlighted search as well
 nnoremap <silent> <C-c> :<C-u>nohlsearch<CR><C-l>
-
-" Repeat the binding with leader key to use it in VS Code
-nnoremap <silent> <leader>l :<C-u>nohlsearch<CR><C-l>
 """" }}}
 
 """" DATE AND TIME {{{
@@ -242,9 +274,6 @@ vnoremap J :m '>+1<CR>gv=gv
 
 " Remove all whitespace at the end of every line in the file.
 noremap <F5> :%s/\s\+$//<CR>:echo 'all whitespace removed.'<CR>
-
-" Reformat file
-map <leader>f gg=G''
 
 " Python: format current file with Black
 nnoremap <F7> :!black -l 79 %<CR>
@@ -440,5 +469,128 @@ let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
 vnoremap <Leader>dg :diffget<CR>
 vnoremap <Leader>dp :diffput<CR>
 """" }}}
+""" }}}
+
+"""" COC {{{
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>cA  <Plug>(coc-codeaction-selected)
+nmap <leader>cA  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>Ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Map function and class text objects
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+
+" Add `:Fold` command to fold current buffer.
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" Add `:OR` command for organize imports of the current buffer.
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Mappings for CoCList
+" Show all diagnostics.
+nnoremap <silent><nowait> <leader>ca  :<C-u>CocList diagnostics<cr>
+" Manage extensions.
+nnoremap <silent><nowait> <leader>ce  :<C-u>CocList extensions<cr>
+" Show commands.
+nnoremap <silent><nowait> <leader>cc  :<C-u>CocList commands<cr>
+" Find symbol of current document.
+nnoremap <silent><nowait> <leader>co  :<C-u>CocList outline<cr>
+" Search workspace symbols.
+nnoremap <silent><nowait> <leader>cs  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent><nowait> <leader>cj  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent><nowait> <leader>ck  :<C-u>CocPrev<CR>
+" Resume latest coc list.
+nnoremap <silent><nowait> <leader>cp  :<C-u>CocListResume<CR>
 """ }}}
 " vim:fdm=marker
