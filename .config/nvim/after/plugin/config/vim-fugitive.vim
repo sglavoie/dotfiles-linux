@@ -2,10 +2,10 @@ if ! exists(':Gstatus')
     finish
 endif
 
-nnoremap <leader>gb :Gblame<CR>
-nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gb :Git blame<CR>
+nnoremap <leader>gc :Git commit<CR>
 nnoremap <leader>gd :Gdiffsplit<CR>
-nnoremap <leader>gl :Glog<CR>
+nnoremap <leader>gl :Gclog<CR>
 nnoremap <leader>gs :G<CR>
 
 " Add git capability to the status line with vim-fugitive
