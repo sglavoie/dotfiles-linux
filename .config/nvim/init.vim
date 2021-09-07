@@ -70,6 +70,9 @@ Plug 'junegunn/gv.vim', { 'on': ['GV', 'GV!'] }
 
 " Git wrapper
 Plug 'tpope/vim-fugitive'
+
+" Browse GitHub (used from vim-fugitive)
+Plug 'tpope/vim-rhubarb'
 " }}}
 
 """" Search {{{
