@@ -12,6 +12,9 @@ Plug 'tpope/vim-surround'
 
 " Allow repeating of custom commands like surround
 Plug 'tpope/vim-repeat'
+
+" Emmet support
+Plug 'mattn/emmet-vim'
 """" }}}
 
 """" Design & appearance {{{
