@@ -121,7 +121,7 @@ set nrformats=  " <C-a>/<C-x> with leading zeros → decimal instead of octal
 set number  " Displays absolute number of current line
 set path=$PWD/**  " Allows to search recursively for files with pattern matching (e.g. :find)
 set relativenumber  " Displays relative number of the lines around current one
-set scrolloff=6  " Always leaves 6 lines above or below the current line
+set scrolloff=0  " Leave X lines above or below the current line, except if set to 0
 set shiftwidth=4  " Number of spaces for indents
 set shortmess+=c  " Don't pass messages to ins-completion-menu
 set shortmess+=I  " Disable default startup message
@@ -174,7 +174,7 @@ autocmd BufReadPost *
             \   exe "normal g`\"" |
             \ endif
 
-" Full stack development options
+" Front-end development options
 autocmd BufRead *.html,*.js,*.htm,*.css,*.xml,*.xhtml,*.scss setlocal
             \ shiftwidth=2 tabstop=2 softtabstop=2
 
