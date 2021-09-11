@@ -118,9 +118,7 @@ set list listchars=tab:>_,trail:-,nbsp:+
 set nojoinspaces  " Use one space, not two, after punctuation
 set noswapfile  " Don't use a swapfile for the buffer
 set nrformats=  " <C-a>/<C-x> with leading zeros → decimal instead of octal
-set number  " Displays absolute number of current line
 set path=$PWD/**  " Allows to search recursively for files with pattern matching (e.g. :find)
-set relativenumber  " Displays relative number of the lines around current one
 set scrolloff=0  " Leave X lines above or below the current line, except if set to 0
 set shiftwidth=4  " Number of spaces for indents
 set shortmess+=c  " Don't pass messages to ins-completion-menu
@@ -228,7 +226,7 @@ inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
 
 " Toggle display of line numbers
-nnoremap <F4> :set number!<CR>:set relativenumber!<CR>
+nnoremap <F4> :set number! relativenumber!<CR>
 
 " Avoid entering 'Ex' mode
 nmap Q <Nop>
