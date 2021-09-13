@@ -2,13 +2,16 @@ let g:lightline = {
             \ 'colorscheme': 'gruvbox',
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ],
-            \             [ 'gitbranch'], ['readonly', 'relativepath'], ['modified' ], [ 'coc_error', 'coc_warning', 'coc_hint', 'coc_info' ] ]
+            \             [ 'gitbranch'], ['readonly', 'relativepath'], ['modified' ], [ 'coc_error', 'coc_warning', 'coc_hint', 'coc_info' ] ],
+            \   'right': [ [ 'lineinfo' ],
+            \              [ 'fileencoding', 'filetype'  ] ]
             \ },
             \ 'component_function': {
             \   'fileformat': 'LightlineFileformat',
+            \   'fileencoding': 'LightlineFileencoding',
             \   'filename': 'LightlineFilename',
             \   'filetype': 'LightlineFiletype',
-            \   'gitbranch': 'fugitive#head',
+            \   'fugitive': 'LightlineFugitive',
             \   'readonly': 'LightlineReadonly',
             \ },
             \ 'component_expand': {
@@ -31,6 +34,8 @@ let g:lightline = {
               \ "\<C-s>": 'SB',
               \ 't': 'T',
               \ },
+            \ 'separator': { 'left': '', 'right': '' },
+            \ 'subseparator': { 'left': '', 'right': '' },
             \ }
 
 let g:lightline.component_type = {
@@ -85,6 +90,17 @@ endfunction
 
 function! LightlineFiletype()
     return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
+
+function! LightlineFileencoding()
+    return winwidth(0) > 70 ? (&fileencoding !=# '' ? &fileencoding : 'no fe') : ''
+endfunction
+
+function! LightlineFugitive()
+    if exists('*FugitiveHead')
+        return FugitiveHead()
+    endif
+    return ''
 endfunction
 
 function! LightlineReadonly()
