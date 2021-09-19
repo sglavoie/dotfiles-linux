@@ -409,6 +409,8 @@ bindsym $mod+Mod1+c    $exec ~/Dropbox/.custom/dmenu/cheatsheets.sh
 bindsym $mod+Mod1+d    $exec ~/Dropbox/.custom/dmenu/documents.sh
 bindsym $mod+Mod1+e    $exec ~/Dropbox/.custom/dmenu/edit_scripts.sh
 bindsym $mod+Mod1+f    $exec ~/Dropbox/.custom/dmenu/filepaths.sh
+bindsym $mod+Mod1+p    $exec ~/Dropbox/.custom/dmenu/projects-start.sh
+bindsym $mod+Mod1+k    $exec ~/Dropbox/.custom/dmenu/projects-kill.sh
 bindsym $mod+Mod1+q    $exec ~/Dropbox/.custom/dmenu/quotes.sh
 bindsym $mod+Mod1+r    $exec ~/Dropbox/.custom/dmenu/reading.sh
 bindsym $mod+Mod1+s    $exec ~/Dropbox/.custom/dmenu/scripts.sh
