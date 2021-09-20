@@ -395,6 +395,14 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 
 " ------------------------------------------------------------------------------
 
+" Custom mappings
+
+" Go to the current directory (when a dir is highlighted) in the other pane
+" (sync them)
+nnoremap zo :sync %c<CR><Tab>
+
+" ------------------------------------------------------------------------------
+
 " Sample mappings
 
 " Start shell in current directory
