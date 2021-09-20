@@ -15,6 +15,9 @@ Plug 'tpope/vim-repeat'
 
 " Emmet support
 Plug 'mattn/emmet-vim'
+
+" TOC with Markdown
+Plug 'mzlogin/vim-markdown-toc'
 """" }}}
 
 """" Design & appearance {{{
