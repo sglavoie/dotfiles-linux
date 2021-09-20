@@ -62,9 +62,11 @@ set vimhelp
 
 set norunexec
 
-" Selected color scheme
+" Selected color scheme / theme: leave to "default" so tmux can load all
+" colors just fine
 
-colorscheme palenight
+colorscheme default
+" colorscheme palenight
 
 " Format for displaying time in file list. For example:
 " TIME_STAMP_FORMAT=%m/%d-%H:%M
