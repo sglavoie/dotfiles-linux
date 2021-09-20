@@ -201,6 +201,10 @@ command! MakeTags !ctags -R .
 
 " Sort Vimwiki links in visual mode
 command! SortVimwikiLinks norm :sort /^.*\|/<CR>
+
+" Format an URL slug appropriately by converting to lowercase, removing spaces
+" and replacing them by hyphens
+command! MakeSlug norm gg:t3cwSlugkjf wgu$v$:s/ /-/gf-r 0
 """ }}}
 
 """ KEYBINDINGS {{{
