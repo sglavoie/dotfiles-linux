@@ -20,8 +20,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # --no-ignore: Do not respect .gitignore, etc.
 # --hidden: Search hidden files and folders
 # --follow: Follow symlinks
-# --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!.venv/*" --glob "!node_modules/*"'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 
 # History in cache directory:
 HISTSIZE=10000
