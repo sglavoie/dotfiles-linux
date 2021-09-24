@@ -18,6 +18,9 @@ Plug 'mattn/emmet-vim'
 
 " TOC with Markdown
 Plug 'mzlogin/vim-markdown-toc'
+
+" Support for snippets
+Plug 'SirVer/ultisnips'
 """" }}}
 
 """" Design & appearance {{{
