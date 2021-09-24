@@ -1,4 +1,8 @@
-snippet ifname
+snippet ifname "if __name__"
 if __name__ == "__main__":
     ${1:pass}
+endsnippet
+
+snippet pl "Print with formatted string for logging purposes"
+print(f"{$1}: {$2}")
 endsnippet
