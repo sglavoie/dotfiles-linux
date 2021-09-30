@@ -466,17 +466,17 @@ nnoremap <Leader>wg :VimwikiGenerateTagLinks<CR>
 
 " Registered Wikis
 let wiki_1 = {}
-let wiki_1.path = '~/Dropbox/notes/'
-let wiki_1.path_html = '~/Dropbox/notes/html/'
+let wiki_1.path = '~/Dropbox/notes/personal'
+let wiki_1.path_html = '~/Dropbox/notes/personal/html/'
 let wiki_1.index = 'index'
 
 let wiki_2 = {}
-let wiki_2.path = '~/Dropbox/university/notes/'
-let wiki_2.path_html = '~/Dropbox/university/notes/html/'
+let wiki_2.path = '~/Dropbox/notes/uol'
+let wiki_2.path_html = '~/Dropbox/notes/uol/html/'
 
 let wiki_3 = {}
-let wiki_3.path = '~/Dropbox/career/datopian/wiki/'
-let wiki_3.path_html = '~/Dropbox/career/datopian/wiki/html/'
+let wiki_3.path = '~/Dropbox/notes/work/'
+let wiki_3.path_html = '~/Dropbox/note/work/html/'
 let wiki_3.index = 'index'
 
 let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
