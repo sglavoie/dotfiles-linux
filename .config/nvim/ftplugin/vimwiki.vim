@@ -12,3 +12,4 @@ set fileformat=unix
 nmap <F8> <Plug>VimwikiPrevLink
 nmap <F9> <Plug>VimwikiNextLink
 nmap <F10> <Plug>VimwikiAddHeaderLevel
+nmap <S-F10> <Plug>VimwikiRemoveHeaderLevel
