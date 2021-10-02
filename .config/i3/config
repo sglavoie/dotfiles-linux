@@ -9,15 +9,17 @@ set $brightness-monitor-default  "python3 ~/.local/bin/monitor_brightness defaul
 set $brightness-monitor-down     "python3 ~/.local/bin/monitor_brightness down"
 set $brightness-monitor-up       "python3 ~/.local/bin/monitor_brightness up"
 set $brightness-toggle-laptop    ~/.local/bin/toggle_laptop_brightness
-set $default-web-browser         google-chrome-stable
 set $default-file-manager        nemo
+set $default-web-browser         google-chrome-stable
+set $launcher-notes              ~/Dropbox/notes/.tmux
 set $launcher-python-term        ~/.config/ipython_launch.sh
-set $launcher-temp-notes         ~/.config/tmpnotes_launch.sh
+set $launcher-timer              gnome-clocks
 set $launcher-todoist            ~/.config/todoist_launch.sh
 set $path-xrandr-both            ~/.config/i3/run_xrandr.sh
 set $path-xrandr-laptop          ~/.config/i3/run_xrandr_laptop.sh
 set $path-xrandr-monitor         ~/.config/i3/run_xrandr_monitor.sh
 set $screenshots-folder          ~/Pictures/screenshots/
+set $timer-class-name            "Org.gnome.clocks"
 set $todoist-app-name            "crx_elldfnmogicegdcphgljaoaklkpcnbnn"
 set $toggle-mic-on-off           ~/.local/bin/toggle_mic_source
 
@@ -37,7 +39,7 @@ set $output-primary              output eDP
 set $output-secondary            output HDMI-A-0
 set $python-term                 "ipythonterm"
 set $scratchpad-size             1920 1052
-set $temp-notes                  "tmpnotes"
+set $notes                       "notes"
 set $volumepath                  ~/.config/i3-volume/volume
 
 # set mod key (Mod1=Alt, Mod4=Super)
@@ -275,11 +277,6 @@ bindsym $mod+BackSpace        workspace next_on_output
 bindsym $mod+Shift+BackSpace  workspace prev_on_output
 bindsym $mod+Left             workspace prev_on_output
 
-# Bindings to "mark" and "goto" mark specified with 1 character
-# ⇒ rarely used, but can still be useful if you have many containers open
-bindsym $mod+z    $exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
-bindsym $mod+g    $exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
-
 # switch to workspace (no matter which monitor it is set to)
 bindsym $mod+1    workspace $ws1
 bindsym $mod+2    workspace $ws2
@@ -375,15 +372,18 @@ bindsym $mod+minus    floating toggle; resize set $scratchpad-size, \
 for_window [class="Audacious"]           floating enable
 for_window [class="Audacious"]           move scratchpad
 for_window [class="Audacious"]           resize set $scratchpad-size
-for_window [instance=$temp-notes]        floating enable
-for_window [instance=$temp-notes]        move scratchpad
-for_window [instance=$temp-notes]        resize set $scratchpad-size
+for_window [instance=$notes]             floating enable
+for_window [instance=$notes]             move scratchpad
+for_window [instance=$notes]             resize set $scratchpad-size
 for_window [instance=$python-term]       floating enable
 for_window [instance=$python-term]       move scratchpad
 for_window [instance=$python-term]       resize set $scratchpad-size
 for_window [instance=$todoist-app-name]  floating enable
 for_window [instance=$todoist-app-name]  move scratchpad
 for_window [instance=$todoist-app-name]  resize set $scratchpad-size
+for_window [class=$timer-class-name]     floating enable
+for_window [class=$timer-class-name]     move scratchpad
+for_window [class=$timer-class-name]     resize set $scratchpad-size
 
 ################################################################################
 # Borders
@@ -488,12 +488,14 @@ bindsym $mod+Shift+w                $exec $default-web-browser
 bindsym $mod+masculine              [instance=$python-term] scratchpad show; move position center
 bindsym $mod+Shift+masculine        $exec kitty --name ipythonterm -o font_size=22 -e \
                                         $launcher-python-term -q
-bindsym $mod+plus                   [instance=$temp-notes] scratchpad show; move position center
-bindsym $mod+Shift+plus             $exec kitty --name tmpnotes -e $launcher-temp-notes
+bindsym $mod+plus                   [instance=$notes] scratchpad show; move position center
+bindsym $mod+Shift+plus             $exec kitty --name notes -e $launcher-notes
 bindsym $mod+p                      [class="Audacious"] scratchpad show; move position center
 bindsym $mod+Shift+p                $exec audacious
 bindsym $mod+q                      [instance=$todoist-app-name] scratchpad show; move position center
 bindsym $mod+Shift+q                $exec $launcher-todoist
+bindsym $mod+g                      [class=$timer-class-name] scratchpad show; move position center
+bindsym $mod+Shift+g                $exec $launcher-timer
 bindsym Print --release             $exec flameshot gui --path $screenshots-folder
 bindsym $mod+Print --release        $exec flameshot screen --path $screenshots-folder
 bindsym mod1+F3                     $exec kitty -e htop
