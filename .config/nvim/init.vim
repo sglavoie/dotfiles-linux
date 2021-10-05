@@ -464,6 +464,9 @@ nnoremap <Leader>wf :VimwikiSearchTags<space>
 " 'g' for 'Generate'
 nnoremap <Leader>wg :VimwikiGenerateTagLinks<CR>
 
+" 'v' for 'View' (view page in browser)
+nnoremap <Leader>wv :Vimwiki2HTMLBrowse<CR>
+
 " Registered Wikis
 let g:vimwiki_list = [
   \ {'name': 'personal', 'path': '~/Dropbox/notes/personal', 'path_html': '~/Dropbox/notes/work/'},
