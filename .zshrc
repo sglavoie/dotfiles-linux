@@ -1,5 +1,5 @@
 # Load multiple SSH keys
-zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa_datopian
+zstyle :omz:plugins:ssh-agent identities id_rsa
 
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/dev/git-scripts:$HOME/.local/bin:$HOME/.node/bin:$HOME/.cargo/bin:$HOME/.gem/ruby/2.7.0/bin:$PATH"
