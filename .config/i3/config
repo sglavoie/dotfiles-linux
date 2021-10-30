@@ -135,6 +135,9 @@ set $rofi-font 'JetBrainsMono 16'
 # Set the compose key to right Control
 set $compose-key "compose:rctrl"
 
+# This allows the ALT key to kill i3blocks to update the keyboard layout indicator
+bindsym ISO_Next_Group exec pkill -RTMIN+1 i3blocks
+
 ################################################################################
 # General settings
 ######################################
@@ -547,6 +550,9 @@ for_window [class="(?i)zoom"]         floating enable border pixel 5
 #######################################
 # Set compose key to Right Ctrl
 exec_always --no-startup-id    setxkbmap -option $compose-key
+
+# Set two keyboard layouts and allow toggling them with ALT+SHIFT
+exec_always --no-startup-id    setxkbmap -layout "us,es" -option "grp:alt_shift_toggle"
 
 # Delay, interval
 exec_always --no-startup-id    xset r rate 250 60

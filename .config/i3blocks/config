@@ -49,6 +49,12 @@ command=~/.config/i3blocks/microphone/microphone
 interval=10
 signal=10
 
+[LANGUAGE]
+#label=LNG
+command=~/.local/bin/xkblayout-state print %s | awk '{print "⌨️ " toupper($0)}'
+interval=once
+signal=1
+
 [TIME_DATE]
 command=date +"  %a, %d %b - %H:%M  "
 interval=5
