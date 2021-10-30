@@ -481,6 +481,9 @@ $exec  nm-applet
 $exec  pasystray
 $exec  xfce4-clipman
 
+# Automatically set profile for Logitech G Pro keyboard
+exec_always --no-startup-id gpro-led -p ~/.config/gpro-led-profile
+
 # First kill it as it doesn't always respect the `--timeout` option otherwise
 exec_always --no-startup-id  "killall unclutter; unclutter --jitter 40 --ignore-scrolling --timeout 5 &"
 
