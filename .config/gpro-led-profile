@@ -1,0 +1,42 @@
+# More at https://github.com/MatMoul/g810-led
+# Help with command gpro-led --help
+
+# Set all keys the same colors to start
+a 2788c8 # Set all keys blue
+
+# Set different colors by groups of keys
+g fkeys ff00ff # F1-F12: magenta
+g indicators ffffff # lights in the top row white
+g modifiers ffffff # white: shift, control, super, alt, fn, menu
+g arrows 00ff00 # green: arrow keys
+g functions ff0000 # red: escape, insert, delete, home, end, page up/down
+
+# Override colors for individual keys
+k logo 00162B # logitech logo dark blue
+k capslock ff0000 # red
+k caps_indicator ff0000 # red
+k tab FFB133 # light orange
+k enter FFB133 # light orange
+k backspace FFB133 # light orange
+k printscreen 00ff00 # green
+k delete ffffff # white
+k pageup FFFE33 # clear yellow
+k pagedown FFFE33 # clear yellow
+k home AC33FF # purple
+k end AC33FF # purple
+k escape F8FF00 # bright yellow
+k space 60FFD5 # light green
+k minus 60FFD5 # light green
+k equal 60FFD5 # light green
+k open_bracket 60FFD5 # light green
+k close_bracket 60FFD5 # light green
+k backslash 60FFD5 # light green
+k comma 60FFD5 # light green
+k period 60FFD5 # light green
+k slash 60FFD5 # light green
+k quote 60FFD5 # light green
+k semicolon 60FFD5 # light green
+k tilde 60FFD5 # light green
+
+# Commit changes
+c
