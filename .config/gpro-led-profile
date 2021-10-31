@@ -5,38 +5,42 @@
 a 2788c8 # Set all keys blue
 
 # Set different colors by groups of keys
+g arrows 00ff00 # green: arrow keys
 g fkeys ff00ff # F1-F12: magenta
+g functions ff0000 # red: escape, insert, delete, home, end, page up/down
 g indicators ffffff # lights in the top row white
 g modifiers ffffff # white: shift, control, super, alt, fn, menu
-g arrows 00ff00 # green: arrow keys
-g functions ff0000 # red: escape, insert, delete, home, end, page up/down
 
 # Override colors for individual keys
-k logo 00162B # logitech logo dark blue
-k capslock ff0000 # red
-k caps_indicator ff0000 # red
-k tab FFB133 # light orange
-k enter FFB133 # light orange
-k backspace FFB133 # light orange
-k printscreen 00ff00 # green
-k delete ffffff # white
-k pageup FFFE33 # clear yellow
-k pagedown FFFE33 # clear yellow
-k home AC33FF # purple
-k end AC33FF # purple
-k escape F8FF00 # bright yellow
-k space 60FFD5 # light green
-k minus 60FFD5 # light green
-k equal 60FFD5 # light green
-k open_bracket 60FFD5 # light green
-k close_bracket 60FFD5 # light green
 k backslash 60FFD5 # light green
+k backspace FFB133 # light orange
+k caps_indicator ff0000 # red
+k capslock ff0000 # red
+k close_bracket 60FFD5 # light green
 k comma 60FFD5 # light green
+k ctrlright 00FFA8 # cyan
+k delete ffffff # white
+k end AC33FF # purple
+k enter FFB133 # light orange
+k equal 60FFD5 # light green
+k escape F8FF00 # bright yellow
+k home AC33FF # purple
+k logo 00162B # logitech logo dark blue
+k menu 0050FF # blue
+k minus 60FFD5 # light green
+k open_bracket 60FFD5 # light green
+k pagedown FFFE33 # clear yellow
+k pageup FFFE33 # clear yellow
 k period 60FFD5 # light green
-k slash 60FFD5 # light green
+k printscreen 00ff00 # green
 k quote 60FFD5 # light green
 k semicolon 60FFD5 # light green
+k slash 60FFD5 # light green
+k space 60FFD5 # light green
+k tab FFB133 # light orange
 k tilde 60FFD5 # light green
+k win_left FF00BD # clear magenta
+k winright FF3E00 # bright orange
 
 # Commit changes
 c
