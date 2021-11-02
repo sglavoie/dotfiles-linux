@@ -443,6 +443,7 @@ bindsym XF86AudioMute           exec $volumepath mute -n -t $statuscmd \
                                     -u $statussig && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioMicMute        $exec $toggle-mic-on-off
 bindsym $mod+exclamdown         $exec $toggle-mic-on-off
+bindsym $mod+Pause              $exec $toggle-mic-on-off
 
 # Automatically set the volume to a given value when (re)launching i3
 exec_always --no-startup-id "amixer -D pulse set Master 50%"
@@ -457,7 +458,9 @@ exec_always --no-startup-id pactl set-source-mute \
 #######################################
 # Control brightness more precisely through software `light`
 bindsym XF86MonBrightnessDown    $exec $brightness-laptop-down
+bindsym $mod+mod1+F1             $exec $brightness-laptop-down
 bindsym XF86MonBrightnessUp      $exec $brightness-laptop-up
+bindsym $mod+mod1+F2             $exec $brightness-laptop-up
 
 # Adjust external monitor brightness
 bindsym $mod+F1   $exec $brightness-monitor-down
@@ -492,10 +495,15 @@ bindsym $mod+Shift+d --release      exec "killall dunst; exec notify-send 'resta
 bindsym $mod+Shift+t                $exec $default-file-manager
 bindsym $mod+Shift+w                $exec $default-web-browser
 bindsym $mod+grave                  [instance=$python-term] scratchpad show; move position center
+bindsym $mod+masculine              [instance=$python-term] scratchpad show; move position center
 bindsym $mod+Shift+grave            $exec kitty --name ipythonterm -o font_size=22 -e \
                                         $launcher-python-term -q
+bindsym $mod+Shift+masculine        $exec kitty --name ipythonterm -o font_size=22 -e \
+                                        $launcher-python-term -q
 bindsym $mod+plus                   [instance=$notes] scratchpad show; move position center
+bindsym $mod+equal                  [instance=$notes] scratchpad show; move position center
 bindsym $mod+Shift+plus             $exec kitty --name notes -e $launcher-notes
+bindsym $mod+Shift+equal            $exec kitty --name notes -e $launcher-notes
 bindsym $mod+p                      [class="Audacious"] scratchpad show; move position center
 bindsym $mod+Shift+p                $exec audacious
 bindsym $mod+q                      [instance=$todoist-app-name] scratchpad show; move position center
