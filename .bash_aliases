@@ -115,6 +115,7 @@ alias cpsglavoie='cp -rf \
     cd ~/dev/sglavoie/sglavoie.github.io && git add .'
 alias da='deactivate'
 alias jl='jupyter-lab &'
+alias learning-logs='~/.local/share/virtualenvs/learning-logs-to-markdown-XJLvhmzn/bin/python3.9 ~/dev/sglavoie/dev-helpers/learning-logs-to-markdown/get_learning_logs.py'
 alias pipupgrade="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 alias pipupdateall="pip install -U \$(pip freeze | awk '{split(\$0, a, \"==\"); print a[1]}')"
 alias pylint='/usr/bin/env python =pylint'
