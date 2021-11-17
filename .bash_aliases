@@ -12,6 +12,7 @@ alias asg='. ~/Programming/virtualenvs/sg/bin/activate && cd ~/dev/sglavoie/sgla
 alias c='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias cat="bat"
 alias cl='clear'
+alias clip='xclip -selection clipboard'  # used as a pipe, put the output into the clipboard
 alias diff='diff-so-fancy'
 alias dockerclean='sudo systemctl start docker.service; docker rmi -f $(docker images -a -q); docker volume rm -f $(docker volume ls -q); docker rm -f $(docker ps -a -q); docker network prune'
 alias f='fg'
