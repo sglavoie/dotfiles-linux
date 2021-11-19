@@ -361,8 +361,8 @@ nnoremap <leader>Ls :set spelllang=es<CR>
 nnoremap <leader>Le :set spelllang=en<CR>
 nnoremap <leader>Lf :set spelllang=fr<CR>
 
-" Toggle spelling option with character "º"
-nnoremap <Char-186> :set spell!<CR>
+" Toggle spelling
+nnoremap <leader>LL :set spell!<CR>
 
 " Go to previous/next spelling error
 nnoremap <M-S-s> [s
