@@ -23,7 +23,6 @@
 	ln = l --name-only
 	logda = l --oneline --decorate --graph --all
 	ls = l --stat
-	p = pull
 	po = push origin
 	pof = push origin --force
 	pos = push --set-upstream origin main
