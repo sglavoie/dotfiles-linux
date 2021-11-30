@@ -1,1 +1,1 @@
-let g:mkdp_browser = '/usr/bin/google-chrome-stable'
+let g:mkdp_browser = '/usr/bin/brave-browser'
